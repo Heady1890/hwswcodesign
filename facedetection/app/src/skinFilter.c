@@ -10,10 +10,15 @@
 #define CR_HIGH  200000000
 
 
-void skinFilter(image_t *inputImage, image_t *outputImage)
+
+void skinFilter(image_t *inputImage, bwimage_t *outputImage)
 {
   int x, y;
-  int pIndex = 0; //(y*inputImage->width+x)*3;
+  int pIndex = 0;
+  //Index des Bytes wo Information gesetzt wird
+  uint16_t bwpIndex=0;
+  //Index innerhalb eines Bytes, welches Bit gesetzt wird.
+  uint16_t byteIndex=0;
   for (y = 0; y < inputImage->height; ++y) {
     for (x = 0; x < inputImage->width; ++x) {  
       ycbcr_color_t ycbcr = getYCbCrColorValue(inputImage, pIndex);
@@ -22,17 +27,21 @@ void skinFilter(image_t *inputImage, image_t *outputImage)
 	  && ycbcr.cb >= CB_LOW && ycbcr.cb <= CB_HIGH
 	  && ycbcr.cr >= CR_LOW && ycbcr.cr <= CR_HIGH) {
 	// set output pixel white
-	outputImage->data[pIndex] = 0xFF;
-	outputImage->data[pIndex+1] = 0xFF;
-	outputImage->data[pIndex+2] = 0xFF;
+        outputImage->data[bwpIndex] |= (1<<byteIndex);
       }
       else {
 	// set output pixel black
-	outputImage->data[pIndex] = 0x00;
-	outputImage->data[pIndex+1] = 0x00;
-	outputImage->data[pIndex+2] = 0x00;
+        // sollte unnötig sein, da Bytes standardmäßig mit 0x00 angelegt werden
+        outputImage->data[bwpIndex] &= ~(1<<byteIndex);
       }
-    pIndex+=3;
+      
+      //neue Indexe setzen
+      pIndex+=3;
+      byteIndex++;
+      if(byteIndex>=9){
+        byteIndex=0;
+        bwpIndex++;
+      }
     }
   }
 }

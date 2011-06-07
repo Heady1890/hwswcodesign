@@ -46,6 +46,21 @@ void initializeImage(image_t *template, image_t *image)
 #endif
 }
 
+void initializeBWImage(image_t *template, bwimage_t *image)
+{
+  image->width = template->width;
+  image->height = template->height;
+  image->dataLength = template->dataLength/24+1;
+#ifdef __SPEAR32__
+  // allocate memory in external SDRAM
+  image->data = (unsigned char *)(SDRAM_BASE+sdramBytesAllocated);
+  sdramBytesAllocated += template->dataLength;
+#else
+  // allocate memory on heap
+  image->data = (unsigned char *)malloc(template->dataLength);    
+#endif
+}
+
 void freeImage(image_t *image) 
 {
   free(image->data);

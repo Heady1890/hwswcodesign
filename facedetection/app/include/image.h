@@ -16,11 +16,18 @@ typedef struct {
 } ycbcr_color_t;
 
 typedef struct {
-  uint32_t width;
-  uint32_t height;
+  uint16_t width;
+  uint16_t height;
   uint32_t dataLength;
   unsigned char *data;
 } image_t;
+
+typedef struct {
+  uint16_t width;
+  uint16_t height;
+  uint32_t dataLength;
+  unsigned char *data;
+} bwimage_t;
 
 rgb_color_t getRGBColorValue(image_t *i, int pIndex);
 ycbcr_color_t getYCbCrColorValue(image_t *i, int pIndex);
