@@ -11,7 +11,7 @@
 
 
 
-void skinFilter(image_t *inputImage, bwimage_t *outputImage)
+void skinFilter(image_t *inputImage, bit_image_t *outputImage)
 {
   int x, y;
   int pIndex = 0;

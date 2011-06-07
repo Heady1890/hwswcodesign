@@ -27,7 +27,7 @@ typedef struct {
   uint16_t height;
   uint32_t dataLength;
   unsigned char *data;
-} bwimage_t;
+} bit_image_t;
 
 rgb_color_t getRGBColorValue(image_t *i, int pIndex);
 ycbcr_color_t getYCbCrColorValue(image_t *i, int pIndex);

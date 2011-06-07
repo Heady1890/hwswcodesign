@@ -46,7 +46,7 @@ void initializeImage(image_t *template, image_t *image)
 #endif
 }
 
-void initializeBWImage(image_t *template, bwimage_t *image)
+void initializeBWImage(image_t *template, bit_image_t *image)
 {
   image->width = template->width;
   image->height = template->height;
@@ -157,9 +157,9 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
   uint32_t imageLen;
   image_t inputImage;
   //image_t tempImage;
-  image_t skinFilterImage;
-  image_t erodeFilterImage;
-  image_t dilateFilterImage;
+  bit_image_t skinFilterImage;
+  bit_image_t erodeFilterImage;
+  bit_image_t dilateFilterImage;
   char tgaHeader[18];
 
 #ifndef __SPEAR32__
