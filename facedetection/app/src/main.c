@@ -172,6 +172,34 @@ void printImage(image_t *inputImage)
   #endif
 }
 
+void printBitImage(bit_image_t *inputImage)
+{
+  int x, y;
+  #ifdef __SPEAR32__
+  for (y=0; y<SCREEN_HEIGHT; y++) {
+    for (x=0; x<SCREEN_WIDTH; x++) {
+      if (x < inputImage->width && y < inputImage->height) {
+	uint16_t bpIndex=(x*y)>>8;
+        uint16_t byteIndex=(x*y)%8;
+	rgb_color_t color;
+        
+        uint16_t bpIndex=(x*y)>>8;
+        uint16_t byteIndex=(x*y)%8;
+	
+        if( (inputImage->data[bpIndex]>>byteIndex)&0x01==0x01){
+        color.b = inputImage->data[pIndex];
+	color.g = inputImage->data[pIndex+1];
+	color.r = inputImage->data[pIndex+2];
+	screenData[y*SCREEN_WIDTH+x] = (color.r << 16) | (color.g << 8) | color.b;
+      }
+      else {
+	screenData[y*SCREEN_WIDTH+x] = 0;
+      }
+    }
+  }
+  #endif
+}
+
 void computeSingleImage(const char *sourcePath, const char *targetPath)
 {
   uint32_t imageLen;

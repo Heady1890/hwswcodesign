@@ -54,7 +54,7 @@ void detectFace(bit_image_t *faceMask, image_t *rawImage)
       /*if (c.r == FOREGROUND_COLOR_R && 
 	  c.g == FOREGROUND_COLOR_G && 
 	  c.b == FOREGROUND_COLOR_B) {*/
-      if( (faceMask->data[bpIndex]>>byteIndex)&0x00==0x01){
+      if( (faceMask->data[bpIndex]>>byteIndex)&0x01==0x01){
 	histX[x]++;
 	histY[y]++;
       }
