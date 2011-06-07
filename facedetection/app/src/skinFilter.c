@@ -38,7 +38,7 @@ void skinFilter(image_t *inputImage, bit_image_t *outputImage)
       //neue Indexe setzen
       pIndex+=3;
       byteIndex++;
-      if(byteIndex>=9){
+      if(byteIndex>=8){
         byteIndex=0;
         bwpIndex++;
       }

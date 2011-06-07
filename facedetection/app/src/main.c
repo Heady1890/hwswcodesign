@@ -65,7 +65,7 @@ void initializeBWImage(image_t *template, bit_image_t *image)
 {
   image->width = template->width;
   image->height = template->height;
-  image->dataLength = template->dataLength/24+1;
+  image->dataLength = ((template->width*template->height)>>4);
 #ifdef __SPEAR32__
   // allocate memory in external SDRAM
   image->data = (unsigned char *)(SDRAM_BASE+sdramBytesAllocated);
@@ -179,17 +179,16 @@ void printBitImage(bit_image_t *inputImage)
   for (y=0; y<SCREEN_HEIGHT; y++) {
     for (x=0; x<SCREEN_WIDTH; x++) {
       if (x < inputImage->width && y < inputImage->height) {
-	uint16_t bpIndex=(x*y)>>8;
-        uint16_t byteIndex=(x*y)%8;
+	uint16_t bpIndex=(y*inputImage->width+x)>>4;
+        uint16_t byteIndex=(y*inputImage->width+x)%4;
 	rgb_color_t color;
-        
-        uint16_t bpIndex=(x*y)>>8;
-        uint16_t byteIndex=(x*y)%8;
 	
         if( (inputImage->data[bpIndex]>>byteIndex)&0x01==0x01){
-        color.b = inputImage->data[pIndex];
-	color.g = inputImage->data[pIndex+1];
-	color.r = inputImage->data[pIndex+2];
+        color.b = color.g = color.r = 0xFF;
+	}else{
+	color.b = color.g = color.r = 0x00;
+        }
+        
 	screenData[y*SCREEN_WIDTH+x] = (color.r << 16) | (color.g << 8) | color.b;
       }
       else {
@@ -199,6 +198,19 @@ void printBitImage(bit_image_t *inputImage)
   }
   #endif
 }
+
+/*void saveBitImage(const char *targetPath, bit_image_t inputImage){
+  FILE *f;
+  f = fopen(targetPath+"test.tga", "w");
+  if (!f) {
+    printf("Image file <%s> couldn't be opened", targetPath);
+    exit(1);
+  }
+    
+  fwrite(tgaHeader, 1, sizeof(tgaHeader), f);
+  fwrite(inputImage.data, 1, inputImage.dataLength, f);
+  fclose(f);
+}*/
 
 void computeSingleImage(const char *sourcePath, const char *targetPath)
 {
@@ -273,11 +285,11 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
   // perform face detection
   skinFilter(&inputImage, &skinFilterImage);
   printf("skinFilter finished\n");
-  //printImage(&skinFilterImage);
+  printBitImage(&skinFilterImage);
 
   erodeDilateFilter(&skinFilterImage, &erodeFilterImage, FILTER_ERODE);
   printf("erodeFilter finished\n");
-  //printImage(&erodeFilterImage);
+  //printBitImage(&erodeFilterImage);
 
   //counter_reset(&counterHandle);
   //counter_start(&counterHandle);
@@ -286,30 +298,12 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
   //counter_stop(&counterHandle);
 
   printf("dilitateFilter finished\n");
-  //printImage(&dilateFilterImage);
+  //printBitImage(&dilateFilterImage);
 
   detectFace(&dilateFilterImage, &inputImage);
 
 #ifdef __SPEAR32__
-  // output image on touchscreen
-  /*for (y=0; y<SCREEN_HEIGHT; y++) {
-    for (x=0; x<SCREEN_WIDTH; x++) {
-      if (x < inputImage.width && y < inputImage.height) {
-	int pIndex;
-	rgb_color_t color;
-	pIndex = (y*inputImage.width+x)*3;
-	color.b = inputImage.data[pIndex];
-	color.g = inputImage.data[pIndex+1];
-	color.r = inputImage.data[pIndex+2];
-	screenData[y*SCREEN_WIDTH+x] = (color.r << 16) | (color.g << 8) | color.b;
-      }
-      else {
-	screenData[y*SCREEN_WIDTH+x] = 0;
-      }
-    }
-  }*/
-
-  printImage(&inputImage);
+  //printImage(&inputImage);
   counter_stop(&counterHandle);
 #endif 
 
