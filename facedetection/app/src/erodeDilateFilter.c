@@ -77,7 +77,7 @@ void erodeDilateFilter(image_t *inputImage, image_t *outputImage, uint8_t op)
 
       //if((op == FILTER_ERODE && c.r == 0xff)||op == FILTER_DILATE)
       //foundMatch = checkWindow(inputImage,x,y,compare.r);
-      if(c.r == FOREGROUND_COLOR_R){
+      //if(c.r == FOREGROUND_COLOR_R){
       for (dy = -WINDOW_OFFSET; dy <= WINDOW_OFFSET; ++dy) {
 	wy = y+dy;
 	if (wy >= 0 && wy < inputImage->height) {
@@ -100,7 +100,7 @@ void erodeDilateFilter(image_t *inputImage, image_t *outputImage, uint8_t op)
 	  break;
 	}
       }
-      }
+      //}
 
       if ((op == FILTER_ERODE && !foundMatch) ||
 	  (op == FILTER_DILATE && foundMatch)) {
