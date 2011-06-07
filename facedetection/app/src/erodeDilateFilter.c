@@ -3,51 +3,9 @@
 
 #define WINDOW_LENGTH 5
 #define WINDOW_OFFSET ((WINDOW_LENGTH-1)/2)
-#define BACKGROUND_COLOR_R   0
-#define BACKGROUND_COLOR_G   0
-#define BACKGROUND_COLOR_B   0
-#define FOREGROUND_COLOR_R   0xff
-#define FOREGROUND_COLOR_G   0xff
-#define FOREGROUND_COLOR_B   0xff
 
 
-uint8_t checkPixel(image_t *inputImage, int pIndex, uint8_t check){
-  uint8_t b=inputImage->data[pIndex];
-  if(b==check)
-  {
-    return 0x01;
-  }
-  return 0x00;
-}
-
-uint8_t checkWindow(image_t *inputImage, int x, int y, uint8_t comp){
-  int dx,dy, wx, wy;
-  int pIndex=0, pIndex2=0;
-  rgb_color_t c, compare;
-  compare.r = compare.g = compare.b = comp;
-
-  for (dy = -WINDOW_OFFSET; dy <= WINDOW_OFFSET; ++dy) {
-    wy = y+dy;
-      if (wy >= 0 && wy < inputImage->height) {
-        pIndex2=(wy*inputImage->width + (x-2))*3;
-	for (dx = -WINDOW_OFFSET; dx <= WINDOW_OFFSET; ++dx) {
-	  wx = x+dx;
-	  if (wx >= 0 && wx < inputImage->width) {
-	    c.b = inputImage->data[pIndex2];
-	    c.g = inputImage->data[pIndex2 + 1];
-	    c.r = inputImage->data[pIndex2 + 2];
-	    if (c.r == compare.r && c.g == compare.g && c.b == compare.b) {
-	      return 0x01;
-	    }
-            pIndex2+=3;
-	  }
-        }
-      }
-    }
-    return 0x00;
-}
-
-void erodeDilateFilter(image_t *inputImage, bit_image_t *outputImage, uint8_t op)
+void erodeDilateFilter(bit_image_t *inputImage, bit_image_t *outputImage, uint8_t op)
 {
   int x, y, dx, dy, wx, wy;
   rgb_color_t c, compare;
@@ -76,7 +34,7 @@ void erodeDilateFilter(image_t *inputImage, bit_image_t *outputImage, uint8_t op
 	  for (dx = -WINDOW_OFFSET; dx <= WINDOW_OFFSET; ++dx) {
 	    wx = x+dx;
 	    if (wx >= 0 && wx < inputImage->width && foundMatch == 0) {
-              uint8_t op2 = inputImage->data[pIndex2];
+              uint8_t op2 = (inputImage->data[bpIndex2]>>byteIndex2)&0x01;
 	      if (op2 == op) {
 		foundMatch = 1;
 		break;
@@ -98,11 +56,11 @@ void erodeDilateFilter(image_t *inputImage, bit_image_t *outputImage, uint8_t op
       if ((op == FILTER_ERODE && !foundMatch) ||
 	  (op == FILTER_DILATE && foundMatch)) {
 	// set output pixel white
-	outputImage->data[bwpIndex] |= (1<<byteIndex);
+	outputImage->data[bpIndex] |= (1<<byteIndex);
       }
       else{
         // default: set background color
-        outputImage->data[bwpIndex] &= ~(1<<byteIndex);
+        outputImage->data[bpIndex] &= ~(1<<byteIndex);
       }
 
       //pIndex+=3;

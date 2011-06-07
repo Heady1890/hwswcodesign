@@ -10,6 +10,6 @@ typedef struct {
   int bottomRightY;
 } rect_t;
 
-void detectFace(image_t *faceMask, image_t *rawImage);
+void detectFace(bit_image_t *faceMask, image_t *rawImage);
 
 #endif // _detectFace_h_

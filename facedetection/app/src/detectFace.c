@@ -12,7 +12,7 @@
 int getIndexBelowThreshold(int *hist, int histLen, int start, int step, int threshold);
 void paintRectangle(image_t *image, rect_t rectangle);
 
-void detectFace(image_t *faceMask, image_t *rawImage)
+void detectFace(bit_image_t *faceMask, image_t *rawImage)
 {
   int *histX;
   int *histY;
@@ -44,14 +44,17 @@ void detectFace(image_t *faceMask, image_t *rawImage)
 
   for (y = 0; y < faceMask->height; y++) {
     for (x = 0; x < faceMask->width; x++) {
-      pIndex = (y*faceMask->width + x)*3;
+      /*pIndex = (y*faceMask->width + x)*3;
       c.b = faceMask->data[pIndex];
       c.g = faceMask->data[pIndex + 1];
-      c.r = faceMask->data[pIndex + 2];
+      c.r = faceMask->data[pIndex + 2];*/
+      uint16_t bpIndex=(x*y)>>8;
+      uint16_t byteIndex=(x*y)%8;
 
-      if (c.r == FOREGROUND_COLOR_R && 
+      /*if (c.r == FOREGROUND_COLOR_R && 
 	  c.g == FOREGROUND_COLOR_G && 
-	  c.b == FOREGROUND_COLOR_B) {
+	  c.b == FOREGROUND_COLOR_B) {*/
+      if( (faceMask->data[bpIndex]>>byteIndex)&0x00==0x01){
 	histX[x]++;
 	histY[y]++;
       }

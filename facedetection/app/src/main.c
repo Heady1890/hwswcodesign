@@ -46,6 +46,21 @@ void initializeImage(image_t *template, image_t *image)
 #endif
 }
 
+void initializeBitImage(image_t *template, bit_image_t *image)
+{
+  image->width = template->width;
+  image->height = template->height;
+  image->dataLength = template->dataLength;
+#ifdef __SPEAR32__
+  // allocate memory in external SDRAM
+  image->data = (unsigned char *)(SDRAM_BASE+sdramBytesAllocated);
+  sdramBytesAllocated += template->dataLength;
+#else
+  // allocate memory on heap
+  image->data = (unsigned char *)malloc(template->dataLength);    
+#endif
+}
+
 void initializeBWImage(image_t *template, bit_image_t *image)
 {
   image->width = template->width;
@@ -62,6 +77,11 @@ void initializeBWImage(image_t *template, bit_image_t *image)
 }
 
 void freeImage(image_t *image) 
+{
+  free(image->data);
+}
+
+void freeBitImage(bit_image_t *image) 
 {
   free(image->data);
 }
@@ -210,10 +230,9 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
   printf("Images received, starting computation.\n");
 #endif
 
-  //initializeImage(&inputImage, &tempImage);
-  initializeImage(&inputImage, &skinFilterImage);
-  initializeImage(&inputImage, &erodeFilterImage);
-  initializeImage(&inputImage, &dilateFilterImage);
+  initializeBitImage(&inputImage, &skinFilterImage);
+  initializeBitImage(&inputImage, &erodeFilterImage);
+  initializeBitImage(&inputImage, &dilateFilterImage);
 
 
 #ifdef __SPEAR32__
@@ -226,11 +245,11 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
   // perform face detection
   skinFilter(&inputImage, &skinFilterImage);
   printf("skinFilter finished\n");
-  printImage(&skinFilterImage);
+  //printImage(&skinFilterImage);
 
   erodeDilateFilter(&skinFilterImage, &erodeFilterImage, FILTER_ERODE);
   printf("erodeFilter finished\n");
-  printImage(&erodeFilterImage);
+  //printImage(&erodeFilterImage);
 
   //counter_reset(&counterHandle);
   //counter_start(&counterHandle);
@@ -239,7 +258,7 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
   //counter_stop(&counterHandle);
 
   printf("dilitateFilter finished\n");
-  printImage(&dilateFilterImage);
+  //printImage(&dilateFilterImage);
 
   detectFace(&dilateFilterImage, &inputImage);
 
@@ -305,8 +324,8 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
 
   freeImage(&inputImage);
   //freeImage(&tempImage);
-  freeImage(&skinFilterImage);
-  freeImage(&erodeFilterImage);
-  freeImage(&dilateFilterImage);
+  freeBitImage(&skinFilterImage);
+  freeBitImage(&erodeFilterImage);
+  freeBitImage(&dilateFilterImage);
   
 }
