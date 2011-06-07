@@ -65,7 +65,7 @@ void initializeBWImage(image_t *template, bit_image_t *image)
 {
   image->width = template->width;
   image->height = template->height;
-  image->dataLength = ((template->width*template->height)>>4);
+  image->dataLength = template->dataLength;//((template->width*template->height)>>4);
 #ifdef __SPEAR32__
   // allocate memory in external SDRAM
   image->data = (unsigned char *)(SDRAM_BASE+sdramBytesAllocated);
@@ -175,24 +175,33 @@ void printImage(image_t *inputImage)
 void printBitImage(bit_image_t *inputImage)
 {
   int x, y;
+  //Index des Bytes wo Information gesetzt wird
+  uint16_t bpIndex=0;
+  //Index innerhalb eines Bytes, welches Bit gesetzt wird.
+  uint16_t byteIndex=0;
   #ifdef __SPEAR32__
   for (y=0; y<SCREEN_HEIGHT; y++) {
     for (x=0; x<SCREEN_WIDTH; x++) {
       if (x < inputImage->width && y < inputImage->height) {
-	uint16_t bpIndex=(y*inputImage->width+x)>>4;
-        uint16_t byteIndex=(y*inputImage->width+x)%4;
+	//uint16_t bpIndex=(y*inputImage->width+x)>>4;
+        //uint16_t byteIndex=(y*inputImage->width+x)%8;
 	rgb_color_t color;
 	
         if( (inputImage->data[bpIndex]>>byteIndex)&0x01==0x01){
-        color.b = color.g = color.r = 0xFF;
+          color.b = color.g = color.r = 0xFF;
 	}else{
-	color.b = color.g = color.r = 0x00;
+	  color.b = color.g = color.r = 0x00;
         }
         
 	screenData[y*SCREEN_WIDTH+x] = (color.r << 16) | (color.g << 8) | color.b;
       }
       else {
 	screenData[y*SCREEN_WIDTH+x] = 0;
+      }
+      byteIndex++;
+      if(byteIndex>=8){
+        byteIndex=0;
+        bpIndex++;
       }
     }
   }
@@ -287,20 +296,20 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
   printf("skinFilter finished\n");
   printBitImage(&skinFilterImage);
 
-  erodeDilateFilter(&skinFilterImage, &erodeFilterImage, FILTER_ERODE);
-  printf("erodeFilter finished\n");
+  //erodeDilateFilter(&skinFilterImage, &erodeFilterImage, FILTER_ERODE);
+  //printf("erodeFilter finished\n");
   //printBitImage(&erodeFilterImage);
 
   //counter_reset(&counterHandle);
   //counter_start(&counterHandle);
 
-  erodeDilateFilter(&erodeFilterImage, &dilateFilterImage, FILTER_DILATE);
+  //erodeDilateFilter(&erodeFilterImage, &dilateFilterImage, FILTER_DILATE);
   //counter_stop(&counterHandle);
 
-  printf("dilitateFilter finished\n");
+  //printf("dilitateFilter finished\n");
   //printBitImage(&dilateFilterImage);
 
-  detectFace(&dilateFilterImage, &inputImage);
+  //detectFace(&dilateFilterImage, &inputImage);
 
 #ifdef __SPEAR32__
   //printImage(&inputImage);
