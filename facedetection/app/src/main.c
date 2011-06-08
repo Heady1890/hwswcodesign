@@ -57,7 +57,7 @@ void initializeBitImage(image_t *template, bit_image_t *image)
   sdramBytesAllocated += template->dataLength;
 #else
   // allocate memory on heap
-  image->data = (unsigned char *)malloc(template->dataLength);    
+  image->data = (uint8_t *)malloc(template->dataLength);    
 #endif
 }
 
