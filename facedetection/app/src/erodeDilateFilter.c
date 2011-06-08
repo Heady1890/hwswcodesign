@@ -18,6 +18,9 @@ void erodeDilateFilter(bit_image_t *inputImage, bit_image_t *outputImage, uint8_
   uint8_t byteIndex=0;
   uint8_t byteIndex2=0;
 
+  //Debug
+  uint16_t counter=0;
+
   for (y = 0; y < inputImage->height; ++y) {
     for (x = 0; x < inputImage->width; ++x) {  
 
@@ -26,7 +29,7 @@ void erodeDilateFilter(bit_image_t *inputImage, bit_image_t *outputImage, uint8_
       //if((op == FILTER_ERODE && c.r == 0xff)||op == FILTER_DILATE)
       //foundMatch = checkWindow(inputImage,x,y,compare.r);
       //if(c.r == FOREGROUND_COLOR_R){
-      printf("Fenster beginnt, x=%i, y=%i, Index=%i, Bit =%i\n",x,y,bpIndex, byteIndex);
+      //printf("Fenster beginnt, x=%i, y=%i, Index=%i, Bit =%i\n",x,y,bpIndex, byteIndex);
       for (dy = -WINDOW_OFFSET; dy <= WINDOW_OFFSET; ++dy) {
 	wy = y+dy;
 	if (wy >= 0 && wy < inputImage->height) {
@@ -36,10 +39,10 @@ void erodeDilateFilter(bit_image_t *inputImage, bit_image_t *outputImage, uint8_
 	  for (dx = -WINDOW_OFFSET; dx <= WINDOW_OFFSET; ++dx) {
 	    wx = x+dx;
 	    if (wx >= 0 && wx < inputImage->width && foundMatch == 0) {
-              printf("Fenster: Index=%i und Bit=%i\n",bpIndex2,byteIndex2);
-	      if ((inputImage->data[bpIndex2]>>byteIndex2)&0x01==op){
+              //printf("Fenster: Index=%i und Bit=%i\n",bpIndex2,byteIndex2);
+	      if ((inputImage->data[bpIndex2]>>byteIndex2)&0x01==0x01){
 		foundMatch = 1;
-                printf("Farbe gefunden\n");
+                //printf("Farbe gefunden\n");
 		break;
 	      }
               byteIndex2++;
@@ -54,9 +57,11 @@ void erodeDilateFilter(bit_image_t *inputImage, bit_image_t *outputImage, uint8_
 	  break;
 	}
       }
-      printf("Fenster endet\n\n");
+      //printf("Fenster endet\n\n");
       //}
 
+      //printf("foundmatch=%i\n",foundMatch);
+      if(foundMatch)counter++;
       if ((op == FILTER_ERODE && !foundMatch) ||
 	  (op == FILTER_DILATE && foundMatch)) {
 	// set output pixel white
@@ -77,4 +82,5 @@ void erodeDilateFilter(bit_image_t *inputImage, bit_image_t *outputImage, uint8_
       }
     }
   }
+  printf("%i von 76800",counter);
 }
