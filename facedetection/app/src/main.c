@@ -370,9 +370,9 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
 
   //save skinFilter Image
   saveBitImage(&inputImage, &skinFilterImage);
-  f = fopen("../skinFilter.tga", "w");
+  f = fopen("../1.skinFilter.tga", "w");
   if (!f) {
-    printf("Image file <%s> couldn't be opened", "../skinFilter.tga");
+    printf("Image file <%s> couldn't be opened", "../1.skinFilter.tga");
     exit(1);
   }
     
@@ -382,9 +382,9 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
 
   //save erodeFilter Image
   saveBitImage(&inputImage, &erodeFilterImage);
-  f = fopen("../erodeFilter.tga", "w");
+  f = fopen("../2.erodeFilter.tga", "w");
   if (!f) {
-    printf("Image file <%s> couldn't be opened", "../erodeFilter.tga");
+    printf("Image file <%s> couldn't be opened", "../2.erodeFilter.tga");
     exit(1);
   }
     
@@ -394,9 +394,9 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
 
   //save dilateFilter Image
   saveBitImage(&inputImage, &dilateFilterImage);
-  f = fopen("../dilateFilter.tga", "w");
+  f = fopen("../3.dilateFilter.tga", "w");
   if (!f) {
-    printf("Image file <%s> couldn't be opened", "../dilateFilter.tga");
+    printf("Image file <%s> couldn't be opened", "../3.dilateFilter.tga");
     exit(1);
   }
     
