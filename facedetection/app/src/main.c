@@ -36,6 +36,7 @@ void initializeImage(image_t *template, image_t *image)
   image->width = template->width;
   image->height = template->height;
   image->dataLength = template->dataLength;
+  //image->data = (uint8_t *)malloc(template->dataLength*3);
 #ifdef __SPEAR32__
   // allocate memory in external SDRAM
   image->data = (unsigned char *)(SDRAM_BASE+sdramBytesAllocated);
@@ -291,20 +292,16 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
   printf("erodeFilter finished\n");
   //printBitImage(&erodeFilterImage);
 
-  //counter_reset(&counterHandle);
-  //counter_start(&counterHandle);
-
   //erodeDilateFilter(&erodeFilterImage, &dilateFilterImage, FILTER_DILATE);
   dilateFilter(&erodeFilterImage, &dilateFilterImage);
-  //counter_stop(&counterHandle);
-
   printf("dilitateFilter finished\n");
   //printBitImage(&dilateFilterImage);
 
   detectFace(&dilateFilterImage, &inputImage);
+  printf("detectFace finished\n");
 
 #ifdef __SPEAR32__
-  //printImage(&inputImage);
+  printImage(&inputImage);
   counter_stop(&counterHandle);
 #endif 
 

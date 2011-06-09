@@ -74,7 +74,7 @@ void erodeDilateFilter(bit_image_t *inputImage, bit_image_t *outputImage, uint8_
   printf("%i von %i ",counter,(inputImage->height*inputImage->width));
 }
 
-uint8_t checkPaint(int x, int y, bit_image_t *inputImage){
+/*uint8_t checkPaint(int x, int y, bit_image_t *inputImage){
   uint8_t temp;
 
   //linkes Bit checken
@@ -108,7 +108,7 @@ uint8_t checkPaint(int x, int y, bit_image_t *inputImage){
   }
   else byteIndex2--;
   
-}
+}*/
 
 void dilateFilter(bit_image_t *inputImage, bit_image_t *outputImage){
   int x, y, dx, dy, wx, wy;

@@ -20,7 +20,8 @@ typedef struct {
   uint16_t width;
   uint16_t height;
   uint32_t dataLength;
-  unsigned char *data;
+  //unsigned char *data;
+  uint8_t *data;
 } image_t;
 
 //allokiert bei 640x480 38,3kB Speicher
