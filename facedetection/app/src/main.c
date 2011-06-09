@@ -50,37 +50,9 @@ void initializeBitImage(image_t *template, bit_image_t *image)
 {
   image->width = template->width;
   image->height = template->height;
-  //image->dataLength = template->dataLength;
   uint16_t dataLength = (template->width*template->height)>>3;
-#ifdef __SPEAR32__
-  // allocate memory in external SDRAM
-  //image->data = (uint8_t *)(SDRAM_BASE+sdramBytesAllocated);
-  //sdramBytesAllocated += template->dataLength;
   image->data = (uint8_t *)malloc(dataLength);
-#else
-  // allocate memory on heap
-  //image->data = (uint8_t *)malloc(template->dataLength);
-  image->data = (uint8_t *)malloc(dataLength);    
-#endif
 }
-
-/*void initializeBWImage(image_t *template, bit_image_t *image)
-{
-  image->width = template->width;
-  image->height = template->height;
-  //image->dataLength = template->dataLength;
-  uint16_t dataLength = (template->width*template->height)>>3;
-#ifdef __SPEAR32__
-  // allocate memory in external SDRAM
-  //image->data = (uint8_t *)(SDRAM_BASE+sdramBytesAllocated);
-  //sdramBytesAllocated += template->dataLength;
-  image->data = (uint8_t *)malloc(dataLength);
-#else
-  // allocate memory on heap
-  //image->data = (uint8_t *)malloc(template->dataLength);
-  image->data = (uint8_t *)malloc(dataLength);    
-#endif
-}*/
 
 void saveBitImage(image_t *inputImage, bit_image_t *image){
   int pIndex = 0;
@@ -215,8 +187,6 @@ void printBitImage(bit_image_t *inputImage)
   for (y=0; y<SCREEN_HEIGHT; y++) {
     for (x=0; x<SCREEN_WIDTH; x++) {
       if (x < inputImage->width && y < inputImage->height) {
-	//uint16_t bpIndex=(y*inputImage->width+x)>>4;
-        //uint16_t byteIndex=(y*inputImage->width+x)%8;
 	rgb_color_t color;
 	
         if( (inputImage->data[bpIndex]>>byteIndex)&0x01==0x01){
@@ -239,19 +209,6 @@ void printBitImage(bit_image_t *inputImage)
   }
   #endif
 }
-
-/*void saveBitImage(const char *targetPath, bit_image_t inputImage){
-  FILE *f;
-  f = fopen(targetPath+"test.tga", "w");
-  if (!f) {
-    printf("Image file <%s> couldn't be opened", targetPath);
-    exit(1);
-  }
-    
-  fwrite(tgaHeader, 1, sizeof(tgaHeader), f);
-  fwrite(inputImage.data, 1, inputImage.dataLength, f);
-  fclose(f);
-}*/
 
 void computeSingleImage(const char *sourcePath, const char *targetPath)
 {

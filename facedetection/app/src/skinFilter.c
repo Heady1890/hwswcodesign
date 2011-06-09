@@ -29,11 +29,6 @@ void skinFilter(image_t *inputImage, bit_image_t *outputImage)
 	// set output pixel white
         outputImage->data[bwpIndex] |= (1<<byteIndex);
       }
-      /*else {
-	// set output pixel black
-        // sollte unnötig sein, da Bytes standardmäßig mit 0x00 angelegt werden
-        //outputImage->data[bwpIndex] &= ~(1<<byteIndex);
-      }*/
       
       //neue Indexe setzen
       pIndex+=3;

@@ -40,6 +40,7 @@ void erodeDilateFilter(bit_image_t *inputImage, bit_image_t *outputImage, uint8_
               uint8_t temp2=(inputImage->data[bpIndex2]>>byteIndex2)&0x01;
               if(temp2!=op){
                 foundMatch=1;
+                break;
               }
               byteIndex2++;
 	      if(byteIndex2>=8){

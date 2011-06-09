@@ -15,6 +15,7 @@ typedef struct {
   int cr;
 } ycbcr_color_t;
 
+//allokiert bei 640x480 921,6kB Speicher
 typedef struct {
   uint16_t width;
   uint16_t height;
@@ -22,10 +23,10 @@ typedef struct {
   unsigned char *data;
 } image_t;
 
+//allokiert bei 640x480 38,3kB Speicher
 typedef struct {
   uint16_t width;
   uint16_t height;
-  //uint32_t dataLength;
   uint8_t *data;
 } bit_image_t;
 
