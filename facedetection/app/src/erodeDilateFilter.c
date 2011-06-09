@@ -26,7 +26,7 @@ void erodeDilateFilter(bit_image_t *inputImage, bit_image_t *outputImage, uint8_
 
       foundMatch = 0;
       uint8_t temp=(inputImage->data[bpIndex]>>byteIndex)&0x01;
-      if ( temp==op){
+      if (temp==op){
       for (dy = -WINDOW_OFFSET; dy <= WINDOW_OFFSET; ++dy) {
 	wy = y+dy;
 	if (wy >= 0 && wy < inputImage->height) {
@@ -36,17 +36,10 @@ void erodeDilateFilter(bit_image_t *inputImage, bit_image_t *outputImage, uint8_
 	  for (dx = -WINDOW_OFFSET; dx <= WINDOW_OFFSET; ++dx) {
 	    wx = x+dx;
 	    if (wx >= 0 && wx < inputImage->width && foundMatch == 0) {
-	      if ((inputImage->data[bpIndex2]>>byteIndex2)&0x01==0x01){
-                if(op==FILTER_DILATE){
-                  foundMatch = 1;
-		  break;
-                }
-              }else{
-		if(op==FILTER_ERODE){
-                  foundMatch = 1;
-		  break;
-                }
-	      }
+              uint8_t temp2=(inputImage->data[bpIndex2]>>byteIndex2)&0x01;
+              if(temp2!=op){
+                foundMatch=1;
+              }
               byteIndex2++;
 	      if(byteIndex2>=8){
 		byteIndex2=0;
@@ -62,18 +55,12 @@ void erodeDilateFilter(bit_image_t *inputImage, bit_image_t *outputImage, uint8_
       }
       else{foundMatch=1;}
 
-      
-      //if(temp2==FILTER_DILATE)printf("Pixel,%i,%i, Wert:%x\n",x,y,((inputImage->data[bpIndex]>>byteIndex)&0x01));
-
-      //printf("foundmatch=%i\n",foundMatch);
       if(foundMatch)counter++;
       if ((op == FILTER_ERODE && !foundMatch) ||
 	  (op == FILTER_DILATE && foundMatch)) {
 	// set output pixel white
 	outputImage->data[bpIndex] |= (1<<byteIndex);
       }
-
-      //pIndex+=3;
 
       byteIndex++;
       if(byteIndex>=8){
