@@ -40,6 +40,7 @@ void skinFilter(image_t *inputImage, bit_image_t *outputImage)
       byteIndex++;
       if(byteIndex>=8){
         byteIndex=0;
+        printf("Index: %i, Inhalt: %x",bwpIndex,outputImage->data[bwpIndex]);
         bwpIndex++;
         outputImage->data[bwpIndex]=0x00;
       }
