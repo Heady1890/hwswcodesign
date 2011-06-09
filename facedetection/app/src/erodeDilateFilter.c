@@ -15,32 +15,34 @@ void erodeDilateFilter(bit_image_t *inputImage, bit_image_t *outputImage, uint8_
   uint16_t bpIndex=0;
   uint16_t bpIndex2=0;
   //Index innerhalb eines Bytes, welches Bit gesetzt wird.
-  uint16_t byteIndex=0;
-  uint16_t byteIndex2=0;
+  uint8_t byteIndex=0;
+  uint8_t byteIndex2=0;
+
+  //Debug
+  uint16_t counter=0;
 
   for (y = 0; y < inputImage->height; ++y) {
     for (x = 0; x < inputImage->width; ++x) {  
 
       foundMatch = 0;
-      
-      //if((op == FILTER_ERODE && c.r == 0xff)||op == FILTER_DILATE)
-      //foundMatch = checkWindow(inputImage,x,y,compare.r);
-      //if(c.r == FOREGROUND_COLOR_R){
+      uint8_t temp=(inputImage->data[bpIndex]>>byteIndex)&0x01;
+      if (temp==op){
+      counter++;
       for (dy = -WINDOW_OFFSET; dy <= WINDOW_OFFSET; ++dy) {
 	wy = y+dy;
 	if (wy >= 0 && wy < inputImage->height) {
-          bpIndex2=((x-2)*dy)>>8;
-          byteIndex2=((x-2)*dy)%8;
+          uint32_t temp = ((x-2)+wy*inputImage->width);
+          bpIndex2=temp>>3;
+          byteIndex2=temp&0x07;
 	  for (dx = -WINDOW_OFFSET; dx <= WINDOW_OFFSET; ++dx) {
 	    wx = x+dx;
 	    if (wx >= 0 && wx < inputImage->width && foundMatch == 0) {
-              uint8_t op2 = (inputImage->data[bpIndex2]>>byteIndex2)&0x01;
-	      if (op2 == op) {
-		foundMatch = 1;
-		break;
-	      }
+              uint8_t temp2=(inputImage->data[bpIndex2]>>byteIndex2)&0x01;
+              if(temp2!=op){
+                foundMatch=1;
+              }
               byteIndex2++;
-	      if(byteIndex2>=9){
+	      if(byteIndex2>=8){
 		byteIndex2=0;
 		bpIndex2++;
 	      }
@@ -51,25 +53,22 @@ void erodeDilateFilter(bit_image_t *inputImage, bit_image_t *outputImage, uint8_
 	  break;
 	}
       }
-      //}
+      }
+      else{foundMatch=1;}
 
       if ((op == FILTER_ERODE && !foundMatch) ||
 	  (op == FILTER_DILATE && foundMatch)) {
 	// set output pixel white
 	outputImage->data[bpIndex] |= (1<<byteIndex);
       }
-      else{
-        // default: set background color
-        outputImage->data[bpIndex] &= ~(1<<byteIndex);
-      }
-
-      //pIndex+=3;
 
       byteIndex++;
-      if(byteIndex>=9){
+      if(byteIndex>=8){
         byteIndex=0;
         bpIndex++;
+        outputImage->data[bpIndex]=0x00;
       }
     }
   }
+  printf("%i von %i",counter,(inputImage->height*inputImage->width));
 }

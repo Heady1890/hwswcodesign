@@ -42,21 +42,20 @@ void detectFace(bit_image_t *faceMask, image_t *rawImage)
   memset(histX, 0, faceMask->width*sizeof(int));
   memset(histY, 0, faceMask->height*sizeof(int));
 
+  uint16_t bpIndex=0;
+  uint8_t byteIndex=0;
   for (y = 0; y < faceMask->height; y++) {
     for (x = 0; x < faceMask->width; x++) {
-      /*pIndex = (y*faceMask->width + x)*3;
-      c.b = faceMask->data[pIndex];
-      c.g = faceMask->data[pIndex + 1];
-      c.r = faceMask->data[pIndex + 2];*/
-      uint16_t bpIndex=(x*y)>>8;
-      uint16_t byteIndex=(x*y)%8;
 
-      /*if (c.r == FOREGROUND_COLOR_R && 
-	  c.g == FOREGROUND_COLOR_G && 
-	  c.b == FOREGROUND_COLOR_B) {*/
-      if( (faceMask->data[bpIndex]>>byteIndex)&0x01==0x01){
+      if(faceMask->data[bpIndex]>>byteIndex){
 	histX[x]++;
 	histY[y]++;
+      }
+      
+      byteIndex++;
+      if(byteIndex>=8){
+        byteIndex=0;
+        bpIndex++;
       }
     }
   }

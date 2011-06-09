@@ -25,7 +25,7 @@ typedef struct {
 typedef struct {
   uint16_t width;
   uint16_t height;
-  uint32_t dataLength;
+  //uint32_t dataLength;
   uint8_t *data;
 } bit_image_t;
 

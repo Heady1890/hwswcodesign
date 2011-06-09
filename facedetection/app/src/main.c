@@ -50,30 +50,63 @@ void initializeBitImage(image_t *template, bit_image_t *image)
 {
   image->width = template->width;
   image->height = template->height;
-  image->dataLength = template->dataLength;
+  //image->dataLength = template->dataLength;
+  uint16_t dataLength = (template->width*template->height)>>3;
 #ifdef __SPEAR32__
   // allocate memory in external SDRAM
-  image->data = (unsigned char *)(SDRAM_BASE+sdramBytesAllocated);
-  sdramBytesAllocated += template->dataLength;
+  //image->data = (uint8_t *)(SDRAM_BASE+sdramBytesAllocated);
+  //sdramBytesAllocated += template->dataLength;
+  image->data = (uint8_t *)malloc(dataLength);
 #else
   // allocate memory on heap
-  image->data = (uint8_t *)malloc(template->dataLength);    
+  //image->data = (uint8_t *)malloc(template->dataLength);
+  image->data = (uint8_t *)malloc(dataLength);    
 #endif
 }
 
-void initializeBWImage(image_t *template, bit_image_t *image)
+/*void initializeBWImage(image_t *template, bit_image_t *image)
 {
   image->width = template->width;
   image->height = template->height;
-  image->dataLength = template->dataLength;//((template->width*template->height)>>4);
+  //image->dataLength = template->dataLength;
+  uint16_t dataLength = (template->width*template->height)>>3;
 #ifdef __SPEAR32__
   // allocate memory in external SDRAM
-  image->data = (unsigned char *)(SDRAM_BASE+sdramBytesAllocated);
-  sdramBytesAllocated += template->dataLength;
+  //image->data = (uint8_t *)(SDRAM_BASE+sdramBytesAllocated);
+  //sdramBytesAllocated += template->dataLength;
+  image->data = (uint8_t *)malloc(dataLength);
 #else
   // allocate memory on heap
-  image->data = (unsigned char *)malloc(template->dataLength);    
+  //image->data = (uint8_t *)malloc(template->dataLength);
+  image->data = (uint8_t *)malloc(dataLength);    
 #endif
+}*/
+
+void saveBitImage(image_t *inputImage, bit_image_t *image){
+  int pIndex = 0;
+  int x, y;
+  uint16_t bpIndex=0;
+  uint8_t byteIndex=0;
+  for (y = 0; y < inputImage->height; ++y) {
+    for (x = 0; x < inputImage->width; ++x) {  
+      if( (image->data[bpIndex]>>byteIndex)&0x01==0x01){
+        inputImage->data[pIndex]=0xFF;
+        inputImage->data[pIndex+1]=0xFF;
+        inputImage->data[pIndex+2]=0xFF;
+      }else{
+	inputImage->data[pIndex]=0x00;
+        inputImage->data[pIndex+1]=0x00;
+        inputImage->data[pIndex+2]=0x00;
+      }
+
+      pIndex+=3;
+      byteIndex++;
+      if(byteIndex>=8){
+        byteIndex=0;
+        bpIndex++;
+      }
+    }
+  }
 }
 
 void freeImage(image_t *image) 
@@ -147,7 +180,6 @@ int main(int argc, char **argv)
 
   return 0;
 }
-
 
 void printImage(image_t *inputImage)
 {
@@ -249,6 +281,8 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
   fseek(f, 0, SEEK_SET);
   
   fread(tgaHeader, 1, sizeof(tgaHeader), f);
+
+  
 #else
   UART_read(0, (char *)&imageLen, sizeof(imageLen));
   
@@ -294,22 +328,22 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
   // perform face detection
   skinFilter(&inputImage, &skinFilterImage);
   printf("skinFilter finished\n");
-  printBitImage(&skinFilterImage);
+  //printBitImage(&skinFilterImage);
 
-  //erodeDilateFilter(&skinFilterImage, &erodeFilterImage, FILTER_ERODE);
-  //printf("erodeFilter finished\n");
+  erodeDilateFilter(&skinFilterImage, &erodeFilterImage, FILTER_ERODE);
+  printf("erodeFilter finished\n");
   //printBitImage(&erodeFilterImage);
 
   //counter_reset(&counterHandle);
   //counter_start(&counterHandle);
 
-  //erodeDilateFilter(&erodeFilterImage, &dilateFilterImage, FILTER_DILATE);
+  erodeDilateFilter(&erodeFilterImage, &dilateFilterImage, FILTER_DILATE);
   //counter_stop(&counterHandle);
 
-  //printf("dilitateFilter finished\n");
+  printf("dilitateFilter finished\n");
   //printBitImage(&dilateFilterImage);
 
-  //detectFace(&dilateFilterImage, &inputImage);
+  detectFace(&dilateFilterImage, &inputImage);
 
 #ifdef __SPEAR32__
   //printImage(&inputImage);
@@ -329,6 +363,7 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
   imageLen = sizeof(tgaHeader) + inputImage.dataLength;
 
 #ifndef __SPEAR32__
+  //save input Image
   f = fopen(targetPath, "w");
   if (!f) {
     printf("Image file <%s> couldn't be opened", targetPath);
@@ -338,6 +373,44 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
   fwrite(tgaHeader, 1, sizeof(tgaHeader), f);
   fwrite(inputImage.data, 1, inputImage.dataLength, f);
   fclose(f);
+
+  //save skinFilter Image
+  saveBitImage(&inputImage, &skinFilterImage);
+  f = fopen("../1.skinFilter.tga", "w");
+  if (!f) {
+    printf("Image file <%s> couldn't be opened", "../1.skinFilter.tga");
+    exit(1);
+  }
+    
+  fwrite(tgaHeader, 1, sizeof(tgaHeader), f);
+  fwrite(inputImage.data, 1, inputImage.dataLength, f);
+  fclose(f);
+
+  //save erodeFilter Image
+  saveBitImage(&inputImage, &erodeFilterImage);
+  f = fopen("../2.erodeFilter.tga", "w");
+  if (!f) {
+    printf("Image file <%s> couldn't be opened", "../2.erodeFilter.tga");
+    exit(1);
+  }
+    
+  fwrite(tgaHeader, 1, sizeof(tgaHeader), f);
+  fwrite(inputImage.data, 1, inputImage.dataLength, f);
+  fclose(f);
+
+  //save dilateFilter Image
+  saveBitImage(&inputImage, &dilateFilterImage);
+  f = fopen("../3.dilateFilter.tga", "w");
+  if (!f) {
+    printf("Image file <%s> couldn't be opened", "../3.dilateFilter.tga");
+    exit(1);
+  }
+    
+  fwrite(tgaHeader, 1, sizeof(tgaHeader), f);
+  fwrite(inputImage.data, 1, inputImage.dataLength, f);
+  fclose(f);
+
+  
 #else
   // send signal to PC client that output data will be sent
   printf("\x04\n");
