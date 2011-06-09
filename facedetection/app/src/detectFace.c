@@ -148,20 +148,23 @@ void detectFace(bit_image_t *faceMask, image_t *rawImage)
 void paintRectangle(image_t *image, rect_t rectangle)
 {
   int pIndex;
+  int pIndex2;
   int i;
 
   // paint rectangle on original image
   // horizontal lines
+  pIndex = (rectangle.topLeftY*image->width+rectangle.topLeftX)*3;
+  pIndex2 = (rectangle.bottomRightY*image->width+rectangle.topLeftX)*3;
   for (i=rectangle.topLeftX; i<rectangle.bottomRightX; i++) {
-    pIndex = (rectangle.topLeftY*image->width+i)*3;
     image->data[pIndex] = 0x00;
     image->data[pIndex+1] = 0xff;
     image->data[pIndex+2] = 0x00;
     
-    pIndex = (rectangle.bottomRightY*image->width+i)*3;
-    image->data[pIndex] = 0x00;
-    image->data[pIndex+1] = 0xff;
-    image->data[pIndex+2] = 0x00;
+    image->data[pIndex2] = 0x00;
+    image->data[pIndex2+1] = 0xff;
+    image->data[pIndex2+2] = 0x00;
+    pIndex+=3;
+    pIndex2+=3;
   }
   // vertical lines
   for (i=rectangle.topLeftY; i<rectangle.bottomRightY; i++) {

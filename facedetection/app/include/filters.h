@@ -8,6 +8,7 @@
 
 void skinFilter(image_t *inputImage, bit_image_t *outputImage);
 void erodeDilateFilter(bit_image_t *inputImage, bit_image_t *outputImage, uint8_t op);
+void dilateFilter(bit_image_t *inputImage, bit_image_t *outputImage);
 
 
 #endif // _filters_h_

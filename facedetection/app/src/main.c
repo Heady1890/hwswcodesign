@@ -294,7 +294,8 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
   //counter_reset(&counterHandle);
   //counter_start(&counterHandle);
 
-  erodeDilateFilter(&erodeFilterImage, &dilateFilterImage, FILTER_DILATE);
+  //erodeDilateFilter(&erodeFilterImage, &dilateFilterImage, FILTER_DILATE);
+  dilateFilter(&erodeFilterImage, &dilateFilterImage);
   //counter_stop(&counterHandle);
 
   printf("dilitateFilter finished\n");
