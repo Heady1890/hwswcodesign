@@ -50,31 +50,37 @@ void initializeBitImage(image_t *template, bit_image_t *image)
 {
   image->width = template->width;
   image->height = template->height;
-  image->dataLength = template->dataLength;
+  //image->dataLength = template->dataLength;
+  uint16_t dataLength = (template->width*template->height)>>3;
 #ifdef __SPEAR32__
   // allocate memory in external SDRAM
-  image->data = (uint8_t *)(SDRAM_BASE+sdramBytesAllocated);
-  sdramBytesAllocated += template->dataLength;
+  //image->data = (uint8_t *)(SDRAM_BASE+sdramBytesAllocated);
+  //sdramBytesAllocated += template->dataLength;
+  image->data = (uint8_t *)malloc(dataLength);
 #else
   // allocate memory on heap
-  image->data = (uint8_t *)malloc(template->dataLength);    
+  //image->data = (uint8_t *)malloc(template->dataLength);
+  image->data = (uint8_t *)malloc(dataLength);    
 #endif
 }
 
-void initializeBWImage(image_t *template, bit_image_t *image)
+/*void initializeBWImage(image_t *template, bit_image_t *image)
 {
   image->width = template->width;
   image->height = template->height;
-  image->dataLength = template->dataLength;//((template->width*template->height)>>4);
+  //image->dataLength = template->dataLength;
+  uint16_t dataLength = (template->width*template->height)>>3;
 #ifdef __SPEAR32__
   // allocate memory in external SDRAM
-  image->data = (unsigned char *)(SDRAM_BASE+sdramBytesAllocated);
-  sdramBytesAllocated += template->dataLength;
+  //image->data = (uint8_t *)(SDRAM_BASE+sdramBytesAllocated);
+  //sdramBytesAllocated += template->dataLength;
+  image->data = (uint8_t *)malloc(dataLength);
 #else
   // allocate memory on heap
-  image->data = (unsigned char *)malloc(template->dataLength);    
+  //image->data = (uint8_t *)malloc(template->dataLength);
+  image->data = (uint8_t *)malloc(dataLength);    
 #endif
-}
+}*/
 
 void saveBitImage(image_t *inputImage, bit_image_t *image){
   int pIndex = 0;

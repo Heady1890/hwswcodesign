@@ -27,6 +27,7 @@ void erodeDilateFilter(bit_image_t *inputImage, bit_image_t *outputImage, uint8_
       foundMatch = 0;
       uint8_t temp=(inputImage->data[bpIndex]>>byteIndex)&0x01;
       if (temp==op){
+      counter++;
       for (dy = -WINDOW_OFFSET; dy <= WINDOW_OFFSET; ++dy) {
 	wy = y+dy;
 	if (wy >= 0 && wy < inputImage->height) {
@@ -55,7 +56,6 @@ void erodeDilateFilter(bit_image_t *inputImage, bit_image_t *outputImage, uint8_
       }
       else{foundMatch=1;}
 
-      if(foundMatch)counter++;
       if ((op == FILTER_ERODE && !foundMatch) ||
 	  (op == FILTER_DILATE && foundMatch)) {
 	// set output pixel white
