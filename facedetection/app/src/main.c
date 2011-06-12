@@ -385,13 +385,12 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
   fwrite(tgaHeader, 1, sizeof(tgaHeader), f);
   fwrite(tempImage.data, 1, tempImage.dataLength, f);
   fclose(f);
-
   
 #else
   // send signal to PC client that output data will be sent
   printf("\x04\n");
 
-  // send elapsed time for computation
+  // send elapsed time for computation		
   cycles = counter_getValue(&counterHandle);
   UART_write(1, (char *)&cycles, sizeof(cycles));
   // send length of whole image file
@@ -403,7 +402,7 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
 #endif
 
   freeImage(&inputImage);
-  //freeImage(&tempImage);
+  freeImage(&tempImage);
   freeBitImage(&skinFilterImage);
   freeBitImage(&erodeFilterImage);
   freeBitImage(&dilateFilterImage);
