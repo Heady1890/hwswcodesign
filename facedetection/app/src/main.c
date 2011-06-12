@@ -302,16 +302,16 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
   printf("skinFilter finished\n");
   //printBitImage(&skinFilterImage);
 
-  //erodeDilateFilter(&skinFilterImage, &erodeFilterImage, FILTER_ERODE);
+  erodeDilateFilter(&skinFilterImage, &erodeFilterImage, FILTER_ERODE);
   printf("erodeFilter finished\n");
   //printBitImage(&erodeFilterImage);
 
-  //erodeDilateFilter(&erodeFilterImage, &dilateFilterImage, FILTER_DILATE);
+  erodeDilateFilter(&erodeFilterImage, &dilateFilterImage, FILTER_DILATE);
   //dilateFilter(&erodeFilterImage, &dilateFilterImage);
   printf("dilitateFilter finished\n");
   //printBitImage(&dilateFilterImage);
 
-  //detectFace(&dilateFilterImage, &inputImage);
+  detectFace(&dilateFilterImage, &inputImage);
   printf("detectFace finished\n");
 
 #ifdef __SPEAR32__
