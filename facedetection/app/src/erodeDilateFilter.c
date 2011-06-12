@@ -1,7 +1,7 @@
 #include "filters.h"
 #include "image.h"
 
-#define WINDOW_LENGTH 5
+#define WINDOW_LENGTH 3
 #define WINDOW_OFFSET ((WINDOW_LENGTH-1)/2)
 
 
