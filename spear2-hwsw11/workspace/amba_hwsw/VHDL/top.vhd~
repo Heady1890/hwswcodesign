@@ -6,6 +6,9 @@ use work.spear_pkg.all;
 use work.spear_amba_pkg.all;
 use work.pkg_dis7seg.all;
 use work.pkg_counter.all;
+--added by me
+use work.pkg_camd5m_init.all;
+use work.pkg_camd5m_read.all;
 
 library grlib;
 use grlib.amba.all;
@@ -44,7 +47,24 @@ entity top is
     ltm_b       : out std_logic_vector(7 downto 0);
     ltm_nclk    : out std_logic;
     ltm_den     : out std_logic;
-    ltm_grest   : out std_logic
+    ltm_grest   : out std_logic;
+    
+    --added by me
+    -- Camera
+    CAM_PIXCLK	: in  std_logic;
+    CAM_XCLKIN	: out std_logic;
+    CAM_LVAL	: in  std_logic;
+    CAM_RESET   : out std_logic;
+    CAM_SDATA	: inout std_logic;
+    CAM_TRIGGER	: out std_logic;
+    CAM_SCLK	: out std_logic;
+    CAM_STROBE	: in  std_logic;
+    CAM_FVAL	: in  std_logic;
+    CAM_D	: in std_logic_vector(11 downto 0);
+    
+    LED_RED	: out std_logic_vector(17 downto 0);
+    LED_GREEN	: out std_logic_vector(8 downto 0)
+    
   );
 end top;
 
@@ -73,7 +93,7 @@ architecture behaviour of top is
   
   -- signals for AHB slaves and APB slaves
   signal ahbmi            : ahb_master_in_type;
-  signal ahbmo            : ahb_master_out_type;
+  signal spear_ahbmo      : ahb_master_out_type;
   signal grlib_ahbmi      : ahb_mst_in_type;
   signal grlib_ahbmo      : ahb_mst_out_vector;
   signal ahbsi            : ahb_slv_in_type;
@@ -91,6 +111,14 @@ architecture behaviour of top is
   signal vgao           : apbvga_out_type;
   signal vga_clk_int    : std_logic;
   signal vga_clk_sel    : std_logic_vector(1 downto 0);
+  signal svga_ahbmo     : ahb_mst_out_type;
+  
+  -- signals for Camera
+  --added by me
+  
+  signal init_done_sig		: std_logic;
+  
+  
   
   component altera_pll IS
     PORT
@@ -99,6 +127,7 @@ architecture behaviour of top is
         inclk0		: IN STD_LOGIC  := '0';
         c0		: OUT STD_LOGIC ;
         c1		: OUT STD_LOGIC;
+        c2		: OUT STD_LOGIC;
         locked		: OUT STD_LOGIC 
         );
    END component;
@@ -110,6 +139,7 @@ begin
     inclk0	 => db_clk,
     c0	         => clk,
     c1	         => vga_clk_int,
+    c2	         => CAM_XCLKIN,
     locked	 => open
     );
 
@@ -135,7 +165,7 @@ begin
       speari => speari,
       spearo => spearo,
       ahbmi  => ahbmi,
-      ahbmo  => ahbmo,
+      ahbmo  => spear_ahbmo,
       debugi_if => debugi_if,
       debugo_if => debugo_if
       );
@@ -163,7 +193,7 @@ begin
       );
 
 
-  process(grlib_ahbmi, ahbmo)
+  process(grlib_ahbmi, spear_ahbmo, svga_ahbmo)
   begin  -- process
     ahbmi.hgrant  <=  grlib_ahbmi.hgrant(0);
     ahbmi.hready  <=  grlib_ahbmi.hready;
@@ -175,18 +205,20 @@ begin
       grlib_ahbmo(i) <= ahbm_none;
     end loop;
 
-    grlib_ahbmo(0).hbusreq  <=  ahbmo.hbusreq;
-    grlib_ahbmo(0).hlock    <=  ahbmo.hlock;
-    grlib_ahbmo(0).htrans   <=  ahbmo.htrans;
-    grlib_ahbmo(0).haddr    <=  ahbmo.haddr;
-    grlib_ahbmo(0).hwrite   <=  ahbmo.hwrite;
-    grlib_ahbmo(0).hsize    <=  ahbmo.hsize;
-    grlib_ahbmo(0).hburst   <=  ahbmo.hburst;
-    grlib_ahbmo(0).hprot    <=  ahbmo.hprot;
-    grlib_ahbmo(0).hwdata   <=  ahbmo.hwdata;
+    grlib_ahbmo(0).hbusreq  <=  spear_ahbmo.hbusreq;
+    grlib_ahbmo(0).hlock    <=  spear_ahbmo.hlock;
+    grlib_ahbmo(0).htrans   <=  spear_ahbmo.htrans;
+    grlib_ahbmo(0).haddr    <=  spear_ahbmo.haddr;
+    grlib_ahbmo(0).hwrite   <=  spear_ahbmo.hwrite;
+    grlib_ahbmo(0).hsize    <=  spear_ahbmo.hsize;
+    grlib_ahbmo(0).hburst   <=  spear_ahbmo.hburst;
+    grlib_ahbmo(0).hprot    <=  spear_ahbmo.hprot;
+    grlib_ahbmo(0).hwdata   <=  spear_ahbmo.hwdata;
     grlib_ahbmo(0).hirq     <=  (others => '0');
     grlib_ahbmo(0).hconfig  <=  AMBA_MASTER_CONFIG;
-    grlib_ahbmo(0).hindex   <=  0;    
+    grlib_ahbmo(0).hindex   <=  0;
+
+    grlib_ahbmo(1)          <=  svga_ahbmo;
   end process;
 
 
@@ -287,12 +319,88 @@ begin
     ahbso(1) <= sdram_ahbso;
   end process;
 
+  -----------------------------------------------------------------------------
+  -- SVGA controller (LCD)
+  -----------------------------------------------------------------------------
+  
+  svgactrl0 : svgactrl
+    generic map
+    (
+      pindex => 0,
+      paddr => 16#001#,
+      pmask => 16#fff#,
+      hindex => 1,
+      memtech => 7
+    )
+    port map
+    (
+      rst => syncrst,
+      clk => clk,
+      vgaclk => vga_clk_int,
+      apbi => apbi,
+      apbo => apbo(0),
+      vgao => vgao,
+      ahbi => grlib_ahbmi,
+      ahbo => svga_ahbmo,
+      clk_sel => vga_clk_sel
+    );  
 
+    vga_clk_sel <= (others => '0');	
+    ltm_hd <= vgao.hsync;
+    ltm_vd <= vgao.vsync;
+    ltm_r <= vgao.video_out_r(7 downto 0);
+    ltm_g <= vgao.video_out_g(7 downto 0);
+    ltm_b <= vgao.video_out_b(7 downto 0);
+    ltm_nclk <= vga_clk_int;    
+    ltm_den <= vgao.blank;
+    ltm_grest <= '1';
+  
+
+  
 
   -----------------------------------------------------------------------------
   -- Spear extension modules
   -----------------------------------------------------------------------------
+  camd5m_init_unit: ext_camd5m_init
+     port map(
+      
+      CAM_RESET   	=> CAM_RESET,	
+      CAM_SDATA		=> CAM_SDATA,
+     
+      CAM_SCLK		=> CAM_SCLK,
+      
+      
+      LED_RED		=> LED_RED,
+      INIT_DONE		=> init_done_sig,
     
+      sys_res 		=> sysrst,
+      sys_clk 		=> clk
+      );
+      
+      
+   camd5m_read_unit: ext_camd5m_read
+     port map(
+      CAM_PIXCLK	=> CAM_PIXCLK,
+      CAM_LVAL		=> CAM_LVAL,
+      
+      CAM_TRIGGER	=> CAM_TRIGGER,	
+
+      CAM_STROBE	=> CAM_STROBE,
+      CAM_FVAL		=> CAM_FVAL,
+      CAM_D			=> CAM_D,
+      
+      LED_GREEN		=> LED_GREEN,
+      INIT_DONE		=> init_done_sig,
+    
+      sys_res 		=> sysrst,
+      sys_clk 		=> clk
+      
+      
+      );
+  
+  
+  
+  
   dis7seg_unit: ext_dis7seg
     generic map (
       DIGIT_COUNT => 8,
@@ -368,35 +476,4 @@ begin
     end if;
   end process;
 
-  svgactrl0 : svgactrl
-    generic map
-    (
-      pindex => 0,
-      paddr => 16#001#,
-      pmask => 16#fff#,
-	    hindex => 1,
-	    memtech => 7
-    )
-    port map
-    (
-      rst => syncrst,
-      clk => clk,
-      vgaclk => vga_clk_int,
-      apbi => apbi,
-      apbo => apbo(0),
-      vgao => vgao,
-	    ahbi => grlib_ahbmi,
-	    ahbo => grlib_ahbmo(1),
-	    clk_sel => vga_clk_sel
-    );
-
-    vga_clk_sel <= (others => '0');	
-    ltm_hd <= vgao.hsync;
-    ltm_vd <= vgao.vsync;
-    ltm_r <= vgao.video_out_r(7 downto 0);
-    ltm_g <= vgao.video_out_g(7 downto 0);
-    ltm_b <= vgao.video_out_b(7 downto 0);
-    ltm_nclk <= vga_clk_int;    
-    ltm_den <= vgao.blank;
-    ltm_grest <= '1';
 end behaviour;

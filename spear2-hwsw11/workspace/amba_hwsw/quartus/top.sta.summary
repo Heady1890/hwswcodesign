@@ -1,0 +1,41 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'altera_pll_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.891
+TNS   : 0.000
+
+Type  : Setup 'altera_pll_inst|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 2.117
+TNS   : 0.000
+
+Type  : Hold 'altera_pll_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.330
+TNS   : 0.000
+
+Type  : Hold 'altera_pll_inst|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 0.401
+TNS   : 0.000
+
+Type  : Recovery 'altera_pll_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 12.350
+TNS   : 0.000
+
+Type  : Removal 'altera_pll_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 2.281
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'altera_pll_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 9.698
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clock'
+Slack : 9.819
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'altera_pll_inst|altpll_component|auto_generated|pll1|clk[1]'
+Slack : 14.709
+TNS   : 0.000
+
+------------------------------------------------------------

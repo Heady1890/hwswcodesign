@@ -1,0 +1,460 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim
+Pallmem
+Z1 DPx17 __model_tech/ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+32
+Z2 Mx1 17 __model_tech/ieee 14 std_logic_1164
+Z3 w1209024930
+Z4 d/homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim
+Z5 8../../../VHDL/amba_modules/techmap/maps/allmem.vhd
+Z6 F../../../VHDL/amba_modules/techmap/maps/allmem.vhd
+l0
+L28
+Z7 VUYWKYEXFZ3aCN_HhmiVkc1
+Z8 OL;C;6.6d;45
+Z9 o-work techmap
+Z10 tExplicit 1
+Z11 !s100 9zhMkB<i]UilGURB18aDb3
+Pallpads
+Z12 DPx72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 7 version 0 22 S0L_M<6=Y]>cAa^NR0bR:2
+Z13 DPx72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 6 stdlib 0 22 1TdkUT3:2Z@aWRHgC_3:]2
+Z14 DPx16 __model_tech/std 6 textio 0 22 m2KQDRRhmF833<<DjYdL70
+Z15 DPx17 __model_tech/ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
+Z16 DPx72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 4 amba 0 22 1bVKkflXCG@EOO2WeR7;E2
+Z17 DPx74 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/techmap 7 gencomp 0 22 UGe8K;c=a?h3=;oGYiebG1
+R1
+32
+Z18 Mx7 17 __model_tech/ieee 14 std_logic_1164
+Z19 Mx6 74 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/techmap 7 gencomp
+Z20 Mx5 72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 4 amba
+Z21 Mx4 17 __model_tech/ieee 11 numeric_std
+Z22 Mx3 16 __model_tech/std 6 textio
+Z23 Mx2 72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 6 stdlib
+Z24 Mx1 72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 7 version
+R3
+R4
+Z25 8../../../VHDL/amba_modules/techmap/maps/allpads.vhd
+Z26 F../../../VHDL/amba_modules/techmap/maps/allpads.vhd
+l0
+L30
+Z27 V<11oCMC@bKEf3gN55Z:910
+R8
+R9
+R10
+Z28 !s100 AA;^hgHRD@UYQ5m`I86KZ3
+Ealtera_syncram
+R3
+Z29 DPx4 ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+R4
+Z30 8../../../VHDL/amba_modules/techmap/altera_mf/memory_altera_mf.vhd
+Z31 F../../../VHDL/amba_modules/techmap/altera_mf/memory_altera_mf.vhd
+l0
+L92
+Z32 VZYk8E0;P;^mg;aCC0`K[?0
+R8
+32
+R9
+R10
+Z33 !s100 5ihzX]:1lbgDOGh9XAHOf2
+Abehav
+R29
+Z34 DEx4 work 14 altera_syncram 0 22 ZYk8E0;P;^mg;aCC0`K[?0
+l125
+L104
+Z35 VWU3gP;m0gQW7AfTAWb=oR3
+R8
+32
+Z36 Mx1 4 ieee 14 std_logic_1164
+R9
+R10
+Z37 !s100 Ck0]1WSRflQeJ<hlRon^41
+Ealtera_syncram_dp
+R3
+Z38 DPx9 altera_mf 22 altera_device_families 0 22 hOS8S0K@m3L[cBBTGW55J0
+Z39 DPx9 altera_mf 24 altera_common_conversion 0 22 H11C:meBcdRbl0kYgnEzh2
+Z40 DPx3 std 6 textio 0 22 m2KQDRRhmF833<<DjYdL70
+Z41 DPx4 ieee 18 std_logic_unsigned 0 22 hEMVMlaNCR^<OOoVNV;m90
+Z42 DPx4 ieee 15 std_logic_arith 0 22 GJbAT?7@hRQU9IQ702DT]2
+Z43 DEx9 altera_mf 10 altsyncram 0 22 IfQV3b_IUD=5e_ZkRIlc50
+R29
+R4
+R30
+R31
+l0
+L33
+Z44 V[X6:81o8=HRdgd78>ReeX0
+R8
+32
+R9
+R10
+Z45 !s100 5S@@?XK[J=010P>8A=]Wd0
+Abehav
+R38
+R39
+R40
+R41
+R42
+R29
+Z46 DEx4 work 17 altera_syncram_dp 0 22 [X6:81o8=HRdgd78>ReeX0
+l75
+L52
+Z47 V=ci12:Mm]z0QeF8?PAV7n2
+R8
+32
+Z48 Mx6 4 ieee 14 std_logic_1164
+Z49 Mx5 4 ieee 15 std_logic_arith
+Z50 Mx4 4 ieee 18 std_logic_unsigned
+Z51 Mx3 3 std 6 textio
+Z52 Mx2 9 altera_mf 24 altera_common_conversion
+Z53 Mx1 9 altera_mf 22 altera_device_families
+R9
+R10
+Z54 !s100 Zc>UDiicOW[4=ONMBZASN0
+Pgencomp
+R12
+R13
+R14
+R15
+R16
+R1
+32
+Z55 Mx6 17 __model_tech/ieee 14 std_logic_1164
+R20
+R21
+R22
+R23
+R24
+R3
+R4
+Z56 8../../../VHDL/amba_modules/techmap/gencomp/gencomp.vhd
+Z57 F../../../VHDL/amba_modules/techmap/gencomp/gencomp.vhd
+l0
+L30
+Z58 VUGe8K;c=a?h3=;oGYiebG1
+R8
+R9
+R10
+Z59 !s100 A>FEEW9WkZ[MH7]ZAj>VI2
+Einpad
+R3
+Z60 DPx7 techmap 7 allpads 0 22 <11oCMC@bKEf3gN55Z:910
+Z61 DPx5 grlib 7 version 0 22 S0L_M<6=Y]>cAa^NR0bR:2
+Z62 DPx5 grlib 6 stdlib 0 22 1TdkUT3:2Z@aWRHgC_3:]2
+R40
+Z63 DPx4 ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
+Z64 DPx5 grlib 4 amba 0 22 1bVKkflXCG@EOO2WeR7;E2
+Z65 DPx7 techmap 7 gencomp 0 22 UGe8K;c=a?h3=;oGYiebG1
+R29
+R4
+Z66 8../../../VHDL/amba_modules/techmap/maps/inpad.vhd
+Z67 F../../../VHDL/amba_modules/techmap/maps/inpad.vhd
+l0
+L31
+Z68 VfBRjKdYhz>0gJWGXz72jA1
+R8
+32
+R9
+R10
+Z69 !s100 XNdiYhdcg=kQ5>9n_WQfF3
+Artl
+R60
+R61
+R62
+R40
+R63
+R64
+R65
+R29
+Z70 DEx4 work 5 inpad 0 22 fBRjKdYhz>0gJWGXz72jA1
+l39
+L38
+Z71 Va:409ld7T^;6M0]Kf6D;^0
+R8
+32
+Z72 Mx8 4 ieee 14 std_logic_1164
+Z73 Mx7 7 techmap 7 gencomp
+Z74 Mx6 5 grlib 4 amba
+Z75 Mx5 4 ieee 11 numeric_std
+Z76 Mx4 3 std 6 textio
+Z77 Mx3 5 grlib 6 stdlib
+Z78 Mx2 5 grlib 7 version
+Z79 Mx1 7 techmap 7 allpads
+R9
+R10
+Z80 !s100 jz5k26ShlZQh]fl1a9V7l2
+Einpadv
+R3
+R61
+R62
+R40
+R63
+R64
+R65
+R29
+R4
+R66
+R67
+l0
+L82
+Z81 VfS9[]cb12bG^TB:EU9W6W1
+R8
+32
+R9
+R10
+Z82 !s100 ?bD28OW6hYgn6i_SoQRAQ3
+Artl
+R61
+R62
+R40
+R63
+R64
+R65
+R29
+Z83 DEx4 work 6 inpadv 0 22 fS9[]cb12bG^TB:EU9W6W1
+l90
+L89
+Z84 Ve;Gj=Vd>FZ_I8:58hQkWk2
+R8
+32
+Z85 Mx7 4 ieee 14 std_logic_1164
+Z86 Mx6 7 techmap 7 gencomp
+Z87 Mx5 5 grlib 4 amba
+Z88 Mx4 4 ieee 11 numeric_std
+R51
+Z89 Mx2 5 grlib 6 stdlib
+Z90 Mx1 5 grlib 7 version
+R9
+R10
+Z91 !s100 @XcX^509Xc4PCgh>IX@o13
+Eiopad
+R3
+R60
+R61
+R62
+R40
+R63
+R64
+R65
+R29
+R4
+Z92 8../../../VHDL/amba_modules/techmap/maps/iopad.vhd
+Z93 F../../../VHDL/amba_modules/techmap/maps/iopad.vhd
+l0
+L31
+Z94 V;nFV^ibYRf[GBl_HgE_Sd0
+R8
+32
+R9
+R10
+Z95 !s100 ;ThCO?0b_eLS=3OTXPMg21
+Artl
+R60
+R61
+R62
+R40
+R63
+R64
+R65
+R29
+Z96 DEx4 work 5 iopad 0 22 ;nFV^ibYRf[GBl_HgE_Sd0
+l40
+L38
+Z97 VYC7aMMRk?TT]T=YXjjeDa0
+R8
+32
+R72
+R73
+R74
+R75
+R76
+R77
+R78
+R79
+R9
+R10
+Z98 !s100 G5hD2R2<_o:_]SS5V@PbE2
+Eiopadv
+R3
+R61
+R62
+R40
+R63
+R64
+R65
+R29
+R4
+R92
+R93
+l0
+L100
+Z99 Vd2gLf[GhVKkL<z2D1o6iM2
+R8
+32
+R9
+R10
+Z100 !s100 dINTBkj[:MF5n02WP0^2U0
+Artl
+R61
+R62
+R40
+R63
+R64
+R65
+R29
+Z101 DEx4 work 6 iopadv 0 22 d2gLf[GhVKkL<z2D1o6iM2
+l111
+L110
+Z102 V5zBb769D>EdaYNmA:RC@]1
+R8
+32
+R85
+R86
+R87
+R88
+R51
+R89
+R90
+R9
+R10
+Z103 !s100 ^UYJNI:bIJ9;_l8=zGdIN3
+Eiopadvv
+R3
+R61
+R62
+R40
+R63
+R64
+R65
+R29
+R4
+R92
+R93
+l0
+L123
+Z104 VeW;_7J^JN0`R3=MI=Si^`2
+R8
+32
+R9
+R10
+Z105 !s100 _z6=Ekg@cZ0X3IK1O0bCA0
+Artl
+Z106 DPx74 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/techmap 7 allpads 0 22 <11oCMC@bKEf3gN55Z:910
+Z107 DEx74 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/techmap 5 iopad 0 22 ;nFV^ibYRf[GBl_HgE_Sd0
+R12
+R13
+R14
+R15
+R16
+R17
+R1
+Z108 DEx74 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/techmap 7 iopadvv 0 22 eW;_7J^JN0`R3=MI=Si^`2
+32
+Z109 Mx8 17 __model_tech/ieee 14 std_logic_1164
+Z110 Mx7 74 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/techmap 7 gencomp
+Z111 Mx6 72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 4 amba
+Z112 Mx5 17 __model_tech/ieee 11 numeric_std
+Z113 Mx4 16 __model_tech/std 6 textio
+Z114 Mx3 72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 6 stdlib
+Z115 Mx2 72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 7 version
+Z116 Mx1 74 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/techmap 7 allpads
+l134
+L133
+Z117 V6i_a[[5ZPcNiSfF:_09lX2
+R8
+R9
+R10
+Z118 !s100 fM`6?V3eTg4gb8?[C8ACM2
+Eoutpad
+R3
+R60
+R61
+R62
+R40
+R63
+R64
+R65
+R29
+R4
+Z119 8../../../VHDL/amba_modules/techmap/maps/outpad.vhd
+Z120 F../../../VHDL/amba_modules/techmap/maps/outpad.vhd
+l0
+L31
+Z121 Vh<^eo7;3`XFP;WC`h1oOO3
+R8
+32
+R9
+R10
+Z122 !s100 89d`l8X2XOh<P];LEd4oa0
+Artl
+R60
+R61
+R62
+R40
+R63
+R64
+R65
+R29
+Z123 DEx4 work 6 outpad 0 22 h<^eo7;3`XFP;WC`h1oOO3
+l39
+L37
+Z124 VnD6UmVc_JKCYSoO0[i4?=2
+R8
+32
+R72
+R73
+R74
+R75
+R76
+R77
+R78
+R79
+R9
+R10
+Z125 !s100 6Kl?zkaQD`Le5l7E?D_ib0
+Eoutpadv
+R3
+R61
+R62
+R40
+R63
+R64
+R65
+R29
+R4
+R119
+R120
+l0
+L85
+Z126 VfUZRz3PCejzYO9`fdnD1<1
+R8
+32
+R9
+R10
+Z127 !s100 _CgTlmJ1eK3lW`3giR88;0
+Artl
+R61
+R62
+R40
+R63
+R64
+R65
+R29
+Z128 DEx4 work 7 outpadv 0 22 fUZRz3PCejzYO9`fdnD1<1
+l93
+L92
+Z129 V506aMNDeX[]gg3@jK8YDT3
+R8
+32
+R85
+R86
+R87
+R88
+R51
+R89
+R90
+R9
+R10
+Z130 !s100 9ARY:22Qi>Vd1V2<E?YN02

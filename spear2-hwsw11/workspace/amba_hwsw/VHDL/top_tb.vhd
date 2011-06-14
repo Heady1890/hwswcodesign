@@ -42,6 +42,26 @@ architecture behaviour of top_tb is
   signal ltm_den     : std_logic;
   signal ltm_grest   : std_logic;
   
+  --added by me
+    -- Camera
+  signal CAM_PIXCLK	:  std_logic;
+  signal CAM_XCLKIN	:  std_logic;
+  signal CAM_LVAL	:  std_logic;
+  signal CAM_RESET   	:  std_logic;
+  signal CAM_SDATA	:  std_logic;
+  signal CAM_TRIGGER	:  std_logic;
+  signal CAM_SCLK	:  std_logic;
+  signal CAM_STROBE	:  std_logic;
+  signal CAM_FVAL	:  std_logic;
+  signal CAM_D		:  std_logic_vector(11 downto 0);
+    
+  signal LED_RED	:  std_logic_vector(17 downto 0);
+  signal LED_GREEN	:  std_logic_vector(8 downto 0);
+  signal sys_res 	: std_logic;
+  signal sys_clk 	: std_logic;
+  
+  
+  
   file appFile : text  open read_mode is "app.srec";
 
   component top
@@ -70,7 +90,24 @@ architecture behaviour of top_tb is
       ltm_b       : out std_logic_vector(7 downto 0);
       ltm_nclk    : out std_logic;
       ltm_den     : out std_logic;
-      ltm_grest   : out std_logic
+      ltm_grest   : out std_logic;
+      
+      --added by me
+      -- Camera
+      CAM_PIXCLK	: in  std_logic;
+      CAM_XCLKIN	: out std_logic;
+      CAM_LVAL	: in  std_logic;
+      CAM_RESET   : out std_logic;
+      CAM_SDATA	: inout std_logic;
+      CAM_TRIGGER	: out std_logic;
+      CAM_SCLK	: out std_logic;
+      CAM_STROBE	: in  std_logic;
+      CAM_FVAL	: in  std_logic;
+      CAM_D	: in std_logic_vector(11 downto 0);
+      
+      LED_RED	: out std_logic_vector(17 downto 0);
+      LED_GREEN	: out std_logic_vector(8 downto 0)
+      
       );    
   end component;
   
@@ -100,7 +137,23 @@ begin
       ltm_b          => ltm_b,
       ltm_nclk       => ltm_nclk,
       ltm_den        => ltm_den,
-      ltm_grest      => ltm_grest
+      ltm_grest      => ltm_grest,
+      --added by me
+      -- Camera
+      CAM_PIXCLK	=> CAM_PIXCLK,
+      CAM_XCLKIN	=> CAM_XCLKIN,
+      CAM_LVAL		=> CAM_LVAL,
+      CAM_RESET   	=> CAM_RESET,
+      CAM_SDATA		=> CAM_SDATA,
+      CAM_TRIGGER	=> CAM_TRIGGER,
+      CAM_SCLK		=> CAM_SCLK,
+      CAM_STROBE	=> CAM_STROBE,
+      CAM_FVAL		=> CAM_FVAL,
+      CAM_D		=> CAM_D,
+    
+      LED_RED		=> LED_RED,
+      LED_GREEN		=> LED_GREEN      
+      
       );
 
   clkgen : process
@@ -156,22 +209,30 @@ begin
 
     rst <= RST_ACT;
     D_Rxd <= '1';
-    icwait(100);
+    icwait(10);
     rst <= not RST_ACT;
 
     -- wait until bootloader is ready to receive program
     icwait(2000);
+    
+    --if CAM_SDATA='Z'and CAM_SCLK='1' then
+    --	CAM_SDATA<='0';
+    	--icwait(100);
+    	--CAM_SDATA<='Z';
+    --end if;	
   
-    while not endfile(appFile) loop
-      readline(appFile, l);
-      loop
-        read(l, c, neol);
-        exit when not neol;
-        ser_send(character'pos(c), even);
-      end loop;
+    --while not endfile(appFile) loop
+    --  readline(appFile, l);
+    --  loop
+    --    read(l, c, neol);
+     --   exit when not neol;
+     --   ser_send(character'pos(c), even);
+    --  end loop;
       -- newline
-      ser_send(10, even);
-    end loop;
+    ---  ser_send(10, even);
+    --end loop;
+    
+    
 
     wait;
   

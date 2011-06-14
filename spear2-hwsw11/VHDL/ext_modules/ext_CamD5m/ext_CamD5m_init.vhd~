@@ -1,0 +1,341 @@
+-------------------------------------------------------------------------------
+-- Title      : D5m Camera
+-- Project    : SPEAR - Scalable Processor for Embedded Applications in
+--              Realtime Environment
+-------------------------------------------------------------------------------
+-- File       : ext_CamD5m.vhd
+-- Author     : BSc Folie Simon
+-- Company    : TU Wien - Institut fr technische Informatik
+-- Created    : 2011-29-05
+-- Last update: 2011-29-05
+-- Platform   : Altera 
+-------------------------------------------------------------------------------
+-- Description:
+--
+-------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------
+-- LIBRARY
+--------------------------------------------------------------------------------
+
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use IEEE.std_logic_unsigned.all;
+
+use work.spear_pkg.all;
+use work.pkg_camd5m_init.all;
+
+architecture behaviour of ext_camd5m_init is
+
+--procedure send_bit(counter_var : in integer range 0 to 151; sdata : inout std_logic; value : in std_logic) IS
+--begin	
+--	if (counter_var=10) then
+--		sdata:=value;
+--	end if;
+--end;
+
+
+signal counter : integer range 0 to 300 := 0;
+signal cam_sclk_sig : std_ulogic;
+--signal led_red_sig : std_logic_vector(17 downto 0) := (others => '0');
+signal sig 		:signals;
+signal sig_next		: signals;
+
+
+begin  
+--synchron part
+	syn_phase: process(sys_res, sys_clk,CAM_SDATA)
+	begin
+		if (sys_res = RST_ACT) then
+		
+			--initializations
+			--CAM_RESET<= RST_ACT;
+			CAM_RESET<= RST_ACT;
+			INIT_DONE<='0';
+			CAM_SCLK<='0';
+			CAM_SDATA<='1';
+			
+			sig.bit_counter<=8;
+			sig.state <= idle;
+			sig.cam_sdata<= '1';
+			
+			counter<=0;
+			cam_sclk_sig <= '0';
+			
+			--debugging
+			LED_RED<= (others =>'0');
+			sig.led_red_sig<= (others =>'0');
+			
+			--debugging inits
+			
+			
+			
+		elsif  (sys_clk'event and sys_clk ='1') then
+		
+			--syn_phase	
+			sig<=sig_next;
+			
+			
+			
+		
+		
+	
+			--SCLK Clock generieren
+			if (counter= 149) then
+				--takt negieren
+				cam_sclk_sig <= NOT cam_sclk_sig;
+				counter<=0;
+			else
+				counter<=counter+1;
+			end if;
+			
+			CAM_SCLK <= cam_sclk_sig;
+			CAM_SDATA<= sig_next.cam_sdata;
+			
+			
+			--debugging
+			LED_RED(16 downto 0)<=sig_next.led_red_sig(16 downto 0);
+			LED_RED(17)<= cam_sclk_sig;
+			
+					
+		end if;
+  	end process syn_phase;
+  	
+  	
+  	
+  	state_machine: process(sig,counter,cam_sclk_sig,CAM_SDATA)
+	begin
+	sig_next<=sig;
+	
+	
+	
+	if (counter = FULL_CLOCK and cam_sclk_sig='0') then
+	  case sig.state is
+		
+		when idle =>
+		
+			sig_next.state<=start_bit;
+			sig_next.led_red_sig(0)<= '1';
+			
+		when idle_second_round	=>
+			
+			sig_next.second_round<=true;
+			sig_next.state<=start_bit;
+			sig_next.led_red_sig(0)<= '1';
+		
+		when start_bit =>
+			
+			sig_next.state<=write_slave_adr;
+			sig_next.led_red_sig(1)<= '1';
+		
+		when write_slave_adr =>
+			
+			if (sig.bit_counter = 0) then
+				sig_next.state<=wait_to_ack_adr;
+			end if;	
+			
+			--sig_next.led_red_sig(2)<= '1';
+			
+		
+		when wait_to_ack_adr =>
+		
+			if (sig.ack_receive=true) then				
+				sig_next.state<=write_reg;
+		    		sig_next.ack_receive<=false;
+			end if;
+		    	sig_next.led_red_sig(3)<= '1';
+			
+		when write_reg =>
+			
+			if (sig.bit_counter = 0) then
+				sig_next.state<=wait_to_ack_reg;
+			end if;
+		
+			sig_next.led_red_sig(4)<= '1';
+			
+		when wait_to_ack_reg =>
+		
+			if (sig.ack_receive=true) then				
+				sig_next.state<=write_value1;
+		    		sig_next.ack_receive<=false;
+			end if;
+		    	sig_next.led_red_sig(5)<= '1';
+		
+		when write_value1 =>
+
+			if (sig.bit_counter = 8) then
+				sig_next.state<=wait_to_ack_value1;
+			end if;			
+		
+			sig_next.led_red_sig(6)<= '1';
+			
+		when write_value2 =>
+		
+			if (sig.bit_counter = 0) then
+				sig_next.state<=wait_to_ack_value2;
+			end if;	
+		
+			sig_next.led_red_sig(6)<= '1';	
+		
+		when wait_to_ack_value1 =>
+		
+			if (sig.ack_receive=true) then				
+				sig_next.state<=write_value2;
+		    		sig_next.ack_receive<=false;
+			end if;
+		    	sig_next.led_red_sig(7)<= '1';	
+		
+		when wait_to_ack_value2 =>
+		
+			if (sig.ack_receive=true) then				
+				if sig.second_round=true then
+					sig_next.state<=end_state;
+				else
+					sig_next.state<=idle_second_round;
+				end if;
+		    		sig_next.ack_receive<=false;
+			end if;
+		    	sig_next.led_red_sig(8)<= '1';    	
+		    	
+		when error_state =>
+			sig_next.led_red_sig(16)<= '1';
+			
+		when end_state =>	
+			sig_next.led_red_sig(10)<= '1';
+			
+		when others =>
+		
+			sig_next.led_red_sig(15)<= '1';
+		
+		end case;
+	end if;	
+		
+  	
+  	if (counter = HALF_CLOCK and cam_sclk_sig='0') then
+  
+		case sig.state is
+		
+		when idle =>
+			
+			sig_next.cam_sdata<='1';
+		when idle_second_round	=>
+			sig_next.cam_sdata<='1';
+		
+		when start_bit =>	
+			sig_next.bit_counter<=8;			
+			
+		when write_slave_adr =>
+		
+			sig_next.cam_sdata<=SLAVEADRESS(sig.bit_counter-1);
+			if (sig.bit_counter /= 0) then
+				sig_next.bit_counter<=sig.bit_counter-1;
+			else
+				sig_next.bit_counter<=8;
+			end if;
+		
+		when wait_to_ack_adr =>
+			sig_next.cam_sdata<='0';
+			sig_next.ack_wait_adr<=true;
+			sig_next.bit_counter<=8;
+		
+		when write_reg =>
+			if sig.second_round=true then
+				sig_next.cam_sdata<=REGISTER03(sig.bit_counter-1);
+			else
+				sig_next.cam_sdata<=REGISTER22(sig.bit_counter-1);
+			end if;	
+			if (sig.bit_counter /= 0) then
+				sig_next.bit_counter<=sig.bit_counter-1;
+			else
+				sig_next.bit_counter<=16;
+			end if;
+		
+		when wait_to_ack_reg =>	
+			sig_next.cam_sdata<='0';
+			sig_next.ack_wait_reg<=true;
+			sig_next.bit_counter<=16;
+		
+		when write_value1 =>
+			if (sig.second_round=false) then
+				sig_next.cam_sdata<=REGISTER03_WERT(sig.bit_counter-1);
+			else
+				sig_next.cam_sdata<=REGISTER22_WERT(sig.bit_counter-1);
+
+			end if;
+			if (sig.bit_counter /= 0) then
+				sig_next.bit_counter<=sig.bit_counter-1;
+			else
+				sig_next.bit_counter<=16;
+			end if;
+			
+		when write_value2 =>
+			if sig.second_round=false then
+				sig_next.cam_sdata<=REGISTER04_WERT(sig.bit_counter-1);
+			else
+				sig_next.cam_sdata<=REGISTER23_WERT(sig.bit_counter-1);
+
+			end if;
+			if (sig.bit_counter /= 0) then
+				sig_next.bit_counter<=sig.bit_counter-1;
+			else
+				sig_next.bit_counter<=16;
+			end if;	
+		
+		when wait_to_ack_value1 =>
+			sig_next.cam_sdata<='0';
+			sig_next.ack_wait_value1<=true;
+			sig_next.bit_counter<=8;
+			
+		when wait_to_ack_value2 =>
+			sig_next.cam_sdata<='0';
+			sig_next.ack_wait_value2<=true;
+			sig_next.bit_counter<=8;
+		
+		when error_state =>
+		
+			sig_next.cam_sdata<='Z';
+		when end_state =>	
+			
+			sig_next.cam_sdata<='Z';
+				
+		when others =>
+		
+			sig_next.cam_sdata<='Z';
+		
+		end case;
+	end if;	
+	
+	if (counter = SRTH and cam_sclk_sig='1'and sig.state = start_bit ) then
+
+			sig_next.cam_sdata<='0';	
+			sig_next.bit_counter<=8;
+	end if;
+	
+	if (CAM_SDATA = '0' and sig.state = wait_to_ack_adr and sig.ack_wait_adr=true) then
+			sig_next.ack_receive<=true;
+			sig_next.ack_wait_adr<=false;
+	end if;
+	if (CAM_SDATA = '0' and sig.state = wait_to_ack_reg and sig.ack_wait_reg=true) then
+			sig_next.ack_receive<=true;
+			sig_next.ack_wait_reg<=false;
+	end if;
+	if (CAM_SDATA = '0' and sig.state = wait_to_ack_value1 and sig.ack_wait_value1=true) then
+			sig_next.ack_receive<=true;
+			sig_next.ack_wait_value1<=false;
+	end if;
+	if (CAM_SDATA = '0' and sig.state = wait_to_ack_value2 and sig.ack_wait_value2=true) then
+			sig_next.ack_receive<=true;
+			sig_next.ack_wait_value2<=false;
+	end if;
+	
+		
+  	end process state_machine;
+  	
+  	
+  	
+  	
+  	
+
+end behaviour;

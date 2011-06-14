@@ -44,6 +44,13 @@ vcom  -work work ../../../VHDL/ext_modules/ext_counter/pkg_counter.vhd
 vcom  -work work ../../../VHDL/ext_modules/ext_counter/ext_counter_ent.vhd
 vcom  -work work ../../../VHDL/ext_modules/ext_counter/ext_counter.vhd
 
+vcom  -work work ../../../VHDL/ext_modules/ext_CamD5m/pkg_CamD5m_init.vhd
+vcom  -work work ../../../VHDL/ext_modules/ext_CamD5m/ext_CamD5m_init_ent.vhd
+vcom  -work work ../../../VHDL/ext_modules/ext_CamD5m/ext_CamD5m_init.vhd
+vcom  -work work ../../../VHDL/ext_modules/ext_CamD5m/pkg_CamD5m_read.vhd
+vcom  -work work ../../../VHDL/ext_modules/ext_CamD5m/ext_CamD5m_read_ent.vhd
+vcom  -work work ../../../VHDL/ext_modules/ext_CamD5m/ext_CamD5m_read.vhd
+
 vcom  -work grlib ../../../VHDL/amba_modules/grlib/stdlib/version.vhd
 vcom  -work grlib ../../../VHDL/amba_modules/grlib/stdlib/stdlib.vhd
 vcom  -work grlib ../../../VHDL/amba_modules/grlib/amba/amba.vhd

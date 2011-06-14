@@ -6,6 +6,9 @@ use work.spear_pkg.all;
 use work.spear_amba_pkg.all;
 use work.pkg_dis7seg.all;
 use work.pkg_counter.all;
+--added by me
+use work.pkg_camd5m_init.all;
+use work.pkg_camd5m_read.all;
 
 library grlib;
 use grlib.amba.all;
@@ -44,7 +47,26 @@ entity top is
     ltm_b       : out std_logic_vector(7 downto 0);
     ltm_nclk    : out std_logic;
     ltm_den     : out std_logic;
-    ltm_grest   : out std_logic
+    ltm_grest   : out std_logic;
+    
+    --added by me
+    -- Camera
+    CAM_PIXCLK	: in  std_logic;
+    CAM_XCLKIN	: out std_logic;
+    CAM_LVAL	: in  std_logic;
+    CAM_RESET   : out std_logic;
+    CAM_SDATA	: inout std_logic;
+    CAM_TRIGGER	: out std_logic;
+    CAM_SCLK	: out std_logic;
+    CAM_STROBE	: in  std_logic;
+    CAM_FVAL	: in  std_logic;
+    CAM_D	: in std_logic_vector(11 downto 0);
+    
+    LED_RED	: out std_logic_vector(17 downto 0);
+    LED_GREEN	: out std_logic_vector(8 downto 0);
+    
+    GPIO	: out std_logic_vector(28 downto 0)
+    
   );
 end top;
 
@@ -93,6 +115,16 @@ architecture behaviour of top is
   signal vga_clk_sel    : std_logic_vector(1 downto 0);
   signal svga_ahbmo     : ahb_mst_out_type;
   
+  -- signals for Camera
+  --added by me
+  
+  signal init_done_sig		: std_logic;
+  signal cam_sdata_sig		: std_logic;
+  signal cam_xclkin_sig		: std_logic;
+  signal cam_sclk_sig		: std_logic;
+  
+  
+  
   component altera_pll IS
     PORT
       (
@@ -100,6 +132,7 @@ architecture behaviour of top is
         inclk0		: IN STD_LOGIC  := '0';
         c0		: OUT STD_LOGIC ;
         c1		: OUT STD_LOGIC;
+        c2		: OUT STD_LOGIC;
         locked		: OUT STD_LOGIC 
         );
    END component;
@@ -111,6 +144,7 @@ begin
     inclk0	 => db_clk,
     c0	         => clk,
     c1	         => vga_clk_int,
+    c2	         => cam_xclkin_sig,	
     locked	 => open
     );
 
@@ -332,7 +366,65 @@ begin
   -----------------------------------------------------------------------------
   -- Spear extension modules
   -----------------------------------------------------------------------------
+  camd5m_init_unit: ext_camd5m_init
+     port map(
+      
+      --CAM_RESET   	=> CAM_RESET,	
+      CAM_SDATA		=> CAM_SDATA,
+
+      CAM_SCLK		=> cam_sclk_sig,
+      
+      
+      LED_RED		=> LED_RED,
+      INIT_DONE		=> init_done_sig,
     
+      sys_res 		=> sysrst,
+      sys_clk 		=> clk
+      );
+      
+      
+   camd5m_read_unit: ext_camd5m_read
+     port map(
+      CAM_PIXCLK	=> CAM_PIXCLK,
+      CAM_LVAL		=> CAM_LVAL,
+      
+      CAM_TRIGGER	=> CAM_TRIGGER,	
+
+      CAM_STROBE	=> CAM_STROBE,
+      CAM_FVAL		=> CAM_FVAL,
+      CAM_D		=> CAM_D,
+      
+      LED_GREEN		=> LED_GREEN,
+      INIT_DONE		=> init_done_sig,
+    
+      sys_res 		=> sysrst,
+      sys_clk 		=> clk
+      
+      
+      );
+   
+   --sdata_out : process(cam_sdata_sig)   
+   --begin
+  --	 if cam_sdata_sig = '0' then
+  --	 	CAM_SDATA<='0';
+  ---	 else
+  --		 CAM_SDATA<='Z';
+  --	 end if;
+  --end process;	 
+  
+  --sdata_in : process(CAM_SDATA)   
+  -- begin
+  --	 if CAM_SDATA = '0' then
+  --	 	cam_sdata_sig<='0';
+  --	 else
+  --		cam_sdata_sig<='Z';
+  --	 end if;
+  --end process;	
+      
+  
+  
+  
+  
   dis7seg_unit: ext_dis7seg
     generic map (
       DIGIT_COUNT => 8,
@@ -407,5 +499,41 @@ begin
       syncrst <= rst;
     end if;
   end process;
+  
+  --Camera verbinden
+  CAM_RESET	<= sysrst;
+  CAM_XCLKIN	<= cam_xclkin_sig;
+  CAM_SCLK	<= cam_sclk_sig;
+  --CAM_SDATA	<= cam_sdata_sig;
+  --cam_sdata_sig <= CAM_SDATA;
+  
+  	 GPIO(0)<= CAM_PIXCLK;
+  	 GPIO(1)<= CAM_D(11);
+  	 --GPIO(2)<=
+  	 GPIO(3)<= CAM_D(10);
+  	 GPIO(4)<= CAM_D(9);	
+  	 GPIO(5)<= CAM_D(8);
+  	 GPIO(6)<= CAM_D(7);
+  	 GPIO(7)<= CAM_D(6);
+  	 GPIO(8)<= CAM_D(5);
+  	 GPIO(9)<= CAM_D(4);
+  	 --GPIO(10)<=
+  	 --GPIO(11)<=
+  	 GPIO(12)<= CAM_D(3);
+  	 GPIO(13)<= CAM_D(2);
+  	 GPIO(14)<= CAM_D(1);
+  	 GPIO(15)<= CAM_D(0);
+  	 --GPIO(16)<=
+  	 --GPIO(17)<=
+  	 GPIO(18)<= cam_xclkin_sig;
+  	 GPIO(19)<= sysrst;
+  	 --GPIO(20)<= 
+  	 --GPIO(21)<= 
+  	 --GPIO(22)<= 
+  	 GPIO(23)<= CAM_LVAL;
+  	 GPIO(24)<= CAM_FVAL;
+  	 GPIO(25)<= CAM_SDATA;
+  	 GPIO(26)<= cam_sclk_sig;
+  	 --GPIO(27)<=
 
 end behaviour;
