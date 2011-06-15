@@ -1,0 +1,300 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim
+Eahbctrl
+Z1 w1209024930
+Z2 DPx5 grlib 7 devices 0 22 7OXS[_3O=CCzCY8=SaHFj1
+Z3 DPx5 grlib 4 amba 0 22 1bVKkflXCG@EOO2WeR7;E2
+Z4 DPx5 grlib 7 version 0 22 S0L_M<6=Y]>cAa^NR0bR:2
+Z5 DPx3 std 6 textio 0 22 m2KQDRRhmF833<<DjYdL70
+Z6 DPx4 ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
+Z7 DPx5 grlib 6 stdlib 0 22 1TdkUT3:2Z@aWRHgC_3:]2
+Z8 DPx4 ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+Z9 d/homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim
+Z10 8../../../VHDL/amba_modules/grlib/amba/ahbctrl.vhd
+Z11 F../../../VHDL/amba_modules/grlib/amba/ahbctrl.vhd
+l0
+L36
+Z12 VIU_=E[]00n?nj>A[PKe`^0
+Z13 OL;C;6.6d;45
+32
+Z14 o-work grlib
+Z15 tExplicit 1
+Z16 !s100 N<`QZi7mdONb[?Q^?^le81
+Artl
+Z17 DPx72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 7 devices 0 22 7OXS[_3O=CCzCY8=SaHFj1
+Z18 DPx72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 4 amba 0 22 1bVKkflXCG@EOO2WeR7;E2
+Z19 DPx72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 7 version 0 22 S0L_M<6=Y]>cAa^NR0bR:2
+Z20 DPx16 __model_tech/std 6 textio 0 22 m2KQDRRhmF833<<DjYdL70
+Z21 DPx17 __model_tech/ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
+Z22 DPx72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 6 stdlib 0 22 1TdkUT3:2Z@aWRHgC_3:]2
+Z23 DPx17 __model_tech/ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+Z24 DEx72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 7 ahbctrl 0 22 IU_=E[]00n?nj>A[PKe`^0
+32
+Z25 Mx7 17 __model_tech/ieee 14 std_logic_1164
+Z26 Mx6 72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 6 stdlib
+Z27 Mx5 17 __model_tech/ieee 11 numeric_std
+Z28 Mx4 16 __model_tech/std 6 textio
+Z29 Mx3 72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 7 version
+Z30 Mx2 72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 4 amba
+Z31 Mx1 72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 7 devices
+l292
+L76
+Z32 VFMkLHI;4GSlB;00Q@0ak:3
+R13
+R14
+R15
+Z33 !s100 >D44icMonQ`8CW`ONc>0I3
+Eahbdefmst
+R1
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+Z34 8../../../VHDL/amba_modules/grlib/amba/defmst.vhd
+Z35 F../../../VHDL/amba_modules/grlib/amba/defmst.vhd
+l0
+L32
+Z36 Vb>BBXlGQleZL2aejh`U>M3
+R13
+32
+R14
+R15
+Z37 !s100 nk4dhWU3leC[Bm^MC2[3k0
+Artl
+R3
+R4
+R5
+R6
+R7
+R8
+Z38 DEx4 work 9 ahbdefmst 0 22 b>BBXlGQleZL2aejh`U>M3
+l39
+L38
+Z39 V8Xf2aSANMFEY4]ZTP`MP:3
+R13
+32
+Z40 Mx6 4 ieee 14 std_logic_1164
+Z41 Mx5 5 grlib 6 stdlib
+Z42 Mx4 4 ieee 11 numeric_std
+Z43 Mx3 3 std 6 textio
+Z44 Mx2 5 grlib 7 version
+Z45 Mx1 5 grlib 4 amba
+R14
+R15
+Z46 !s100 gFeP_[iIGVdbVAMFiG`iA0
+Pamba
+R19
+R22
+R20
+R21
+R23
+32
+b1
+Z47 Mx5 17 __model_tech/ieee 14 std_logic_1164
+Z48 Mx4 17 __model_tech/ieee 11 numeric_std
+Z49 Mx3 16 __model_tech/std 6 textio
+Z50 Mx2 72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 6 stdlib
+Z51 Mx1 72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 7 version
+Z52 w1300986766
+R9
+Z53 8../../../VHDL/amba_modules/grlib/amba/amba.vhd
+Z54 F../../../VHDL/amba_modules/grlib/amba/amba.vhd
+l0
+L36
+Z55 V1bVKkflXCG@EOO2WeR7;E2
+R13
+b1
+R14
+R15
+Z56 !s100 ^[84PBRRK]ALcNXUJM0F@2
+Bbody
+Z57 DBx72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 4 amba 0 22 1bVKkflXCG@EOO2WeR7;E2
+R19
+R22
+R20
+R21
+R23
+32
+R47
+R48
+R49
+R50
+R51
+l0
+L414
+Z58 V[QL<T`6@8^HI4`3AkAb>I0
+R13
+R14
+R15
+nbody
+Z59 !s100 R;Bz6V2Ej`[co6_hXfMzO1
+Eapbctrl
+R1
+R2
+R4
+R7
+R5
+R6
+R3
+R8
+R9
+Z60 8../../../VHDL/amba_modules/grlib/amba/apbctrl.vhd
+Z61 F../../../VHDL/amba_modules/grlib/amba/apbctrl.vhd
+l0
+L35
+Z62 VTkRV8i7WGHKHAU;?3ZoLF3
+R13
+32
+R14
+R15
+Z63 !s100 O`Z<2L?DB8<V7mj`>H1Bc3
+Artl
+R17
+R19
+R22
+R20
+R21
+R18
+R23
+Z64 DEx72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 7 apbctrl 0 22 TkRV8i7WGHKHAU;?3ZoLF3
+32
+R25
+Z65 Mx6 72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 4 amba
+R27
+R28
+Z66 Mx3 72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 6 stdlib
+Z67 Mx2 72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 7 version
+R31
+l88
+L57
+Z68 VS6:cL<UOGon>hB5XQI[4T3
+R13
+R14
+R15
+Z69 !s100 ?c^4AWl^=l9E7OdMC:N=U2
+Pdevices
+R19
+R22
+R20
+R21
+R18
+R23
+32
+Z70 Mx6 17 __model_tech/ieee 14 std_logic_1164
+Z71 Mx5 72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 4 amba
+R48
+R49
+R50
+R51
+R1
+R9
+Z72 8../../../VHDL/amba_modules/grlib/amba/devices.vhd
+Z73 F../../../VHDL/amba_modules/grlib/amba/devices.vhd
+l0
+L33
+Z74 V7OXS[_3O=CCzCY8=SaHFj1
+R13
+R14
+R15
+Z75 !s100 YahU:M_KiX]TP5nYONI>S2
+Ereport_version
+R1
+R4
+R5
+R6
+R7
+R8
+R9
+Z76 8../../../VHDL/amba_modules/grlib/util/util.vhd
+Z77 F../../../VHDL/amba_modules/grlib/util/util.vhd
+l0
+L32
+Z78 VG]_>48[U?2z;48SZ>SkTL1
+R13
+32
+R14
+R15
+Z79 !s100 JN0[^`RJ8NL[amlYgX2aE2
+Abeh
+R4
+R5
+R6
+R7
+R8
+Z80 DEx4 work 14 report_version 0 22 G]_>48[U?2z;48SZ>SkTL1
+l37
+L36
+Z81 VVO;c[K31S]>J=IK2b:Bdm3
+R13
+32
+Z82 Mx5 4 ieee 14 std_logic_1164
+Z83 Mx4 5 grlib 6 stdlib
+Z84 Mx3 4 ieee 11 numeric_std
+Z85 Mx2 3 std 6 textio
+Z86 Mx1 5 grlib 7 version
+R14
+R15
+Z87 !s100 JK<2oWcWm^A<5[BO0gc4X1
+Pstdlib
+R19
+R20
+R21
+R23
+32
+b1
+Z88 Mx4 17 __model_tech/ieee 14 std_logic_1164
+Z89 Mx3 17 __model_tech/ieee 11 numeric_std
+Z90 Mx2 16 __model_tech/std 6 textio
+R51
+R1
+R9
+Z91 8../../../VHDL/amba_modules/grlib/stdlib/stdlib.vhd
+Z92 F../../../VHDL/amba_modules/grlib/stdlib/stdlib.vhd
+l0
+L24
+Z93 V1TdkUT3:2Z@aWRHgC_3:]2
+R13
+b1
+R14
+R15
+Z94 !s100 W[05nIcVff5R:8gILIhi`0
+Bbody
+Z95 DBx72 /homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 6 stdlib 0 22 1TdkUT3:2Z@aWRHgC_3:]2
+R19
+R20
+R21
+R23
+32
+R88
+R89
+R90
+R51
+l0
+L98
+Z96 VSe;]Oiii]CH7N<jLCP1hE0
+R13
+R14
+R15
+nbody
+Z97 !s100 X34:>>X[2lEjQJ1cQPP0[2
+Pversion
+R20
+32
+Z98 Mx1 16 __model_tech/std 6 textio
+R1
+R9
+Z99 8../../../VHDL/amba_modules/grlib/stdlib/version.vhd
+Z100 F../../../VHDL/amba_modules/grlib/stdlib/version.vhd
+l0
+L4
+Z101 VS0L_M<6=Y]>cAa^NR0bR:2
+R13
+R14
+R15
+Z102 !s100 n^A@6gTEYVKX2iiMT5@7`1

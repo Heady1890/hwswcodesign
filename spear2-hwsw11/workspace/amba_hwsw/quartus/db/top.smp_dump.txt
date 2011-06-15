@@ -1,0 +1,162 @@
+
+State Machine - |top|ext_camd5m_init:camd5m_init_unit|sig.state
+Name sig.state.end_state sig.state.stop_bit sig.state.error_state sig.state.write_value2 sig.state.write_value1 sig.state.write_reg sig.state.wait_to_ack_value2 sig.state.wait_to_ack_value1 sig.state.wait_to_ack_reg sig.state.wait_to_ack_adr sig.state.write_slave_adr sig.state.start_bit sig.state.idle_second_round sig.state.idle 
+sig.state.idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+sig.state.idle_second_round 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+sig.state.start_bit 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+sig.state.write_slave_adr 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+sig.state.wait_to_ack_adr 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+sig.state.wait_to_ack_reg 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+sig.state.wait_to_ack_value1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+sig.state.wait_to_ack_value2 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+sig.state.write_reg 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+sig.state.write_value1 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+sig.state.write_value2 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+sig.state.error_state 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+sig.state.stop_bit 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+sig.state.end_state 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |top|svgactrl:svgactrl0|r.state
+Name r.state.reset r.state.not_running r.state.running 
+r.state.running 0 0 0 
+r.state.not_running 0 1 1 
+r.state.reset 1 0 1 
+
+State Machine - |top|sdctrl:sdctrl_inst|r.istate
+Name r.istate.finish r.istate.emode r.istate.lmode r.istate.ref r.istate.pre r.istate.iidle 
+r.istate.iidle 0 0 0 0 0 0 
+r.istate.pre 0 0 0 0 1 1 
+r.istate.ref 0 0 0 1 0 1 
+r.istate.lmode 0 0 1 0 0 1 
+r.istate.emode 0 1 0 0 0 1 
+r.istate.finish 1 0 0 0 0 1 
+
+State Machine - |top|sdctrl:sdctrl_inst|r.cmstate
+Name r.cmstate.leadout r.cmstate.active r.cmstate.midle 
+r.cmstate.midle 0 0 0 
+r.cmstate.active 0 1 1 
+r.cmstate.leadout 1 0 1 
+
+State Machine - |top|sdctrl:sdctrl_inst|r.sdstate
+Name r.sdstate.dpd r.sdstate.pd r.sdstate.sref r.sdstate.sidle r.sdstate.wr5 r.sdstate.wr4 r.sdstate.wr3 r.sdstate.wr2 r.sdstate.wr1 r.sdstate.rd8 r.sdstate.rd7 r.sdstate.rd6 r.sdstate.rd5 r.sdstate.rd4 r.sdstate.rd3 r.sdstate.rd2 r.sdstate.rd1 r.sdstate.act3 r.sdstate.act2 r.sdstate.act1 
+r.sdstate.act1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+r.sdstate.act2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+r.sdstate.act3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+r.sdstate.rd1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+r.sdstate.rd2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+r.sdstate.rd3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+r.sdstate.rd4 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+r.sdstate.rd5 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+r.sdstate.rd6 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+r.sdstate.rd7 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+r.sdstate.rd8 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.wr1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.wr2 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.wr3 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.wr4 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.wr5 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.sidle 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.sref 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.pd 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.sdstate.dpd 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |top|sdctrl:sdctrl_inst|r.mstate
+Name r.mstate.leadout r.mstate.active r.mstate.midle 
+r.mstate.midle 0 0 0 
+r.mstate.active 0 1 1 
+r.mstate.leadout 1 0 1 
+
+State Machine - |top|spear:spear_unit|r.old_memaccess
+Name r.old_memaccess.WORD_A r.old_memaccess.HWORD_A r.old_memaccess.BYTE_A r.old_memaccess.MEM_DISABLE 
+r.old_memaccess.MEM_DISABLE 0 0 0 0 
+r.old_memaccess.BYTE_A 0 0 1 1 
+r.old_memaccess.HWORD_A 0 1 0 1 
+r.old_memaccess.WORD_A 1 0 0 1 
+
+State Machine - |top|spear:spear_unit|ext_AMBA:\ena_amba:amba_unit|AMBA_AHBMasterStatemachine:ASM_0|r.St
+Name r.St.ACTIVE_END r.St.ACTIVE_NEXT r.St.ACTIVE r.St.HOLD r.St.DEFAULTMASTER r.St.IDLE 
+r.St.IDLE 0 0 0 0 0 0 
+r.St.DEFAULTMASTER 0 0 0 0 1 1 
+r.St.HOLD 0 0 0 1 0 1 
+r.St.ACTIVE 0 0 1 0 0 1 
+r.St.ACTIVE_NEXT 0 1 0 0 0 1 
+r.St.ACTIVE_END 1 0 0 0 0 1 
+
+State Machine - |top|spear:spear_unit|ext_miniUART:ext_miniUART_unit|miniUART_receiver:miniUART_receiver_unit|Rec_State
+Name Rec_State.RECEIVE_S Rec_State.STARTBITDETECTION_S Rec_State.DISABLE_S 
+Rec_State.DISABLE_S 0 0 0 
+Rec_State.STARTBITDETECTION_S 0 1 1 
+Rec_State.RECEIVE_S 1 0 1 
+
+State Machine - |top|spear:spear_unit|ext_miniUART:ext_miniUART_unit|miniUART_transmitter:miniUART_transmitter_unit|Trans_State
+Name Trans_State.STOP_S Trans_State.PARITY_S Trans_State.DATA_S Trans_State.START_S 
+Trans_State.START_S 0 0 0 0 
+Trans_State.DATA_S 0 0 1 1 
+Trans_State.PARITY_S 0 1 0 1 
+Trans_State.STOP_S 1 0 0 1 
+
+State Machine - |top|spear:spear_unit|spear_core:core_unit|r.d.alusrc2
+Name r.d.alusrc2.DEC_SRC r.d.alusrc2.WB_SRC r.d.alusrc2.EXE_SRC r.d.alusrc2.REGF_SRC 
+r.d.alusrc2.REGF_SRC 0 0 0 0 
+r.d.alusrc2.EXE_SRC 0 0 1 1 
+r.d.alusrc2.WB_SRC 0 1 0 1 
+r.d.alusrc2.DEC_SRC 1 0 0 1 
+
+State Machine - |top|spear:spear_unit|spear_core:core_unit|r.d.alusrc1
+Name r.d.alusrc1.DEC_SRC r.d.alusrc1.WB_SRC r.d.alusrc1.EXE_SRC r.d.alusrc1.REGF_SRC 
+r.d.alusrc1.REGF_SRC 0 0 0 0 
+r.d.alusrc1.EXE_SRC 0 0 1 1 
+r.d.alusrc1.WB_SRC 0 1 0 1 
+r.d.alusrc1.DEC_SRC 1 0 0 1 
+
+State Machine - |top|spear:spear_unit|spear_core:core_unit|r.d.decfix.carry
+Name r.d.decfix.carry.CARRY_ONE r.d.decfix.carry.CARRY_ZERO r.d.decfix.carry.CARRY_NOT r.d.decfix.carry.CARRY_IN 
+r.d.decfix.carry.CARRY_IN 0 0 0 0 
+r.d.decfix.carry.CARRY_NOT 0 0 1 1 
+r.d.decfix.carry.CARRY_ZERO 0 1 0 1 
+r.d.decfix.carry.CARRY_ONE 1 0 0 1 
+
+State Machine - |top|spear:spear_unit|spear_core:core_unit|r.d.dec.aluctrl
+Name r.d.dec.aluctrl.ALU_BYPEXC r.d.dec.aluctrl.ALU_BYPR2 r.d.dec.aluctrl.ALU_BYPR1 r.d.dec.aluctrl.ALU_RRC r.d.dec.aluctrl.ALU_SRA r.d.dec.aluctrl.ALU_SR r.d.dec.aluctrl.ALU_SL r.d.dec.aluctrl.ALU_NEG r.d.dec.aluctrl.ALU_NOT r.d.dec.aluctrl.ALU_CMPLT r.d.dec.aluctrl.ALU_CMPGT r.d.dec.aluctrl.ALU_CMPULT r.d.dec.aluctrl.ALU_CMPUGT r.d.dec.aluctrl.ALU_CMPEQ r.d.dec.aluctrl.ALU_SUB r.d.dec.aluctrl.ALU_ADD r.d.dec.aluctrl.ALU_EOR r.d.dec.aluctrl.ALU_OR r.d.dec.aluctrl.ALU_AND r.d.dec.aluctrl.ALU_LDHI r.d.dec.aluctrl.ALU_LDLIU r.d.dec.aluctrl.ALU_NOP 
+r.d.dec.aluctrl.ALU_NOP 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+r.d.dec.aluctrl.ALU_LDLIU 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+r.d.dec.aluctrl.ALU_LDHI 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+r.d.dec.aluctrl.ALU_AND 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+r.d.dec.aluctrl.ALU_OR 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+r.d.dec.aluctrl.ALU_EOR 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+r.d.dec.aluctrl.ALU_ADD 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+r.d.dec.aluctrl.ALU_SUB 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+r.d.dec.aluctrl.ALU_CMPEQ 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+r.d.dec.aluctrl.ALU_CMPUGT 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+r.d.dec.aluctrl.ALU_CMPULT 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+r.d.dec.aluctrl.ALU_CMPGT 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+r.d.dec.aluctrl.ALU_CMPLT 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+r.d.dec.aluctrl.ALU_NOT 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.d.dec.aluctrl.ALU_NEG 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.d.dec.aluctrl.ALU_SL 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.d.dec.aluctrl.ALU_SR 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.d.dec.aluctrl.ALU_SRA 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.d.dec.aluctrl.ALU_RRC 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.d.dec.aluctrl.ALU_BYPR1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.d.dec.aluctrl.ALU_BYPR2 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+r.d.dec.aluctrl.ALU_BYPEXC 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |top|spear:spear_unit|spear_core:core_unit|r.d.dec.jmpctrl
+Name r.d.dec.jmpctrl.SAVE_EXC r.d.dec.jmpctrl.SAVE_JMP r.d.dec.jmpctrl.NO_SAVE 
+r.d.dec.jmpctrl.NO_SAVE 0 0 0 
+r.d.dec.jmpctrl.SAVE_JMP 0 1 1 
+r.d.dec.jmpctrl.SAVE_EXC 1 0 1 
+
+State Machine - |top|spear:spear_unit|spear_core:core_unit|r.d.dec.stactrl
+Name r.d.dec.stactrl.REST_SR r.d.dec.stactrl.SAVE_SR r.d.dec.stactrl.SET_COND r.d.dec.stactrl.SET_FLAG 
+r.d.dec.stactrl.SET_FLAG 0 0 0 0 
+r.d.dec.stactrl.SET_COND 0 0 1 1 
+r.d.dec.stactrl.SAVE_SR 0 1 0 1 
+r.d.dec.stactrl.REST_SR 1 0 0 1 
+
+State Machine - |top|spear:spear_unit|spear_core:core_unit|r.d.dec.memaccess
+Name r.d.dec.memaccess.WORD_A r.d.dec.memaccess.HWORD_A r.d.dec.memaccess.BYTE_A r.d.dec.memaccess.MEM_DISABLE 
+r.d.dec.memaccess.MEM_DISABLE 0 0 0 0 
+r.d.dec.memaccess.BYTE_A 0 0 1 1 
+r.d.dec.memaccess.HWORD_A 0 1 0 1 
+r.d.dec.memaccess.WORD_A 1 0 0 1 

@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="top">
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|altera_pll:altera_pll_inst|altpll:altpll_component" CBX_FILE_NAME="altpll_imp2.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|spear:spear_unit|spear_brom:brom_unit|altera_boot_rom:\altera_gen:boot_rom_inst|altsyncram:\use_brom_hex:altsyncram_component" CBX_FILE_NAME="altsyncram_p6b1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|spear:spear_unit|spear_regf:regf_unit|spear_regfram:ram1|altsyncram:ram_rtl_6" CBX_FILE_NAME="altsyncram_mji1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|spear:spear_unit|ext_AMBA_sharedmem:\ena_amba:ambadram_unit|AMBA_sharedmem_dram:dram_unit|AMBA_sharedmem_byteram:\ramcfg:ram2|altsyncram:ram_rtl_8" CBX_FILE_NAME="altsyncram_8jm1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|spear:spear_unit|ext_AMBA_sharedmem:\ena_amba:ambadram_unit|AMBA_sharedmem_dram:dram_unit|AMBA_sharedmem_byteram:\ramcfg:ram3|altsyncram:ram_rtl_7" CBX_FILE_NAME="altsyncram_8jm1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|spear:spear_unit|spear_dram:dram_unit|spear_byteram:ram0|altsyncram:ram_rtl_4" CBX_FILE_NAME="altsyncram_k1j1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|spear:spear_unit|spear_dram:dram_unit|spear_byteram:ram1|altsyncram:ram_rtl_3" CBX_FILE_NAME="altsyncram_k1j1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|spear:spear_unit|spear_dram:dram_unit|spear_byteram:ram2|altsyncram:ram_rtl_2" CBX_FILE_NAME="altsyncram_k1j1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|spear:spear_unit|spear_dram:dram_unit|spear_byteram:ram3|altsyncram:ram_rtl_1" CBX_FILE_NAME="altsyncram_k1j1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|spear:spear_unit|ext_AMBA_sharedmem:\ena_amba:ambadram_unit|AMBA_sharedmem_dram:dram_unit|AMBA_sharedmem_byteram:ram0|altsyncram:ram_rtl_10" CBX_FILE_NAME="altsyncram_8jm1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|spear:spear_unit|spear_vectab:vect_unit|altsyncram:ram_rtl_11" CBX_FILE_NAME="altsyncram_2ji1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|spear:spear_unit|ext_AMBA_sharedmem:\ena_amba:ambadram_unit|AMBA_sharedmem_dram:dram_unit|AMBA_sharedmem_byteram:ram1|altsyncram:ram_rtl_9" CBX_FILE_NAME="altsyncram_8jm1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|spear:spear_unit|spear_iram:\use_prog_gen:iram_unit|altsyncram:ram_rtl_5" CBX_FILE_NAME="altsyncram_1si1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|spear:spear_unit|spear_regf:regf_unit|spear_regfram:ram2|altsyncram:ram_rtl_0" CBX_FILE_NAME="altsyncram_mji1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|svgactrl:svgactrl0|syncram_2p:clutram|altera_syncram_dp:\alt:x0|altsyncram:u0" CBX_FILE_NAME="altsyncram_j8r.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|top|svgactrl:svgactrl0|syncram_2p:ram0|altera_syncram_dp:\alt:x0|altsyncram:u0" CBX_FILE_NAME="altsyncram_3br.tdf"/>
+	</PROJECT>
+</LOG_ROOT>
