@@ -135,20 +135,7 @@ begin
     exto.intreq <= r.ifacereg(STATUSREG)(STA_INT);
 
     --module specific part
-    v.counter := r.counter;
     
-    if r.ifacereg(MY_CONFIGREG)(CMD_COUNT) = '1' then
-      if r.prescaler = r.ifacereg(PRESCALER_REG) then
-        v.counter := STD_LOGIC_VECTOR(UNSIGNED(r.counter) + 1);
-        v.prescaler := (others => '0');
-      else
-        v.prescaler := STD_LOGIC_VECTOR(UNSIGNED(r.prescaler) + 1);        
-      end if;
-
-    elsif r.ifacereg(MY_CONFIGREG)(CMD_CLEAR) = '1' then
-      v.counter := (others => '0');
-      v.prescaler := (others => '0');
-    end if;
     
     r_next <= v;
   end process;

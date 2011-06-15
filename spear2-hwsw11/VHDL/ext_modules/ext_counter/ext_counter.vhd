@@ -47,8 +47,7 @@ constant COUNTER_BYTE3      : integer := 11;
 
 type reg_type is record
   ifacereg  : register_set;
-  counter   : std_logic_vector(31 downto 0);
-  prescaler : std_logic_vector(7 downto 0);
+  
 end record;
 
 
