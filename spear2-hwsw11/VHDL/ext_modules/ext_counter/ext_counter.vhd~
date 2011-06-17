@@ -33,21 +33,22 @@ use work.pkg_counter.all;
 architecture behaviour of ext_counter is
 
 subtype BYTE is std_logic_vector(7 downto 0);
-type register_set is array (0 to 3) of BYTE;
+type register_set is array (0 to 7) of BYTE;
 
 constant STATUSREG_CUST : integer := 1;
 constant CONFIGREG_CUST : integer := 3;
 
 constant ZEROVALUE      : std_logic_vector(15 downto 0) := (others => '0');
 
-constant COUNTER_BYTE0      : integer := 4;
-constant COUNTER_BYTE1      : integer := 5;
-constant COUNTER_BYTE2      : integer := 6;
-constant COUNTER_BYTE3      : integer := 7;
+constant COUNTER_BYTE0      : integer := 8;
+constant COUNTER_BYTE1      : integer := 9;
+constant COUNTER_BYTE2      : integer := 10;
+constant COUNTER_BYTE3      : integer := 11;
 
 type reg_type is record
   ifacereg  : register_set;
   counter   : std_logic_vector(31 downto 0);
+  prescaler : std_logic_vector(7 downto 0);
 end record;
 
 
@@ -55,7 +56,10 @@ signal r_next : reg_type;
 signal r : reg_type := 
   (
     ifacereg => (others => (others => '0')),
-    counter => (others => '0')
+--    ifacereg => (PRESCALER_REG => x"01", others => (others => '0')),
+    counter => (others => '0'),
+    --prescaler => x"01"
+    prescaler => x"00"
   );
   
 signal rstint : std_ulogic;
@@ -85,6 +89,19 @@ begin
           end if;
         when "001" =>
           if ((exti.byte_en(0) = '1')) then
+            v.ifacereg(4) := exti.data(7 downto 0);
+          end if;
+          if ((exti.byte_en(1) = '1')) then
+            v.ifacereg(5) := exti.data(15 downto 8);
+          end if;
+          if ((exti.byte_en(2) = '1')) then
+            v.ifacereg(6) := exti.data(23 downto 16);
+          end if;
+          if ((exti.byte_en(3) = '1')) then
+            v.ifacereg(7) := exti.data(31 downto 24);
+          end if;
+        when "010" =>
+          if ((exti.byte_en(0) = '1')) then
             v.counter(7 downto 0) := exti.data(7 downto 0);
           end if;
           if ((exti.byte_en(1) = '1')) then
@@ -111,8 +128,10 @@ begin
           if (r.ifacereg(CONFIGREG)(CONF_ID) = '1') then
             exto.data <= MODULE_VER & MODULE_ID;
           else
-            exto.data <= r.counter;
+            exto.data <= r.ifacereg(7) & r.ifacereg(6) & r.ifacereg(5) & r.ifacereg(4);
           end if;
+        when "010" =>
+          exto.data <= r.counter;
         when others =>
           null;
       end case;
@@ -148,9 +167,16 @@ begin
     v.counter := r.counter;
     
     if r.ifacereg(MY_CONFIGREG)(CMD_COUNT) = '1' then
-      v.counter := STD_LOGIC_VECTOR(UNSIGNED(r.counter) + 1);
+      if r.prescaler = r.ifacereg(PRESCALER_REG) then
+        v.counter := STD_LOGIC_VECTOR(UNSIGNED(r.counter) + 1);
+        v.prescaler := (others => '0');
+      else
+        v.prescaler := STD_LOGIC_VECTOR(UNSIGNED(r.prescaler) + 1);        
+      end if;
+
     elsif r.ifacereg(MY_CONFIGREG)(CMD_CLEAR) = '1' then
       v.counter := (others => '0');
+      v.prescaler := (others => '0');
     end if;
     
     r_next <= v;
@@ -161,7 +187,9 @@ begin
     if rising_edge(clk) then 
       if rstint = RST_ACT then
         r.ifacereg <= (others => (others => '0'));
+        --r.ifacereg(PRESCALER_REG) <= x"01";
         r.counter <= (others => '0');
+        --r.prescaler <= x"01";
       else
         r <= r_next;
       end if;
