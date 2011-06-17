@@ -1,0 +1,400 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/homes/c0726725/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim
+Eahbmst
+Z1 w1307446303
+Z2 DPx7 techmap 7 gencomp 0 22 UGe8K;c=a?h3=;oGYiebG1
+Z3 DPx7 gaisler 4 misc 0 22 heN0@k0_29GiOoMlWG1f60
+Z4 DPx5 grlib 7 devices 0 22 @:6099]NhM2]9JU0PZmGn3
+Z5 DPx5 grlib 7 version 0 22 S0L_M<6=Y]>cAa^NR0bR:2
+Z6 DPx5 grlib 6 stdlib 0 22 1TdkUT3:2Z@aWRHgC_3:]2
+Z7 DPx3 std 6 textio 0 22 m2KQDRRhmF833<<DjYdL70
+Z8 DPx4 ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
+Z9 DPx5 grlib 4 amba 0 22 1bVKkflXCG@EOO2WeR7;E2
+Z10 DPx4 ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+Z11 d/homes/c0726725/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim
+Z12 8../../../VHDL/amba_modules/gaisler/misc/ahbmst.vhd
+Z13 F../../../VHDL/amba_modules/gaisler/misc/ahbmst.vhd
+l0
+L34
+VDYnO?_>:h4NNhBA]7EPUS0
+Z14 OL;C;6.6d;45
+32
+Z15 o-work gaisler
+Z16 tExplicit 1
+!s100 2UY`FI@3lojSAhPJgB4oY0
+Artl
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+DEx4 work 6 ahbmst 0 22 DYnO?_>:h4NNhBA]7EPUS0
+l68
+L53
+VJK_OEMGRK6REZn@JcfLZ_1
+R14
+32
+Z17 Mx9 4 ieee 14 std_logic_1164
+Z18 Mx8 5 grlib 4 amba
+Z19 Mx7 4 ieee 11 numeric_std
+Z20 Mx6 3 std 6 textio
+Z21 Mx5 5 grlib 6 stdlib
+Z22 Mx4 5 grlib 7 version
+Z23 Mx3 5 grlib 7 devices
+Z24 Mx2 7 gaisler 4 misc
+Z25 Mx1 7 techmap 7 gencomp
+R15
+R16
+!s100 >TBoRPiGC1OTkDO>JA=j?0
+Eapbvga
+Z26 w1269601462
+Z27 DPx7 gaisler 15 charrom_package 0 22 P9KAQM>Y422Y]GVTX:hiZ2
+R3
+R2
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+Z28 8../../../VHDL/amba_modules/gaisler/misc/apbvga.vhd
+Z29 F../../../VHDL/amba_modules/gaisler/misc/apbvga.vhd
+l0
+L37
+VlZZajLcCiGe^oTXK>gFN62
+R14
+32
+R15
+R16
+!s100 IDEj6K0hliYB?Y?ORT66H2
+Artl
+R27
+R3
+R2
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+DEx4 work 6 apbvga 0 22 lZZajLcCiGe^oTXK>gFN62
+l124
+L53
+VYmOQB@^njA0BJS@;UU?ai0
+R14
+32
+Mx10 4 ieee 14 std_logic_1164
+Mx9 5 grlib 4 amba
+Mx8 4 ieee 11 numeric_std
+Mx7 3 std 6 textio
+Z30 Mx6 5 grlib 6 stdlib
+Mx5 5 grlib 7 version
+Mx4 5 grlib 7 devices
+Mx3 7 techmap 7 gencomp
+R24
+Mx1 7 gaisler 15 charrom_package
+R15
+R16
+!s100 8O=XkLSkJTJnCYX@5B?DN1
+Echarrom
+R26
+R5
+R7
+R8
+R6
+R10
+R11
+Z31 8../../../VHDL/amba_modules/gaisler/misc/charrom.vhd
+Z32 F../../../VHDL/amba_modules/gaisler/misc/charrom.vhd
+l0
+L29
+VanSJ=9z;1OQT6Lcz6z?zI2
+R14
+32
+R15
+R16
+!s100 825F[]@od5BlJ`Uz[R<VU2
+Artl
+R5
+R7
+R8
+R6
+R10
+DEx4 work 7 charrom 0 22 anSJ=9z;1OQT6Lcz6z?zI2
+l42
+L37
+VegoPf<IU2e1FP`XGa2KN;1
+R14
+32
+Z33 Mx5 4 ieee 14 std_logic_1164
+Z34 Mx4 5 grlib 6 stdlib
+Z35 Mx3 4 ieee 11 numeric_std
+Z36 Mx2 3 std 6 textio
+Z37 Mx1 5 grlib 7 version
+R15
+R16
+!s100 93j156eaR^o3IjDNMmDHP0
+Pcharrom_package
+R5
+R7
+R8
+R6
+R10
+R26
+R11
+8../../../VHDL/amba_modules/gaisler/misc/charrom_package.vhd
+F../../../VHDL/amba_modules/gaisler/misc/charrom_package.vhd
+l0
+L30
+VP9KAQM>Y422Y]GVTX:hiZ2
+R14
+32
+R33
+R34
+R35
+R36
+R37
+R15
+R16
+!s100 cJEeR84S[B==:iPD?YT2U0
+Pmemctrl
+R2
+R5
+R6
+R7
+R8
+R9
+R10
+w1277813654
+R11
+8../../../VHDL/amba_modules/gaisler/memctrl/memctrl.vhd
+F../../../VHDL/amba_modules/gaisler/memctrl/memctrl.vhd
+l0
+L33
+VfC0]JB4IYRanAlGBBfJHR3
+R14
+32
+Z38 Mx7 4 ieee 14 std_logic_1164
+Z39 Mx6 5 grlib 4 amba
+Z40 Mx5 4 ieee 11 numeric_std
+Z41 Mx4 3 std 6 textio
+Z42 Mx3 5 grlib 6 stdlib
+Z43 Mx2 5 grlib 7 version
+R25
+R15
+R16
+!s100 GH4:1TE<:Bl^0m9ZBd<l;3
+Pmisc
+R2
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+R26
+R11
+Z44 8../../../VHDL/amba_modules/gaisler/misc/misc.vhd
+Z45 F../../../VHDL/amba_modules/gaisler/misc/misc.vhd
+l0
+L36
+VheN0@k0_29GiOoMlWG1f60
+R14
+32
+b1
+Z46 Mx8 4 ieee 14 std_logic_1164
+Z47 Mx7 5 grlib 4 amba
+Z48 Mx6 4 ieee 11 numeric_std
+Z49 Mx5 3 std 6 textio
+R34
+Z50 Mx3 5 grlib 7 version
+Z51 Mx2 5 grlib 7 devices
+R25
+R15
+R16
+!s100 CIK`gMhJk7CheSDV8mR5S2
+Bbody
+DBx4 work 4 misc 0 22 heN0@k0_29GiOoMlWG1f60
+R2
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+l0
+L738
+V6MoNmOlhXYN>0hW_7GQhi1
+R14
+32
+R46
+R47
+R48
+R49
+R34
+R50
+R51
+R25
+R15
+R16
+nbody
+!s100 ^>OOIO:eaTd:z7Gd:7NW40
+Esdctrl
+Z52 w1292160940
+R2
+Z53 DPx7 gaisler 7 memctrl 0 22 fC0]JB4IYRanAlGBBfJHR3
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+Z54 8../../../VHDL/amba_modules/gaisler/memctrl/sdctrl.vhd
+Z55 F../../../VHDL/amba_modules/gaisler/memctrl/sdctrl.vhd
+l0
+L35
+VOmVHMDonZzfKXIdT:H<a>2
+!s100 Rgb`zFoBO:z3OY@]JA4]e0
+R14
+32
+R15
+R16
+Artl
+R2
+R53
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+Z56 DEx4 work 6 sdctrl 0 22 OmVHMDonZzfKXIdT:H<a>2
+l155
+L61
+Z57 Vz<XJ9;Z0GSAZ_3h36Tg1Q3
+Z58 !s100 jn4doP?e7m2@Z9omB^i4M1
+R14
+32
+R17
+R18
+R19
+R20
+R21
+R22
+R23
+Z59 Mx2 7 gaisler 7 memctrl
+R25
+R15
+R16
+Esvgactrl
+Z60 w1308047958
+R3
+R2
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+Z61 8../../../VHDL/amba_modules/gaisler/misc/svgactrl.vhd
+Z62 F../../../VHDL/amba_modules/gaisler/misc/svgactrl.vhd
+l0
+L36
+V6W`T:149A?>XBC6:5`;301
+R14
+32
+R15
+R16
+!s100 ^R:5Gk<Fjd7GnYR[AbBA12
+Artl
+R3
+R2
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+DEx4 work 8 svgactrl 0 22 6W`T:149A?>XBC6:5`;301
+l165
+L68
+VRW>?:gMLb[Mcm2HU^YAl`2
+R14
+32
+R17
+R18
+R19
+R20
+R21
+R22
+R23
+Mx2 7 techmap 7 gencomp
+Mx1 7 gaisler 4 misc
+R15
+R16
+!s100 lU61]`BOWRb_[UFQYcV2C3
+Esyncram_2p
+Z63 w1209024930
+Z64 DPx7 techmap 6 allmem 0 22 UYWKYEXFZ3aCN_HhmiVkc1
+R5
+R6
+R7
+R8
+R9
+R2
+R10
+R11
+Z65 8../../../VHDL/amba_modules/techmap/maps/syncram_2p.vhd
+Z66 F../../../VHDL/amba_modules/techmap/maps/syncram_2p.vhd
+l0
+L31
+VG4m0jDRKP0n1]=[m9g2bE3
+R14
+32
+R15
+R16
+!s100 OJfJBn[aD6SGUg]6gIm`>3
+Artl
+R64
+R5
+R6
+R7
+R8
+R9
+R2
+R10
+DEx4 work 10 syncram_2p 0 22 G4m0jDRKP0n1]=[m9g2bE3
+l50
+L45
+VE6Eb7^aSeN_OYH9^[39]b3
+R14
+32
+R46
+Z67 Mx7 7 techmap 7 gencomp
+R39
+R40
+R41
+R42
+R43
+Mx1 7 techmap 6 allmem
+R15
+R16
+!s100 NB;h:YNS1cnzEO2SI<efI1

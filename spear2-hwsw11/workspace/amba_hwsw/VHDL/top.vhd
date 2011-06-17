@@ -6,6 +6,8 @@ use work.spear_pkg.all;
 use work.spear_amba_pkg.all;
 use work.pkg_dis7seg.all;
 use work.pkg_counter.all;
+use work.pkg_rwsdram.all;
+use work.pkg_dp_ram.all;
 
 library grlib;
 use grlib.amba.all;
@@ -44,7 +46,8 @@ entity top is
     ltm_b       : out std_logic_vector(7 downto 0);
     ltm_nclk    : out std_logic;
     ltm_den     : out std_logic;
-    ltm_grest   : out std_logic
+    ltm_grest   : out std_logic;
+    LED_RED	: out std_logic_vector(17 downto 0)
   );
 end top;
 
@@ -66,6 +69,18 @@ architecture behaviour of top is
   -- 7-segment display
   signal dis7segsel  : std_ulogic;
   signal dis7segexto : module_out_type;
+
+  -- Write RWSDRAM extension segsel
+  signal rwsdramsel 		: std_ulogic;
+  signal rwsdramsegexto 	: module_out_type;
+  signal addr_dp_ram_sig	: std_logic_vector(19 downto 0);
+  signal data_dp_ram_sig	: std_logic_vector(31 downto 0);
+
+  -- Signals for dp_ram module for rgb
+  signal address1_sig  : std_logic_vector(19 downto 0);
+  signal data_out1_sig : std_logic_vector(31 downto 0);
+  signal wr1_sig       : std_logic;
+  signal data_in1_sig  : std_logic_vector(31 downto 0);
 
   -- signals for counter extension module
   signal counter_segsel : std_logic;
@@ -92,7 +107,10 @@ architecture behaviour of top is
   signal vga_clk_int    : std_logic;
   signal vga_clk_sel    : std_logic_vector(1 downto 0);
   signal svga_ahbmo     : ahb_mst_out_type;
-  
+
+  --signals for Write SDRAM Controller
+  signal rwsdram_ahbmo	: ahb_mst_out_type;
+
   component altera_pll IS
     PORT
       (
@@ -150,7 +168,7 @@ begin
     generic map(
       defmast => 0,                  -- default master
       split   => 0,                  -- split support
-      nahbm   => 2,                  -- number of masters
+      nahbm   => 3,                  -- number of masters
       nahbs   => AHB_SLAVE_COUNT,    -- number of slaves
       fixbrst => 1                   -- support fix-length bursts
       )
@@ -164,7 +182,7 @@ begin
       );
 
 
-  process(grlib_ahbmi, spear_ahbmo, svga_ahbmo)
+  process(grlib_ahbmi, spear_ahbmo, svga_ahbmo, rwsdram_ahbmo)
   begin  -- process
     ahbmi.hgrant  <=  grlib_ahbmi.hgrant(0);
     ahbmi.hready  <=  grlib_ahbmi.hready;
@@ -172,7 +190,7 @@ begin
     ahbmi.hrdata  <=  grlib_ahbmi.hrdata;
     ahbmi.hirq    <=  grlib_ahbmi.hirq(MAX_AHB_IRQ-1 downto 0);
 
-    for i in 2 to grlib_ahbmo'length - 1 loop
+    for i in 1 to grlib_ahbmo'length - 1 loop
       grlib_ahbmo(i) <= ahbm_none;
     end loop;
 
@@ -190,6 +208,7 @@ begin
     grlib_ahbmo(0).hindex   <=  0;
 
     grlib_ahbmo(1)          <=  svga_ahbmo;
+    grlib_ahbmo(2)	    <=  rwsdram_ahbmo;
   end process;
 
 
@@ -282,7 +301,6 @@ begin
     sdi.data(31 downto 0)
   );
 
-
   process(apb_bridge_ahbso, sdram_ahbso)
   begin  -- process
     ahbso    <= (others => ahbs_none);
@@ -322,12 +340,52 @@ begin
     ltm_r <= vgao.video_out_r(7 downto 0);
     ltm_g <= vgao.video_out_g(7 downto 0);
     ltm_b <= vgao.video_out_b(7 downto 0);
-    ltm_nclk <= vga_clk_int;    
+    ltm_nclk <= vga_clk_int;
     ltm_den <= vgao.blank;
     ltm_grest <= '1';
   
+  -----------------------------------------------------------------------------
+  -- Write to SDRAM modules
+  -----------------------------------------------------------------------------
+  rwsdram0 : rwsdram
+    generic map
+    (
+      hindex => 2
+    )
+    port map
+    (
+      rst => syncrst,
+      clk => clk,
+      extsel => rwsdramsel,
+      exti => exti,
+      exto => rwsdramsegexto,
+      ahbi => grlib_ahbmi,
+      ahbo => rwsdram_ahbmo,
+      addr_ram_out => addr_dp_ram_sig,
+      data_ram_in => data_dp_ram_sig,
+      LED_RED => LED_RED
+    );
 
-  
+  -----------------------------------------------------------------------------
+  -- RAM Module for rgb
+  -----------------------------------------------------------------------------
+
+  dp_ram0 : dp_ram
+   generic map
+  (
+     ADDR_WIDTH => 20,
+     DATA_WIDTH => 32
+  )
+  port map
+  (
+     clk => clk,
+     address1 => address1_sig,
+     data_out1 => data_out1_sig,
+     wr1 => wr1_sig,
+     data_in1 => data_in1_sig,
+     address2 => addr_dp_ram_sig,
+     data_out2 => data_dp_ram_sig
+  );
 
   -----------------------------------------------------------------------------
   -- Spear extension modules
@@ -356,7 +414,7 @@ begin
       exto       => counter_exto
       );
   
-  comb : process(spearo, debugo_if, D_RxD, dis7segexto, counter_exto)  --extend!
+  comb : process(spearo, debugo_if, D_RxD, dis7segexto, counter_exto, rwsdramsegexto)  --extend!
     variable extdata : std_logic_vector(31 downto 0);
   begin   
     exti.reset    <= spearo.reset;
@@ -367,15 +425,19 @@ begin
 
     dis7segsel <= '0';
     counter_segsel <= '0';
-    
+    rwsdramsel <= '0';
+
     if spearo.extsel = '1' then
       case spearo.addr(14 downto 5) is
         when "1111110111" => -- (-288)
           --DIS7SEG Module
           dis7segsel <= '1';
-        when "1111110110" => -- (-320)              
+        when "1111110110" => -- (-320)
           --Counter Module
           counter_segsel <= '1';
+	when "1111110101" => -- (-352)
+	  --Extended module RW SDRAM
+	  rwsdramsel <= '1';
         when others =>
           null;
       end case;
@@ -383,7 +445,7 @@ begin
     
     extdata := (others => '0');
     for i in extdata'left downto extdata'right loop
-      extdata(i) := dis7segexto.data(i) or counter_exto.data(i); 
+      extdata(i) := dis7segexto.data(i) or counter_exto.data(i) or rwsdramsegexto.data(i);
     end loop;
 
     speari.data <= (others => '0');

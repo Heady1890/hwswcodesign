@@ -1,0 +1,457 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/homes/c0726725/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim
+Pallmem
+Z1 DPx4 ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+Z2 w1209024930
+Z3 d/homes/c0726725/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim
+8../../../VHDL/amba_modules/techmap/maps/allmem.vhd
+F../../../VHDL/amba_modules/techmap/maps/allmem.vhd
+l0
+L28
+VUYWKYEXFZ3aCN_HhmiVkc1
+!s100 9zhMkB<i]UilGURB18aDb3
+Z4 OL;C;6.6d;45
+32
+Z5 Mx1 4 ieee 14 std_logic_1164
+Z6 o-work techmap
+Z7 tExplicit 1
+Pallpads
+Z8 DPx5 grlib 7 version 0 22 S0L_M<6=Y]>cAa^NR0bR:2
+Z9 DPx5 grlib 6 stdlib 0 22 1TdkUT3:2Z@aWRHgC_3:]2
+Z10 DPx3 std 6 textio 0 22 m2KQDRRhmF833<<DjYdL70
+Z11 DPx4 ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
+Z12 DPx5 grlib 4 amba 0 22 1bVKkflXCG@EOO2WeR7;E2
+Z13 DPx7 techmap 7 gencomp 0 22 UGe8K;c=a?h3=;oGYiebG1
+R1
+R2
+R3
+8../../../VHDL/amba_modules/techmap/maps/allpads.vhd
+F../../../VHDL/amba_modules/techmap/maps/allpads.vhd
+l0
+L30
+V<11oCMC@bKEf3gN55Z:910
+R4
+32
+Z14 Mx7 4 ieee 14 std_logic_1164
+Z15 Mx6 7 techmap 7 gencomp
+Z16 Mx5 5 grlib 4 amba
+Z17 Mx4 4 ieee 11 numeric_std
+Z18 Mx3 3 std 6 textio
+Z19 Mx2 5 grlib 6 stdlib
+Z20 Mx1 5 grlib 7 version
+R6
+R7
+!s100 AA;^hgHRD@UYQ5m`I86KZ3
+Ealtera_syncram
+R2
+R1
+R3
+Z21 8../../../VHDL/amba_modules/techmap/altera_mf/memory_altera_mf.vhd
+Z22 F../../../VHDL/amba_modules/techmap/altera_mf/memory_altera_mf.vhd
+l0
+L92
+VZYk8E0;P;^mg;aCC0`K[?0
+R4
+32
+R6
+R7
+!s100 5ihzX]:1lbgDOGh9XAHOf2
+Abehav
+R1
+DEx4 work 14 altera_syncram 0 22 ZYk8E0;P;^mg;aCC0`K[?0
+l125
+L104
+VWU3gP;m0gQW7AfTAWb=oR3
+!s100 Ck0]1WSRflQeJ<hlRon^41
+R4
+32
+R5
+R6
+R7
+Ealtera_syncram_dp
+R2
+Z23 DPx9 altera_mf 22 altera_device_families 0 22 hOS8S0K@m3L[cBBTGW55J0
+Z24 DPx9 altera_mf 24 altera_common_conversion 0 22 H11C:meBcdRbl0kYgnEzh2
+R10
+Z25 DPx4 ieee 18 std_logic_unsigned 0 22 hEMVMlaNCR^<OOoVNV;m90
+Z26 DPx4 ieee 15 std_logic_arith 0 22 GJbAT?7@hRQU9IQ702DT]2
+DEx9 altera_mf 10 altsyncram 0 22 IfQV3b_IUD=5e_ZkRIlc50
+R1
+R3
+R21
+R22
+l0
+L33
+V[X6:81o8=HRdgd78>ReeX0
+R4
+32
+R6
+R7
+!s100 5S@@?XK[J=010P>8A=]Wd0
+Abehav
+R23
+R24
+R10
+R25
+R26
+R1
+DEx4 work 17 altera_syncram_dp 0 22 [X6:81o8=HRdgd78>ReeX0
+l75
+L52
+V=ci12:Mm]z0QeF8?PAV7n2
+!s100 Zc>UDiicOW[4=ONMBZASN0
+R4
+32
+Z27 Mx6 4 ieee 14 std_logic_1164
+Mx5 4 ieee 15 std_logic_arith
+Mx4 4 ieee 18 std_logic_unsigned
+R18
+Mx2 9 altera_mf 24 altera_common_conversion
+Mx1 9 altera_mf 22 altera_device_families
+R6
+R7
+Pgencomp
+R8
+R9
+R10
+R11
+R12
+R1
+R2
+R3
+8../../../VHDL/amba_modules/techmap/gencomp/gencomp.vhd
+F../../../VHDL/amba_modules/techmap/gencomp/gencomp.vhd
+l0
+L30
+VUGe8K;c=a?h3=;oGYiebG1
+R4
+32
+R27
+R16
+R17
+R18
+R19
+R20
+R6
+R7
+!s100 A>FEEW9WkZ[MH7]ZAj>VI2
+Einpad
+R2
+Z28 DPx7 techmap 7 allpads 0 22 <11oCMC@bKEf3gN55Z:910
+R8
+R9
+R10
+R11
+R12
+R13
+R1
+R3
+Z29 8../../../VHDL/amba_modules/techmap/maps/inpad.vhd
+Z30 F../../../VHDL/amba_modules/techmap/maps/inpad.vhd
+l0
+L31
+VfBRjKdYhz>0gJWGXz72jA1
+R4
+32
+R6
+R7
+!s100 XNdiYhdcg=kQ5>9n_WQfF3
+Artl
+R28
+R8
+R9
+R10
+R11
+R12
+R13
+R1
+DEx4 work 5 inpad 0 22 fBRjKdYhz>0gJWGXz72jA1
+l39
+L38
+Va:409ld7T^;6M0]Kf6D;^0
+R4
+32
+Z31 Mx8 4 ieee 14 std_logic_1164
+Z32 Mx7 7 techmap 7 gencomp
+Z33 Mx6 5 grlib 4 amba
+Z34 Mx5 4 ieee 11 numeric_std
+Z35 Mx4 3 std 6 textio
+Z36 Mx3 5 grlib 6 stdlib
+Z37 Mx2 5 grlib 7 version
+Z38 Mx1 7 techmap 7 allpads
+R6
+R7
+!s100 jz5k26ShlZQh]fl1a9V7l2
+Einpadv
+R2
+R8
+R9
+R10
+R11
+R12
+R13
+R1
+R3
+R29
+R30
+l0
+L82
+VfS9[]cb12bG^TB:EU9W6W1
+R4
+32
+R6
+R7
+!s100 ?bD28OW6hYgn6i_SoQRAQ3
+Artl
+R8
+R9
+R10
+R11
+R12
+R13
+R1
+DEx4 work 6 inpadv 0 22 fS9[]cb12bG^TB:EU9W6W1
+l90
+L89
+Ve;Gj=Vd>FZ_I8:58hQkWk2
+R4
+32
+R14
+R15
+R16
+R17
+R18
+R19
+R20
+R6
+R7
+!s100 @XcX^509Xc4PCgh>IX@o13
+Eiopad
+R2
+R28
+R8
+R9
+R10
+R11
+R12
+R13
+R1
+R3
+Z39 8../../../VHDL/amba_modules/techmap/maps/iopad.vhd
+Z40 F../../../VHDL/amba_modules/techmap/maps/iopad.vhd
+l0
+L31
+V;nFV^ibYRf[GBl_HgE_Sd0
+R4
+32
+R6
+R7
+!s100 ;ThCO?0b_eLS=3OTXPMg21
+Artl
+R28
+R8
+R9
+R10
+R11
+R12
+R13
+R1
+DEx4 work 5 iopad 0 22 ;nFV^ibYRf[GBl_HgE_Sd0
+l40
+L38
+VYC7aMMRk?TT]T=YXjjeDa0
+R4
+32
+R31
+R32
+R33
+R34
+R35
+R36
+R37
+R38
+R6
+R7
+!s100 G5hD2R2<_o:_]SS5V@PbE2
+Eiopadv
+R2
+R8
+R9
+R10
+R11
+R12
+R13
+R1
+R3
+R39
+R40
+l0
+L100
+Vd2gLf[GhVKkL<z2D1o6iM2
+R4
+32
+R6
+R7
+!s100 dINTBkj[:MF5n02WP0^2U0
+Artl
+R8
+R9
+R10
+R11
+R12
+R13
+R1
+DEx4 work 6 iopadv 0 22 d2gLf[GhVKkL<z2D1o6iM2
+l111
+L110
+V5zBb769D>EdaYNmA:RC@]1
+R4
+32
+R14
+R15
+R16
+R17
+R18
+R19
+R20
+R6
+R7
+!s100 ^UYJNI:bIJ9;_l8=zGdIN3
+Eiopadvv
+R2
+R8
+R9
+R10
+R11
+R12
+R13
+R1
+R3
+R39
+R40
+l0
+L123
+VeW;_7J^JN0`R3=MI=Si^`2
+R4
+32
+R6
+R7
+!s100 _z6=Ekg@cZ0X3IK1O0bCA0
+Artl
+R8
+R9
+R10
+R11
+R12
+R13
+R1
+DEx4 work 7 iopadvv 0 22 eW;_7J^JN0`R3=MI=Si^`2
+l134
+L133
+V6i_a[[5ZPcNiSfF:_09lX2
+R4
+32
+R14
+R15
+R16
+R17
+R18
+R19
+R20
+R6
+R7
+!s100 fM`6?V3eTg4gb8?[C8ACM2
+Eoutpad
+R2
+R28
+R8
+R9
+R10
+R11
+R12
+R13
+R1
+R3
+Z41 8../../../VHDL/amba_modules/techmap/maps/outpad.vhd
+Z42 F../../../VHDL/amba_modules/techmap/maps/outpad.vhd
+l0
+L31
+Vh<^eo7;3`XFP;WC`h1oOO3
+R4
+32
+R6
+R7
+!s100 89d`l8X2XOh<P];LEd4oa0
+Artl
+R28
+R8
+R9
+R10
+R11
+R12
+R13
+R1
+DEx4 work 6 outpad 0 22 h<^eo7;3`XFP;WC`h1oOO3
+l39
+L37
+VnD6UmVc_JKCYSoO0[i4?=2
+R4
+32
+R31
+R32
+R33
+R34
+R35
+R36
+R37
+R38
+R6
+R7
+!s100 6Kl?zkaQD`Le5l7E?D_ib0
+Eoutpadv
+R2
+R8
+R9
+R10
+R11
+R12
+R13
+R1
+R3
+R41
+R42
+l0
+L85
+VfUZRz3PCejzYO9`fdnD1<1
+R4
+32
+R6
+R7
+!s100 _CgTlmJ1eK3lW`3giR88;0
+Artl
+R8
+R9
+R10
+R11
+R12
+R13
+R1
+DEx4 work 7 outpadv 0 22 fUZRz3PCejzYO9`fdnD1<1
+l93
+L92
+V506aMNDeX[]gg3@jK8YDT3
+R4
+32
+R14
+R15
+R16
+R17
+R18
+R19
+R20
+R6
+R7
+!s100 9ARY:22Qi>Vd1V2<E?YN02

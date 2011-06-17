@@ -46,7 +46,7 @@ architecture behaviour of top_tb is
 
   component top
     port (
-      db_clk      : in    std_ulogic;
+      db_clk   : in    std_ulogic;
       rst      : in    std_ulogic;
       D_RxD    : in    std_logic;
       D_TxD    : out   std_logic;
