@@ -5,12 +5,8 @@ use ieee.numeric_std.all;
 entity dp_ram is
   generic
   (
-     --ADDR_WIDTH : integer range 1 to integer‘high;
-     --DATA_WIDTH : integer range 1 to integer‘high
-
-     --Adressiert einen 1,048kB großen RAM mit 8Bit Blöcken
-     ADDR_WIDTH : natural := 19;
-     DATA_WIDTH : natural := 24
+     ADDR_WIDTH : integer range 1 to integer‘high;
+     DATA_WIDTH : integer range 1 to integer‘high
   );
   port
   (
