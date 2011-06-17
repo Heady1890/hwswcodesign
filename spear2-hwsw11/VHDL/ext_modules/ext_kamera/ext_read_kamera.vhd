@@ -7,7 +7,7 @@ USE IEEE.std_logic_1164.all;
 USE work.spear_pkg.all;
 
 use work.pkg_camd5m_read.all;
-use work.pkg_getframe.all;
+use work.pkg_kamera.all;
 
 ----------------------------------------------------------------------------------
 -- ENTITY
@@ -59,6 +59,7 @@ architecture behaviour of read_kamera is
 begin
 
   read : process(r, CAM_LVAL, CAM_FVAL, CAM_PIXCLK, CAM_D)
+  begin
     r_next <= r;
 
     ram_address <= r.index;
@@ -76,10 +77,10 @@ begin
           r_next.state <= wait_line;
         end if;
 
-      when wait_line then
+      when wait_line =>
         if CAM_FVAL = '0' then
           r_next.state <= ready;
-        else if CAM_LVAL = '1' then
+        elsif CAM_LVAL = '1' then
           r_next.state <= read_line;
         end if;
 

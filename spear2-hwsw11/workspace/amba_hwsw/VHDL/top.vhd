@@ -87,18 +87,6 @@ architecture behaviour of top is
   signal dis7segsel  : std_ulogic;
   signal dis7segexto : module_out_type;
 
-  -- Write RWSDRAM extension segsel
-  signal rwsdramsel 		: std_ulogic;
-  signal rwsdramsegexto 	: module_out_type;
-  signal addr_dp_ram_sig	: std_logic_vector(19 downto 0);
-  signal data_dp_ram_sig	: std_logic_vector(31 downto 0);
-
-  -- Signals for dp_ram module for rgb
-  signal address1_sig  : std_logic_vector(19 downto 0);
-  signal data_out1_sig : std_logic_vector(31 downto 0);
-  signal wr1_sig       : std_logic;
-  signal data_in1_sig  : std_logic_vector(31 downto 0);
-
   -- signals for counter extension module
   signal counter_segsel : std_logic;
   signal counter_exto : module_out_type;
@@ -135,10 +123,27 @@ architecture behaviour of top is
   --SIGNALE PHILLIP
   --signals for Write SDRAM Controller
   signal rwsdram_ahbmo	: ahb_mst_out_type;
+  -- Write RWSDRAM extension segsel
+  signal rwsdramsel 		: std_ulogic;
+  signal rwsdramsegexto 	: module_out_type;
+  signal addr_dp_ram_sig	: std_logic_vector(19 downto 0);
+  signal data_dp_ram_sig	: std_logic_vector(31 downto 0);
+  -- Signals for dp_ram module for rgb
+  signal address1_sig  : std_logic_vector(19 downto 0);
+  signal data_out1_sig : std_logic_vector(31 downto 0);
+  signal wr1_sig       : std_logic;
+  signal data_in1_sig  : std_logic_vector(31 downto 0);
 
   --SIGNALE LUKAS
   --signals zwischen read_kamera und tp_ram
-  
+  signal tp_adress1_sig		: std_logic_vector(10 downto 0);
+  signal tp_adress2_sig		: std_logic_vector(10 downto 0);
+  signal tp_adress3_sig		: std_logic_vector(10 downto 0);
+  signal tp_data_in1_sig	: std_logic_vector( 7 downto 0);
+  signal tp_wr1_sig		: std_logic;
+  signal tp_data_out2_sig	: std_logic_vector( 7 downto 0);
+  signal tp_data_out3_sig	: std_logic_vector( 7 downto 0);  
+
 
   component altera_pll IS
     PORT
@@ -444,13 +449,13 @@ begin
   port map
   (
      clk	=> clk,                           	
-     address1	=> 
-     address2	=>
-     address3	=>
-     data_in1   =>                 	
-     wr1        =>                   	
-     data_out2	=>
-     data_out3  =>        	
+     address1	=> tp_adress1_sig,
+     address2	=> tp_adress2_sig,
+     address3	=> tp_adress2_sig,
+     data_in1   => tp_data_in1_sig,              	
+     wr1        => tp_wr1_sig,             	
+     data_out2	=> tp_data_out2_sig,
+     data_out3  => tp_data_out3_sig       	
   );
 
   -----------------------------------------------------------------------------
@@ -467,9 +472,9 @@ begin
     CAM_D	=> CAM_D,
     INIT_DONE	=> init_done_sig,
     sys_res	=> sysrst,
-    ram_address	=> 
-    ram_data	=> 
-    ram_en	=> 
+    ram_address	=> tp_adress1_sig,
+    ram_data	=> tp_data_in1_sig,
+    ram_en	=> tp_wr1_sig
   ); 
 
   -----------------------------------------------------------------------------
@@ -478,16 +483,16 @@ begin
 
   con1 : converter
   port (
-    start_conv		=> 
-    sys_res		=> 
-    sys_clk		=> 
-    small_ram_address1	=> 
-    small_ram_data1	=> 
-    small_ram_address2	=> 
-    small_ram_data2	=> 
-    ram_address		=> 
-    ram_data		=> 
-    ram_en		=> 
+    start_conv		=> open,
+    sys_res		=> rst,
+    sys_clk		=> clk,
+    small_ram_address1	=> tp_adress2_sig,
+    small_ram_data1	=> tp_data_out2_sig,
+    small_ram_address2	=> tp_adress3_sig,
+    small_ram_data2	=> tp_data_out3_sig,
+    ram_address		=> open,
+    ram_data		=> open,
+    ram_en		=> open,
   );  
 
   -----------------------------------------------------------------------------
