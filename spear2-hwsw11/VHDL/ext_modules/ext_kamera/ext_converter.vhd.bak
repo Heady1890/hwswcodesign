@@ -56,8 +56,8 @@ architecture behaviour of converter is
     dot_g1	: std_logic_vector(7 downto 0);	
     dot_g2	: std_logic_vector(7 downto 0);	
     dot_b	: std_logic_vector(7 downto 0);	
-    addr1	: std_logic_vector(10 downto 0);
-    addr2	: std_logic_vector(10 downto 0);
+    addr1	: std_logic_vector(18 downto 0);
+    addr2	: std_logic_vector(18 downto 0);
   end record;
 
   signal r_next : reg_type;

@@ -29,7 +29,7 @@ entity read_kamera is
     sys_res : in  std_logic;
     --sys_clk : in  std_logic;
 
-    ram_address	: out std_logic_vector(18 downto 0);
+    ram_address	: out std_logic_vector(10 downto 0);
     ram_data	: out std_logic_vector(7 downto 0);
     ram_en	: out std_logic
   );  
@@ -45,7 +45,7 @@ architecture behaviour of read_kamera is
   type reg_type is record
     --Variablen für Berechnung
     state	: state_type;				--Status der State-Machine
-    index	: std_logic_vector(18 downto 0);			
+    index	: std_logic_vector(10 downto 0);			
   end record;
 
   signal r_next : reg_type;
@@ -101,9 +101,9 @@ begin
     if rising_edge(CAM_PIXCLK) then 
       if sys_res = RST_ACT then
         --Signale initialisieren
-        ram_address <= (others => '0');
-        ram_data <= (others => '0');
-        ram_en <= '0';
+        --ram_address <= (others => '0');
+        --ram_data <= (others => '0');
+        --ram_en <= '0';
       else
         r <= r_next;
       end if;

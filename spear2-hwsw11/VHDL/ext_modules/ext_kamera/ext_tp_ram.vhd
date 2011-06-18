@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity tp_ram_small is
+entity tp_ram is
   generic
   (
      ADDR_WIDTH : integer range 1 to integer'high;
@@ -16,10 +16,10 @@ entity tp_ram_small is
      wr1                           	: in std_logic;
      data_out2, data_out3          	: out std_logic_vector(DATA_WIDTH - 1 downto 0)
 );
-end entity tp_ram_small;
+end entity tp_ram;
 
 
-architecture beh of tp_ram_small is
+architecture beh of tp_ram is
   subtype RAM_ENTRY_TYPE is std_logic_vector(DATA_WIDTH - 1 downto 0);
   type RAM_TYPE is array (0 to (2 ** ADDR_WIDTH) - 1) of RAM_ENTRY_TYPE;
   signal ram : RAM_TYPE := (others => x"00");

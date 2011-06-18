@@ -55,7 +55,7 @@ package pkg_kamera is
       CAM_D		: in  std_logic_vector(11 downto 0);
       INIT_DONE		: in  std_logic;
       sys_res 		: in  std_logic;
-      ram_address	: out std_logic_vector(18 downto 0);
+      ram_address	: out std_logic_vector(10 downto 0);
       ram_data		: out std_logic_vector(7 downto 0);
       ram_en		: out std_logic
     );  
@@ -69,12 +69,12 @@ package pkg_kamera is
       sys_res 		: in  std_logic;
       sys_clk 		: in  std_logic;
 
-      small_ram_address1	: out std_logic_vector(18 downto 0);
+      small_ram_address1	: out std_logic_vector(10 downto 0);
       small_ram_data1		: in  std_logic_vector(7 downto 0);
-      small_ram_address2	: out std_logic_vector(18 downto 0);
+      small_ram_address2	: out std_logic_vector(10 downto 0);
       small_ram_data2		: in  std_logic_vector(7 downto 0);
 
-      ram_address	: out std_logic_vector(18 downto 0);
+      ram_address	: out std_logic_vector(10 downto 0);
       ram_data		: out std_logic_vector(23 downto 0);
       ram_en		: out std_logic
     );  
