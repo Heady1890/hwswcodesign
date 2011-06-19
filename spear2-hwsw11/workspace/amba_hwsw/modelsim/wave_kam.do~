@@ -1,16 +1,22 @@
 onerror {resume}
 quietly WaveActivateNextPane {} 0
 
-#add wave /top_tb_kamera/sys_clk
 add wave /top_tb_kamera/sys_res
+add wave /top_tb_kamera/sys_clk
 add wave /top_tb_kamera/cam_pixclk
 add wave /top_tb_kamera/cam_fval
 add wave /top_tb_kamera/cam_lval
 add wave /top_tb_kamera/cam_d
+add wave /top_tb_kamera/start_conv_sig
 
-add wave /top_tb_kamera/read_kamera1/*
 
+add wave /top_tb_kamera/read_kamera1/r
+add wave /top_tb_kamera/read_kamera1/r_next
+
+add wave /top_tb_kamera/tp_ram1/*
 add wave /top_tb_kamera/dp_ram1/*
+
+#add wave /top_tb_kamera/conv1/*
 
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {4475000 ps} 0}

@@ -42,15 +42,15 @@ architecture behaviour of converter is
   constant FRAME_WIDTH : integer := 640;
   constant FRAME_HEIGHT : integer := 480;
 
-  type state_type is (reset, ready, read1, read2, write1, write2, write3, write4);
+  type state_type is (reset, wait_conv, ready, read1, read2, write1, write2, write3, write4);
 
   type reg_type is record
     --Variablen für Berechnung
     state	: state_type;				--Status der State-Machine
     col_cnt	: std_logic_vector(16 downto 0);	--werden für die Adressierung benötigt
-    row_cnt	: std_logic_vector(16 downto 0);
-    row_toggle	: std_logic;		--0 = gerade Zeile(grün1, rot), 1 ungerade Zeile (grün2, blau)
-    col_toggle	: std_logic;	
+    --row_cnt	: std_logic_vector(16 downto 0);
+    --row_toggle	: std_logic;		--0 = gerade Zeile(grün1, rot), 1 ungerade Zeile (grün2, blau)
+    --col_toggle	: std_logic;	
     index	: std_logic_vector(10 downto 0);
     dot_r	: std_logic_vector(7 downto 0);	
     dot_g1	: std_logic_vector(7 downto 0);	
@@ -66,9 +66,9 @@ architecture behaviour of converter is
     --Signale initialisieren
     state => reset,
     col_cnt => (others => '0'),
-    row_cnt => (others => '0'),
-    row_toggle => '0',
-    col_toggle => '0',
+    --row_cnt => (others => '0'),
+    --row_toggle => '0',
+    --col_toggle => '0',
     index => (others => '0'),
     dot_r => (others => '0'),
     dot_g1 => (others => '0'),
@@ -92,17 +92,21 @@ begin
     case r.state is
       when reset =>
         if start_conv = '1' then
-          s.state := ready;
+          s.state := wait_conv;
           s.addr1 := r.index;
           s.addr2 := r.index + 1;
+        end if;
+
+      when wait_conv =>
+        if start_conv = '1' then
+          s.state := read1;
+          s.col_cnt := (others => '0');
+          if 
         end if;
 
       when ready =>
         s.state := read1;
         s.col_cnt := (others => '0');
-        s.row_cnt := (others => '0');
-        s.col_toggle := '0';
-        s.row_toggle := '0';
         s.index := (others => '0');
 
         small_ram_address1 <= r.addr1;
@@ -155,13 +159,8 @@ begin
         s.state := read1;
 
         s.col_cnt := r.col_cnt + 2;
-        if r.col_cnt = FRAME_WIDTH then
-          s.index := r.index + 2 + FRAME_WIDTH;
-          if r.row_cnt = FRAME_HEIGHT then
-            s.state := ready;
-          else
-            s.row_cnt := r.row_cnt + 1;
-          end if;
+        if r.col_cnt = FRAME_WIDTH - 2 then
+          s.state := wait_conv;
         else
           s.index := r.index + 2;
         end if;

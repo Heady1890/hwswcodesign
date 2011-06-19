@@ -15,7 +15,7 @@ end top_tb_kamera;
 architecture behaviour of top_tb_kamera is
 
   constant  cc    : TIME := 20 ns;
-  constant  cc2   : TIME := 41 ns;	--PIXCLK bei Prescaler 4
+  constant  cc2   : TIME := 40 ns;	--PIXCLK bei Prescaler 4
 
   signal init_done_sig    : std_logic := '0';
 
@@ -33,6 +33,8 @@ architecture behaviour of top_tb_kamera is
   signal dp_data_in1_sig	: std_logic_vector(23 downto 0);
   signal dp_data_out1_sig	: std_logic_vector(23 downto 0);
   signal dp_data_out2_sig	: std_logic_vector(23 downto 0);  
+
+  signal start_conv_sig		: std_logic;
   
     -- Camera
   signal CAM_PIXCLK	:  std_logic;
@@ -106,6 +108,24 @@ architecture behaviour of top_tb_kamera is
     );
   end component;
 
+  component converter
+    port (
+      start_conv	: in  std_logic;
+    
+      sys_res 		: in  std_logic;
+      sys_clk 		: in  std_logic;
+
+      small_ram_address1	: out std_logic_vector(11 downto 0);
+      small_ram_data1		: in  std_logic_vector(7 downto 0);
+      small_ram_address2	: out std_logic_vector(11 downto 0);
+      small_ram_data2		: in  std_logic_vector(7 downto 0);
+
+      ram_address	: out std_logic_vector(11 downto 0);
+      ram_data		: out std_logic_vector(23 downto 0);
+      ram_en		: out std_logic
+    );  
+  end component converter;
+
 begin
 
   read_kamera1 : entity work.read_kamera
@@ -117,6 +137,7 @@ begin
     CAM_FVAL	=> CAM_FVAL,
     CAM_D	=> CAM_D,
     INIT_DONE	=> init_done_sig,
+    start_conv	=> start_conv_sig,
     sys_res	=> sys_res,
     ram_address	=> tp_address1_sig,
     ram_data	=> tp_data_in1_sig,
@@ -134,7 +155,7 @@ begin
      clk	=> sys_clk,                           	
      address1	=> tp_address1_sig,
      address2	=> tp_address2_sig,
-     address3	=> tp_address2_sig,
+     address3	=> tp_address3_sig,
      data_in1   => tp_data_in1_sig,              	
      wr1        => tp_wr1_sig,             	
      data_out2	=> tp_data_out2_sig,
@@ -157,6 +178,20 @@ begin
      address2 	=> dp_address2_sig,
      data_out2 	=> dp_data_out2_sig
   );
+
+  conv1 : entity work.converter
+  port map (
+    start_conv		=> start_conv_sig,
+    sys_res		=> sys_res,
+    sys_clk		=> sys_clk,
+    small_ram_address1	=> tp_address2_sig,
+    small_ram_data1	=> tp_data_out2_sig,
+    small_ram_address2	=> tp_address3_sig,
+    small_ram_data2	=> tp_data_out3_sig,
+    ram_address		=> dp_address1_sig,
+    ram_data		=> dp_data_in1_sig,
+    ram_en		=> dp_wr1_sig
+  );  
 
   clkgen : process
   begin

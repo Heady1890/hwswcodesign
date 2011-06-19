@@ -93,28 +93,29 @@ begin
         elsif CAM_LVAL = '1' then
           r_next.state <= read_line;
 
-          ram_address <= r.index;
-          ram_data <= CAM_D(11 downto 4);
-          ram_en <= '1';
-          temp_index := r.index + 1;
-
-          if r.row = '1' then
-            if r.write_loc = '0' then
-              r_next.write_loc <= '1';
+          if r.row = '0' then
+            if r.write_loc = '1' then
+              r_next.write_loc <= '0';
               temp_index := x"500";
             else
-              r_next.write_loc <= '0';
+              r_next.write_loc <= '1';
               temp_index := x"000";
             end if;
-          else
-            start_conv <= '1';
           end if;
           r_next.row <= not r.row;
+
+          ram_address <= temp_index;
+          ram_data <= CAM_D(11 downto 4);
+          ram_en <= '1';
+          temp_index := temp_index + 1;
         end if;
 
       when read_line =>
         if CAM_LVAL = '0' then
           r_next.state <= wait_line;
+          if r.row = '0' then
+            start_conv <= '1';
+          end if;
         else
           ram_address <= r.index;
           ram_data <= CAM_D(11 downto 4);

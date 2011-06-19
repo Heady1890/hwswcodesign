@@ -16,6 +16,7 @@ use work.pkg_kamera.all;
 
 library grlib;
 use grlib.amba.all;
+use grlib.devices.all;
 
 library techmap;
 use techmap.gencomp.all;
@@ -462,7 +463,7 @@ begin
      clk	=> clk,                           	
      address1	=> tp_address1_sig,
      address2	=> tp_address2_sig,
-     address3	=> tp_address2_sig,
+     address3	=> tp_address3_sig,
      data_in1   => tp_data_in1_sig,              	
      wr1        => tp_wr1_sig,             	
      data_out2	=> tp_data_out2_sig,
