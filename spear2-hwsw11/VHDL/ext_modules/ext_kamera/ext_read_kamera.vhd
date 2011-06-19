@@ -6,6 +6,9 @@ LIBRARY IEEE;
 USE IEEE.std_logic_1164.all;
 USE work.spear_pkg.all;
 
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
 use work.pkg_camd5m_read.all;
 use work.pkg_kamera.all;
 
@@ -20,16 +23,15 @@ entity read_kamera is
     CAM_TRIGGER	: out std_logic;
     CAM_STROBE	: in  std_logic;
     CAM_FVAL	: in  std_logic;
-    CAM_D	: in std_logic_vector(11 downto 0);
+    CAM_D	: in  std_logic_vector(11 downto 0);
     
-    
-    --LED_GREEN	: out std_logic_vector(8 downto 0);
-    INIT_DONE	: in std_logic;
+    INIT_DONE	: in  std_logic;
+    start_conv	: out std_logic;
     
     sys_res : in  std_logic;
     --sys_clk : in  std_logic;
 
-    ram_address	: out std_logic_vector(10 downto 0);
+    ram_address	: out std_logic_vector(11 downto 0);
     ram_data	: out std_logic_vector(7 downto 0);
     ram_en	: out std_logic
   );  
@@ -44,27 +46,35 @@ architecture behaviour of read_kamera is
 
   type reg_type is record
     --Variablen für Berechnung
-    state	: state_type;				--Status der State-Machine
-    index	: std_logic_vector(10 downto 0);			
+    state	: state_type;		--Status der State-Machine
+    row		: std_logic;		--Besagt ob in der gerade oder ungeraden Zeile
+    write_loc	: std_logic;		--ob in den ersten oder letzten beiden Zeilen geschrieben wird
+    index	: std_logic_vector(11 downto 0);			
   end record;
 
   signal r_next : reg_type;
   signal r : reg_type := 
   (
     --Signale initialisieren
-    state => reset,
-    index => (others => '0')
+    state	=> reset,
+    row		=> '0',
+    write_loc	=> '0',
+    index	=> (others => '0')
   );
 
 begin
 
   read : process(r, CAM_LVAL, CAM_FVAL, CAM_PIXCLK, CAM_D)
+  variable temp_index	: std_logic_vector(11 downto 0);
   begin
     r_next <= r;
+
+    temp_index := r.index;
 
     ram_address <= r.index;
     ram_data <= (others => '0');
     ram_en <= '0';
+    start_conv <= '0';
 
     case r.state is
       when reset =>
@@ -82,6 +92,24 @@ begin
           r_next.state <= ready;
         elsif CAM_LVAL = '1' then
           r_next.state <= read_line;
+
+          ram_address <= r.index;
+          ram_data <= CAM_D(11 downto 4);
+          ram_en <= '1';
+          temp_index := r.index + 1;
+
+          if r.row = '1' then
+            if r.write_loc = '0' then
+              r_next.write_loc <= '1';
+              temp_index := x"500";
+            else
+              r_next.write_loc <= '0';
+              temp_index := x"000";
+            end if;
+          else
+            start_conv <= '1';
+          end if;
+          r_next.row <= not r.row;
         end if;
 
       when read_line =>
@@ -91,8 +119,11 @@ begin
           ram_address <= r.index;
           ram_data <= CAM_D(11 downto 4);
           ram_en <= '1';
+          temp_index := r.index + 1;
         end if;
       end case;
+
+    r_next.index <= temp_index;
   end process;
 
 
@@ -101,9 +132,7 @@ begin
     if rising_edge(CAM_PIXCLK) then 
       if sys_res = RST_ACT then
         --Signale initialisieren
-        --ram_address <= (others => '0');
-        --ram_data <= (others => '0');
-        --ram_en <= '0';
+        
       else
         r <= r_next;
       end if;

@@ -1,0 +1,416 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim
+Eahbmst
+Z1 w1307454584
+Z2 DPx7 techmap 7 gencomp 0 22 UGe8K;c=a?h3=;oGYiebG1
+Z3 DPx7 gaisler 4 misc 0 22 heN0@k0_29GiOoMlWG1f60
+Z4 DPx5 grlib 7 devices 0 22 7OXS[_3O=CCzCY8=SaHFj1
+Z5 DPx5 grlib 7 version 0 22 S0L_M<6=Y]>cAa^NR0bR:2
+Z6 DPx5 grlib 6 stdlib 0 22 1TdkUT3:2Z@aWRHgC_3:]2
+Z7 DPx3 std 6 textio 0 22 m2KQDRRhmF833<<DjYdL70
+Z8 DPx4 ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
+Z9 DPx5 grlib 4 amba 0 22 1bVKkflXCG@EOO2WeR7;E2
+Z10 DPx4 ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+Z11 d/homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim
+Z12 8../../../VHDL/amba_modules/gaisler/misc/ahbmst.vhd
+Z13 F../../../VHDL/amba_modules/gaisler/misc/ahbmst.vhd
+l0
+L34
+Z14 VDYnO?_>:h4NNhBA]7EPUS0
+Z15 OL;C;6.6d;45
+32
+Z16 o-work gaisler
+Z17 tExplicit 1
+Z18 !s100 2UY`FI@3lojSAhPJgB4oY0
+Artl
+R2
+R3
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+Z19 DEx4 work 6 ahbmst 0 22 DYnO?_>:h4NNhBA]7EPUS0
+l68
+L53
+Z20 VJK_OEMGRK6REZn@JcfLZ_1
+R15
+32
+Z21 Mx9 4 ieee 14 std_logic_1164
+Z22 Mx8 5 grlib 4 amba
+Z23 Mx7 4 ieee 11 numeric_std
+Z24 Mx6 3 std 6 textio
+Z25 Mx5 5 grlib 6 stdlib
+Z26 Mx4 5 grlib 7 version
+Z27 Mx3 5 grlib 7 devices
+Z28 Mx2 7 gaisler 4 misc
+Z29 Mx1 7 techmap 7 gencomp
+R16
+R17
+Z30 !s100 >TBoRPiGC1OTkDO>JA=j?0
+Eapbvga
+R1
+Z31 DPx7 gaisler 15 charrom_package 0 22 P9KAQM>Y422Y]GVTX:hiZ2
+R3
+R2
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+Z32 8../../../VHDL/amba_modules/gaisler/misc/apbvga.vhd
+Z33 F../../../VHDL/amba_modules/gaisler/misc/apbvga.vhd
+l0
+L37
+Z34 VlZZajLcCiGe^oTXK>gFN62
+R15
+32
+R16
+R17
+Z35 !s100 IDEj6K0hliYB?Y?ORT66H2
+Artl
+R31
+R3
+R2
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+Z36 DEx4 work 6 apbvga 0 22 lZZajLcCiGe^oTXK>gFN62
+l124
+L53
+Z37 VYmOQB@^njA0BJS@;UU?ai0
+R15
+32
+Z38 Mx10 4 ieee 14 std_logic_1164
+Z39 Mx9 5 grlib 4 amba
+Z40 Mx8 4 ieee 11 numeric_std
+Z41 Mx7 3 std 6 textio
+Z42 Mx6 5 grlib 6 stdlib
+Z43 Mx5 5 grlib 7 version
+Z44 Mx4 5 grlib 7 devices
+Z45 Mx3 7 techmap 7 gencomp
+R28
+Z46 Mx1 7 gaisler 15 charrom_package
+R16
+R17
+Z47 !s100 8O=XkLSkJTJnCYX@5B?DN1
+Echarrom
+R1
+R5
+R7
+R8
+R6
+R10
+R11
+Z48 8../../../VHDL/amba_modules/gaisler/misc/charrom.vhd
+Z49 F../../../VHDL/amba_modules/gaisler/misc/charrom.vhd
+l0
+L29
+Z50 VanSJ=9z;1OQT6Lcz6z?zI2
+R15
+32
+R16
+R17
+Z51 !s100 825F[]@od5BlJ`Uz[R<VU2
+Artl
+R5
+R7
+R8
+R6
+R10
+Z52 DEx4 work 7 charrom 0 22 anSJ=9z;1OQT6Lcz6z?zI2
+l42
+L37
+Z53 VegoPf<IU2e1FP`XGa2KN;1
+R15
+32
+Z54 Mx5 4 ieee 14 std_logic_1164
+Z55 Mx4 5 grlib 6 stdlib
+Z56 Mx3 4 ieee 11 numeric_std
+Z57 Mx2 3 std 6 textio
+Z58 Mx1 5 grlib 7 version
+R16
+R17
+Z59 !s100 93j156eaR^o3IjDNMmDHP0
+Pcharrom_package
+R5
+R7
+R8
+R6
+R10
+R1
+R11
+Z60 8../../../VHDL/amba_modules/gaisler/misc/charrom_package.vhd
+Z61 F../../../VHDL/amba_modules/gaisler/misc/charrom_package.vhd
+l0
+L30
+Z62 VP9KAQM>Y422Y]GVTX:hiZ2
+R15
+32
+R54
+R55
+R56
+R57
+R58
+R16
+R17
+Z63 !s100 cJEeR84S[B==:iPD?YT2U0
+Pmemctrl
+Z64 DPx87 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/techmap 7 gencomp 0 22 UGe8K;c=a?h3=;oGYiebG1
+Z65 DPx85 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 7 version 0 22 S0L_M<6=Y]>cAa^NR0bR:2
+Z66 DPx85 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 6 stdlib 0 22 1TdkUT3:2Z@aWRHgC_3:]2
+Z67 DPx16 __model_tech/std 6 textio 0 22 m2KQDRRhmF833<<DjYdL70
+Z68 DPx17 __model_tech/ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
+Z69 DPx85 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 4 amba 0 22 1bVKkflXCG@EOO2WeR7;E2
+Z70 DPx17 __model_tech/ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+32
+Z71 Mx7 17 __model_tech/ieee 14 std_logic_1164
+Z72 Mx6 85 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 4 amba
+Z73 Mx5 17 __model_tech/ieee 11 numeric_std
+Z74 Mx4 16 __model_tech/std 6 textio
+Z75 Mx3 85 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 6 stdlib
+Z76 Mx2 85 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 7 version
+Z77 Mx1 87 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/techmap 7 gencomp
+R1
+R11
+Z78 8../../../VHDL/amba_modules/gaisler/memctrl/memctrl.vhd
+Z79 F../../../VHDL/amba_modules/gaisler/memctrl/memctrl.vhd
+l0
+L33
+Z80 VfC0]JB4IYRanAlGBBfJHR3
+R15
+R16
+R17
+Z81 !s100 GH4:1TE<:Bl^0m9ZBd<l;3
+Pmisc
+R64
+Z82 DPx85 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 7 devices 0 22 7OXS[_3O=CCzCY8=SaHFj1
+R65
+R66
+R67
+R68
+R69
+R70
+32
+b1
+Z83 Mx8 17 __model_tech/ieee 14 std_logic_1164
+Z84 Mx7 85 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 4 amba
+Z85 Mx6 17 __model_tech/ieee 11 numeric_std
+Z86 Mx5 16 __model_tech/std 6 textio
+Z87 Mx4 85 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 6 stdlib
+Z88 Mx3 85 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 7 version
+Z89 Mx2 85 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 7 devices
+R77
+R1
+R11
+Z90 8../../../VHDL/amba_modules/gaisler/misc/misc.vhd
+Z91 F../../../VHDL/amba_modules/gaisler/misc/misc.vhd
+l0
+L36
+Z92 VheN0@k0_29GiOoMlWG1f60
+R15
+b1
+R16
+R17
+Z93 !s100 CIK`gMhJk7CheSDV8mR5S2
+Bbody
+Z94 DBx87 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/gaisler 4 misc 0 22 heN0@k0_29GiOoMlWG1f60
+R64
+R82
+R65
+R66
+R67
+R68
+R69
+R70
+32
+R83
+R84
+R85
+R86
+R87
+R88
+R89
+R77
+l0
+L738
+Z95 V6MoNmOlhXYN>0hW_7GQhi1
+R15
+R16
+R17
+nbody
+Z96 !s100 ^>OOIO:eaTd:z7Gd:7NW40
+Esdctrl
+R1
+R2
+Z97 DPx7 gaisler 7 memctrl 0 22 fC0]JB4IYRanAlGBBfJHR3
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+Z98 8../../../VHDL/amba_modules/gaisler/memctrl/sdctrl.vhd
+Z99 F../../../VHDL/amba_modules/gaisler/memctrl/sdctrl.vhd
+l0
+L35
+Z100 VOmVHMDonZzfKXIdT:H<a>2
+R15
+32
+R16
+R17
+Z101 !s100 Rgb`zFoBO:z3OY@]JA4]e0
+Artl
+Z102 DEx85 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 14 report_version 0 22 G]_>48[U?2z;48SZ>SkTL1
+R64
+Z103 DPx87 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/gaisler 7 memctrl 0 22 fC0]JB4IYRanAlGBBfJHR3
+R82
+R65
+R66
+R67
+R68
+R69
+R70
+Z104 DEx87 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/gaisler 6 sdctrl 0 22 OmVHMDonZzfKXIdT:H<a>2
+32
+Z105 Mx9 17 __model_tech/ieee 14 std_logic_1164
+Z106 Mx8 85 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 4 amba
+Z107 Mx7 17 __model_tech/ieee 11 numeric_std
+Z108 Mx6 16 __model_tech/std 6 textio
+Z109 Mx5 85 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 6 stdlib
+Z110 Mx4 85 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 7 version
+Z111 Mx3 85 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 7 devices
+Z112 Mx2 87 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/gaisler 7 memctrl
+R77
+l155
+L61
+Z113 Vz<XJ9;Z0GSAZ_3h36Tg1Q3
+R15
+R16
+R17
+Z114 !s100 jn4doP?e7m2@Z9omB^i4M1
+Esvgactrl
+R1
+R3
+R2
+R4
+R5
+R6
+R7
+R8
+R9
+R10
+R11
+Z115 8../../../VHDL/amba_modules/gaisler/misc/svgactrl.vhd
+Z116 F../../../VHDL/amba_modules/gaisler/misc/svgactrl.vhd
+l0
+L36
+Z117 V6W`T:149A?>XBC6:5`;301
+R15
+32
+R16
+R17
+Z118 !s100 ^R:5Gk<Fjd7GnYR[AbBA12
+Artl
+Z119 DEx84 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/work 10 altsyncram 0 22 IfQV3b_IUD=5e_ZkRIlc50
+Z120 DPx84 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/work 22 altera_device_families 0 22 hOS8S0K@m3L[cBBTGW55J0
+Z121 DPx84 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/work 24 altera_common_conversion 0 22 H11C:meBcdRbl0kYgnEzh2
+Z122 DPx17 __model_tech/ieee 18 std_logic_unsigned 0 22 hEMVMlaNCR^<OOoVNV;m90
+Z123 DPx17 __model_tech/ieee 15 std_logic_arith 0 22 GJbAT?7@hRQU9IQ702DT]2
+Z124 DEx87 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/techmap 17 altera_syncram_dp 0 22 [X6:81o8=HRdgd78>ReeX0
+Z125 DPx87 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/techmap 6 allmem 0 22 UYWKYEXFZ3aCN_HhmiVkc1
+Z126 DEx87 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/gaisler 6 ahbmst 0 22 DYnO?_>:h4NNhBA]7EPUS0
+Z127 DEx87 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/gaisler 10 syncram_2p 0 22 G4m0jDRKP0n1]=[m9g2bE3
+Z128 DPx87 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/gaisler 4 misc 0 22 heN0@k0_29GiOoMlWG1f60
+R64
+R82
+R65
+R66
+R67
+R68
+R69
+R70
+Z129 DEx87 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/gaisler 8 svgactrl 0 22 6W`T:149A?>XBC6:5`;301
+32
+Z130 Mx14 17 __model_tech/ieee 14 std_logic_1164
+Z131 Mx13 85 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 4 amba
+Z132 Mx12 17 __model_tech/ieee 11 numeric_std
+Z133 Mx11 16 __model_tech/std 6 textio
+Z134 Mx10 85 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 6 stdlib
+Z135 Mx9 85 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 7 version
+Z136 Mx8 85 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/grlib 7 devices
+Z137 Mx7 87 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/techmap 7 gencomp
+Z138 Mx6 87 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/gaisler 4 misc
+Z139 Mx5 87 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/techmap 6 allmem
+Z140 Mx4 17 __model_tech/ieee 15 std_logic_arith
+Z141 Mx3 17 __model_tech/ieee 18 std_logic_unsigned
+Z142 Mx2 84 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/work 24 altera_common_conversion
+Z143 Mx1 84 /homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim/work 22 altera_device_families
+l165
+L68
+Z144 VRW>?:gMLb[Mcm2HU^YAl`2
+R15
+R16
+R17
+Z145 !s100 lU61]`BOWRb_[UFQYcV2C3
+Esyncram_2p
+R1
+Z146 DPx7 techmap 6 allmem 0 22 UYWKYEXFZ3aCN_HhmiVkc1
+R5
+R6
+R7
+R8
+R9
+R2
+R10
+R11
+Z147 8../../../VHDL/amba_modules/techmap/maps/syncram_2p.vhd
+Z148 F../../../VHDL/amba_modules/techmap/maps/syncram_2p.vhd
+l0
+L31
+Z149 VG4m0jDRKP0n1]=[m9g2bE3
+R15
+32
+R16
+R17
+Z150 !s100 OJfJBn[aD6SGUg]6gIm`>3
+Artl
+R146
+R5
+R6
+R7
+R8
+R9
+R2
+R10
+Z151 DEx4 work 10 syncram_2p 0 22 G4m0jDRKP0n1]=[m9g2bE3
+l50
+L45
+Z152 VE6Eb7^aSeN_OYH9^[39]b3
+R15
+32
+Z153 Mx8 4 ieee 14 std_logic_1164
+Z154 Mx7 7 techmap 7 gencomp
+Z155 Mx6 5 grlib 4 amba
+Z156 Mx5 4 ieee 11 numeric_std
+Z157 Mx4 3 std 6 textio
+Z158 Mx3 5 grlib 6 stdlib
+Z159 Mx2 5 grlib 7 version
+Z160 Mx1 7 techmap 6 allmem
+R16
+R17
+Z161 !s100 NB;h:YNS1cnzEO2SI<efI1

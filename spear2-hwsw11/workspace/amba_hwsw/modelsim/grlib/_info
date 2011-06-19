@@ -2,28 +2,53 @@ m255
 K3
 13
 cModel Technology
-Z0 d/homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim
+d/homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim
 Eahbctrl
-Z1 w1209024930
-Z2 DPx5 grlib 7 devices 0 22 7OXS[_3O=CCzCY8=SaHFj1
-Z3 DPx5 grlib 4 amba 0 22 1bVKkflXCG@EOO2WeR7;E2
-Z4 DPx5 grlib 7 version 0 22 S0L_M<6=Y]>cAa^NR0bR:2
-Z5 DPx3 std 6 textio 0 22 m2KQDRRhmF833<<DjYdL70
-Z6 DPx4 ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
-Z7 DPx5 grlib 6 stdlib 0 22 1TdkUT3:2Z@aWRHgC_3:]2
-Z8 DPx4 ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
-Z9 d/homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim
-Z10 8../../../VHDL/amba_modules/grlib/amba/ahbctrl.vhd
-Z11 F../../../VHDL/amba_modules/grlib/amba/ahbctrl.vhd
+Z0 w1307454584
+Z1 DPx5 grlib 7 devices 0 22 7OXS[_3O=CCzCY8=SaHFj1
+Z2 DPx5 grlib 4 amba 0 22 1bVKkflXCG@EOO2WeR7;E2
+Z3 DPx5 grlib 7 version 0 22 S0L_M<6=Y]>cAa^NR0bR:2
+Z4 DPx3 std 6 textio 0 22 m2KQDRRhmF833<<DjYdL70
+Z5 DPx4 ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
+Z6 DPx5 grlib 6 stdlib 0 22 1TdkUT3:2Z@aWRHgC_3:]2
+Z7 DPx4 ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+Z8 d/homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim
+Z9 8../../../VHDL/amba_modules/grlib/amba/ahbctrl.vhd
+Z10 F../../../VHDL/amba_modules/grlib/amba/ahbctrl.vhd
 l0
 L36
 VIU_=E[]00n?nj>A[PKe`^0
-Z12 OL;C;6.6d;45
+Z11 OL;C;6.6d;45
 32
-Z13 o-work grlib
-Z14 tExplicit 1
+Z12 o-work grlib
+Z13 tExplicit 1
 !s100 N<`QZi7mdONb[?Q^?^le81
 Artl
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+DEx4 work 7 ahbctrl 0 22 IU_=E[]00n?nj>A[PKe`^0
+l292
+L76
+VFMkLHI;4GSlB;00Q@0ak:3
+R11
+32
+Z14 Mx7 4 ieee 14 std_logic_1164
+Mx6 5 grlib 6 stdlib
+Z15 Mx5 4 ieee 11 numeric_std
+Z16 Mx4 3 std 6 textio
+Mx3 5 grlib 7 version
+Mx2 5 grlib 4 amba
+Z17 Mx1 5 grlib 7 devices
+R12
+R13
+!s100 >D44icMonQ`8CW`ONc>0I3
+Eahbdefmst
+Z18 w1307454584
 R2
 R3
 R4
@@ -31,53 +56,28 @@ R5
 R6
 R7
 R8
-DEx4 work 7 ahbctrl 0 22 IU_=E[]00n?nj>A[PKe`^0
-l292
-L76
-VFMkLHI;4GSlB;00Q@0ak:3
-R12
-32
-Z15 Mx7 4 ieee 14 std_logic_1164
-Mx6 5 grlib 6 stdlib
-Z16 Mx5 4 ieee 11 numeric_std
-Z17 Mx4 3 std 6 textio
-Mx3 5 grlib 7 version
-Mx2 5 grlib 4 amba
-Z18 Mx1 5 grlib 7 devices
-R13
-R14
-!s100 >D44icMonQ`8CW`ONc>0I3
-Eahbdefmst
-R1
-R3
-R4
-R5
-R6
-R7
-R8
-R9
 Z19 8../../../VHDL/amba_modules/grlib/amba/defmst.vhd
 Z20 F../../../VHDL/amba_modules/grlib/amba/defmst.vhd
 l0
 L32
 Vb>BBXlGQleZL2aejh`U>M3
-R12
+R11
 32
+R12
 R13
-R14
 !s100 nk4dhWU3leC[Bm^MC2[3k0
 Artl
+R2
 R3
 R4
 R5
 R6
 R7
-R8
 DEx4 work 9 ahbdefmst 0 22 b>BBXlGQleZL2aejh`U>M3
 l39
 L38
 V8Xf2aSANMFEY4]ZTP`MP:3
-R12
+R11
 32
 Z21 Mx6 4 ieee 14 std_logic_1164
 Mx5 5 grlib 6 stdlib
@@ -85,214 +85,214 @@ Z22 Mx4 4 ieee 11 numeric_std
 Z23 Mx3 3 std 6 textio
 Z24 Mx2 5 grlib 7 version
 Mx1 5 grlib 4 amba
+R12
 R13
-R14
 !s100 gFeP_[iIGVdbVAMFiG`iA0
 Pamba
-R4
-R7
-R5
+R3
 R6
+R4
+R5
+R7
+R18
 R8
-Z25 w1300986766
-R9
-Z26 8../../../VHDL/amba_modules/grlib/amba/amba.vhd
-Z27 F../../../VHDL/amba_modules/grlib/amba/amba.vhd
+Z25 8../../../VHDL/amba_modules/grlib/amba/amba.vhd
+Z26 F../../../VHDL/amba_modules/grlib/amba/amba.vhd
 l0
 L36
 V1bVKkflXCG@EOO2WeR7;E2
-R12
+R11
 32
 b1
-Z28 Mx5 4 ieee 14 std_logic_1164
+Z27 Mx5 4 ieee 14 std_logic_1164
 R22
 R23
-Z29 Mx2 5 grlib 6 stdlib
-Z30 Mx1 5 grlib 7 version
+Z28 Mx2 5 grlib 6 stdlib
+Z29 Mx1 5 grlib 7 version
+R12
 R13
-R14
 !s100 ^[84PBRRK]ALcNXUJM0F@2
 Bbody
 DBx4 work 4 amba 0 22 1bVKkflXCG@EOO2WeR7;E2
-R4
-R7
-R5
+R3
 R6
-R8
+R4
+R5
+R7
 l0
 L414
 V[QL<T`6@8^HI4`3AkAb>I0
-R12
+R11
 32
-R28
+R27
 R22
 R23
+R28
 R29
-R30
+R12
 R13
-R14
 nbody
 !s100 R;Bz6V2Ej`[co6_hXfMzO1
 Eapbctrl
+R18
 R1
-R2
-R4
-R7
-R5
-R6
 R3
+R6
+R4
+R5
+R2
+R7
 R8
-R9
-Z31 8../../../VHDL/amba_modules/grlib/amba/apbctrl.vhd
-Z32 F../../../VHDL/amba_modules/grlib/amba/apbctrl.vhd
+Z30 8../../../VHDL/amba_modules/grlib/amba/apbctrl.vhd
+Z31 F../../../VHDL/amba_modules/grlib/amba/apbctrl.vhd
 l0
 L35
 VTkRV8i7WGHKHAU;?3ZoLF3
-R12
+R11
 32
+R12
 R13
-R14
 !s100 O`Z<2L?DB8<V7mj`>H1Bc3
 Artl
-R2
-R4
-R7
-R5
-R6
+R1
 R3
-R8
+R6
+R4
+R5
+R2
+R7
 DEx4 work 7 apbctrl 0 22 TkRV8i7WGHKHAU;?3ZoLF3
 l88
 L57
 VS6:cL<UOGon>hB5XQI[4T3
 !s100 ?c^4AWl^=l9E7OdMC:N=U2
-R12
+R11
 32
-R15
+R14
 Mx6 5 grlib 4 amba
+R15
 R16
-R17
 Mx3 5 grlib 6 stdlib
 R24
-R18
+R17
+R12
 R13
-R14
 Pdevices
-R4
-R7
-R5
-R6
 R3
+R6
+R4
+R5
+R2
+R7
+R18
 R8
-R1
-R9
 8../../../VHDL/amba_modules/grlib/amba/devices.vhd
 F../../../VHDL/amba_modules/grlib/amba/devices.vhd
 l0
 L33
 V7OXS[_3O=CCzCY8=SaHFj1
-R12
+R11
 32
 R21
 Mx5 5 grlib 4 amba
 R22
 R23
+R28
 R29
-R30
+R12
 R13
-R14
 !s100 YahU:M_KiX]TP5nYONI>S2
 Ereport_version
-R1
+R18
+R3
 R4
 R5
 R6
 R7
 R8
-R9
-Z33 8../../../VHDL/amba_modules/grlib/util/util.vhd
-Z34 F../../../VHDL/amba_modules/grlib/util/util.vhd
+Z32 8../../../VHDL/amba_modules/grlib/util/util.vhd
+Z33 F../../../VHDL/amba_modules/grlib/util/util.vhd
 l0
 L32
 VG]_>48[U?2z;48SZ>SkTL1
 !s100 JN0[^`RJ8NL[amlYgX2aE2
-R12
+R11
 32
+R12
 R13
-R14
 Abeh
+R3
 R4
 R5
 R6
 R7
-R8
-Z35 DEx4 work 14 report_version 0 22 G]_>48[U?2z;48SZ>SkTL1
+Z34 DEx4 work 14 report_version 0 22 G]_>48[U?2z;48SZ>SkTL1
 l37
 L36
-Z36 VVO;c[K31S]>J=IK2b:Bdm3
-Z37 !s100 JK<2oWcWm^A<5[BO0gc4X1
-R12
+Z35 VVO;c[K31S]>J=IK2b:Bdm3
+Z36 !s100 JK<2oWcWm^A<5[BO0gc4X1
+R11
 32
-R28
-Z38 Mx4 5 grlib 6 stdlib
-Z39 Mx3 4 ieee 11 numeric_std
-Z40 Mx2 3 std 6 textio
-R30
+R27
+Z37 Mx4 5 grlib 6 stdlib
+Z38 Mx3 4 ieee 11 numeric_std
+Z39 Mx2 3 std 6 textio
+R29
+R12
 R13
-R14
 Pstdlib
+R3
 R4
 R5
-R6
+R7
+R18
 R8
-R1
-R9
-Z41 8../../../VHDL/amba_modules/grlib/stdlib/stdlib.vhd
-Z42 F../../../VHDL/amba_modules/grlib/stdlib/stdlib.vhd
+Z40 8../../../VHDL/amba_modules/grlib/stdlib/stdlib.vhd
+Z41 F../../../VHDL/amba_modules/grlib/stdlib/stdlib.vhd
 l0
 L24
 V1TdkUT3:2Z@aWRHgC_3:]2
-R12
+R11
 32
 b1
-Z43 Mx4 4 ieee 14 std_logic_1164
+Z42 Mx4 4 ieee 14 std_logic_1164
+R38
 R39
-R40
-R30
+R29
+R12
 R13
-R14
 !s100 W[05nIcVff5R:8gILIhi`0
 Bbody
 DBx4 work 6 stdlib 0 22 1TdkUT3:2Z@aWRHgC_3:]2
+R3
 R4
 R5
-R6
-R8
+R7
 l0
 L98
 VSe;]Oiii]CH7N<jLCP1hE0
-R12
+R11
 32
-R43
+R42
+R38
 R39
-R40
-R30
+R29
+R12
 R13
-R14
 nbody
 !s100 X34:>>X[2lEjQJ1cQPP0[2
 Pversion
-R5
-R1
-R9
+R4
+R18
+R8
 8../../../VHDL/amba_modules/grlib/stdlib/version.vhd
 F../../../VHDL/amba_modules/grlib/stdlib/version.vhd
 l0
 L4
 VS0L_M<6=Y]>cAa^NR0bR:2
-R12
+R11
 32
-Z44 Mx1 3 std 6 textio
+Z43 Mx1 3 std 6 textio
+R12
 R13
-R14
 !s100 n^A@6gTEYVKX2iiMT5@7`1

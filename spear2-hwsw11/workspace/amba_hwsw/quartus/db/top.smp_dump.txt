@@ -1,4 +1,22 @@
 
+State Machine - |top|converter:con1|r.state
+Name r.state.write4 r.state.write3 r.state.write2 r.state.write1 r.state.read2 r.state.read1 r.state.ready r.state.reset 
+r.state.reset 0 0 0 0 0 0 0 0 
+r.state.ready 0 0 0 0 0 0 1 1 
+r.state.read1 0 0 0 0 0 1 0 1 
+r.state.read2 0 0 0 0 1 0 0 1 
+r.state.write1 0 0 0 1 0 0 0 1 
+r.state.write2 0 0 1 0 0 0 0 1 
+r.state.write3 0 1 0 0 0 0 0 1 
+r.state.write4 1 0 0 0 0 0 0 1 
+
+State Machine - |top|read_kamera:kam1|r.state
+Name r.state.read_line r.state.wait_line r.state.ready r.state.reset 
+r.state.reset 0 0 0 0 
+r.state.ready 0 0 1 1 
+r.state.wait_line 0 1 0 1 
+r.state.read_line 1 0 0 1 
+
 State Machine - |top|ext_camd5m_init:camd5m_init_unit|sig.state
 Name sig.state.end_state sig.state.stop_bit sig.state.error_state sig.state.write_value2 sig.state.write_value1 sig.state.write_reg sig.state.wait_to_ack_value2 sig.state.wait_to_ack_value1 sig.state.wait_to_ack_reg sig.state.wait_to_ack_adr sig.state.write_slave_adr sig.state.start_bit sig.state.idle_second_round sig.state.idle 
 sig.state.idle 0 0 0 0 0 0 0 0 0 0 0 0 0 0 

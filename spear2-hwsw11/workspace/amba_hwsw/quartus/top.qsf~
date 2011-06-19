@@ -244,12 +244,22 @@ set_global_assignment -name VHDL_FILE ../VHDL/top.vhd
 set_global_assignment -name SDC_FILE top.sdc
 set_global_assignment -name QIP_FILE ../VHDL/altera_pll.qip
 
-#### added by me
+#### SIMON
 
-set_global_assignment -name VHDL_FILE ../../../VHDL/ext_modules/ext_CamD5m/ext_CamD5m.vhd
-set_global_assignment -name VHDL_FILE ../../../VHDL/ext_modules/ext_CamD5m/ext_CamD5m_ent.vhd
-set_global_assignment -name VHDL_FILE ../../../VHDL/ext_modules/ext_CamD5m/pkg_CamD5m.vhd
+set_global_assignment -name VHDL_FILE ../../../VHDL/ext_modules/ext_CamD5m/ext_CamD5m_init.vhd
+set_global_assignment -name VHDL_FILE ../../../VHDL/ext_modules/ext_CamD5m/ext_CamD5m_init_ent.vhd
+set_global_assignment -name VHDL_FILE ../../../VHDL/ext_modules/ext_CamD5m/pkg_CamD5m_init.vhd
+set_global_assignment -name VHDL_FILE ../../../VHDL/ext_modules/ext_CamD5m/ext_CamD5m_read.vhd
+set_global_assignment -name VHDL_FILE ../../../VHDL/ext_modules/ext_CamD5m/ext_CamD5m_read_ent.vhd
+set_global_assignment -name VHDL_FILE ../../../VHDL/ext_modules/ext_CamD5m/pkg_CamD5m_read.vhd
 
+## LUKAS
+
+set_global_assignment -name VHDL_FILE ../../../VHDL/ext_modules/ext_kamera/pkg_kamera.vhd
+set_global_assignment -name VHDL_FILE ../../../VHDL/ext_modules/ext_kamera/ext_dp_ram.vhd
+set_global_assignment -name VHDL_FILE ../../../VHDL/ext_modules/ext_kamera/ext_tp_ram.vhd
+set_global_assignment -name VHDL_FILE ../../../VHDL/ext_modules/ext_kamera/ext_read_kamera.vhd
+set_global_assignment -name VHDL_FILE ../../../VHDL/ext_modules/ext_kamera/ext_converter.vhd
 
 #THDB-HTG J2.1, HSMC_CLKINn2
 #set_location_assignment PIN_Y28 -to LTM_ADC_PENIRQ_n
@@ -395,6 +405,92 @@ set_location_assignment PIN_K27 -to CAM_FVAL
 set_location_assignment PIN_K21 -to CAM_D[3]
 set_location_assignment PIN_H23 -to CAM_D[7]
 
+#Leds
+set_location_assignment PIN_G19 -to LED_RED[0]
+set_location_assignment PIN_F19 -to LED_RED[1]
+set_location_assignment PIN_E19 -to LED_RED[2]
+set_location_assignment PIN_F21 -to LED_RED[3]
+set_location_assignment PIN_F18 -to LED_RED[4]
+set_location_assignment PIN_E18 -to LED_RED[5]
+set_location_assignment PIN_J19 -to LED_RED[6]
+set_location_assignment PIN_H19 -to LED_RED[7]
+set_location_assignment PIN_J17 -to LED_RED[8]
+set_location_assignment PIN_G17 -to LED_RED[9]
+set_location_assignment PIN_J15 -to LED_RED[10]
+set_location_assignment PIN_H16 -to LED_RED[11]
+set_location_assignment PIN_J16 -to LED_RED[12]
+set_location_assignment PIN_H17 -to LED_RED[13]
+set_location_assignment PIN_F15 -to LED_RED[14]
+set_location_assignment PIN_G15 -to LED_RED[15]
+set_location_assignment PIN_G16 -to LED_RED[16]
+set_location_assignment PIN_H15 -to LED_RED[17]
+set_location_assignment PIN_E21 -to LED_GREEN[0]
+set_location_assignment PIN_E22 -to LED_GREEN[1]
+set_location_assignment PIN_E25 -to LED_GREEN[2]
+set_location_assignment PIN_E24 -to LED_GREEN[3]
+set_location_assignment PIN_H21 -to LED_GREEN[4]
+set_location_assignment PIN_G20 -to LED_GREEN[5]
+set_location_assignment PIN_G22 -to LED_GREEN[6]
+set_location_assignment PIN_G21 -to LED_GREEN[7]
+set_location_assignment PIN_F17 -to LED_GREEN[8]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_RED[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_RED[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_RED[2]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_RED[3]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_RED[4]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_RED[5]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_RED[6]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_RED[7]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_RED[8]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_RED[9]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_RED[10]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_RED[11]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_RED[12]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_RED[13]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_RED[14]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_RED[15]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_RED[16]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_RED[17]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_GREEN[0]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_GREEN[1]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_GREEN[2]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_GREEN[3]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_GREEN[4]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_GREEN[5]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_GREEN[6]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_GREEN[7]
+set_instance_assignment -name IO_STANDARD "2.5 V" -to LED_GREEN[8]
+
+
+set_location_assignment PIN_AB22 -to GPIO[0]
+set_location_assignment PIN_AC15 -to GPIO[1]
+set_location_assignment PIN_AB21 -to GPIO[2]
+set_location_assignment PIN_Y17 -to GPIO[3]
+set_location_assignment PIN_AC21 -to GPIO[4]
+set_location_assignment PIN_Y16 -to GPIO[5]
+set_location_assignment PIN_AD21 -to GPIO[6]
+set_location_assignment PIN_AE16 -to GPIO[7]
+set_location_assignment PIN_AD15 -to GPIO[8]
+set_location_assignment PIN_AE15 -to GPIO[9]
+set_location_assignment PIN_AC19 -to GPIO[10]
+set_location_assignment PIN_AF16 -to GPIO[11]
+set_location_assignment PIN_AD19 -to GPIO[12]
+set_location_assignment PIN_AF15 -to GPIO[13]
+set_location_assignment PIN_AF24 -to GPIO[14]
+set_location_assignment PIN_AE21 -to GPIO[15]
+set_location_assignment PIN_AF25 -to GPIO[16]
+set_location_assignment PIN_AC22 -to GPIO[17]
+set_location_assignment PIN_AE22 -to GPIO[18]
+set_location_assignment PIN_AF21 -to GPIO[19]
+set_location_assignment PIN_AF22 -to GPIO[20]
+set_location_assignment PIN_AD22 -to GPIO[21]
+set_location_assignment PIN_AG25 -to GPIO[22]
+set_location_assignment PIN_AD25 -to GPIO[23]
+set_location_assignment PIN_AH25 -to GPIO[24]
+set_location_assignment PIN_AE25 -to GPIO[25]
+set_location_assignment PIN_AG22 -to GPIO[26]
+set_location_assignment PIN_AE24 -to GPIO[27]
+set_location_assignment PIN_AH22 -to GPIO[28]
 
 
 
@@ -403,5 +499,6 @@ set_location_assignment PIN_H23 -to CAM_D[7]
 
 
 
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+
 set_global_assignment -name MISC_FILE "/homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/quartus/top.dpf"
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

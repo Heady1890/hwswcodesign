@@ -23,12 +23,12 @@ entity converter is
     sys_res : in  std_logic;
     sys_clk : in  std_logic;
 
-    small_ram_address1	: out std_logic_vector(10 downto 0);
+    small_ram_address1	: out std_logic_vector(11 downto 0);
     small_ram_data1	: in  std_logic_vector(7 downto 0);
-    small_ram_address2	: out std_logic_vector(10 downto 0);
+    small_ram_address2	: out std_logic_vector(11 downto 0);
     small_ram_data2	: in  std_logic_vector(7 downto 0);
 
-    ram_address	: out std_logic_vector(10 downto 0);
+    ram_address	: out std_logic_vector(11 downto 0);
     ram_data	: out std_logic_vector(23 downto 0);
     ram_en	: out std_logic
   );  
@@ -42,7 +42,7 @@ architecture behaviour of converter is
   constant FRAME_WIDTH : integer := 640;
   constant FRAME_HEIGHT : integer := 480;
 
-  type state_type is (reset, ready, read1, read2, write1, write2, write3, write4);
+  type state_type is (reset, pre_ready, ready, read1, read2, write1, write2, write3, write4);
 
   type reg_type is record
     --Variablen für Berechnung
@@ -51,13 +51,13 @@ architecture behaviour of converter is
     row_cnt	: std_logic_vector(16 downto 0);
     row_toggle	: std_logic;		--0 = gerade Zeile(grün1, rot), 1 ungerade Zeile (grün2, blau)
     col_toggle	: std_logic;	
-    index	: std_logic_vector(10 downto 0);
+    index	: std_logic_vector(11 downto 0);
     dot_r	: std_logic_vector(7 downto 0);	
     dot_g1	: std_logic_vector(7 downto 0);	
     dot_g2	: std_logic_vector(7 downto 0);	
     dot_b	: std_logic_vector(7 downto 0);	
-    addr1	: std_logic_vector(10 downto 0);
-    addr2	: std_logic_vector(10 downto 0);
+    addr1	: std_logic_vector(11 downto 0);
+    addr2	: std_logic_vector(11 downto 0);
   end record;
 
   signal r_next : reg_type;
@@ -91,6 +91,10 @@ begin
     
     case r.state is
       when reset =>
+        if start_conv = '1' then
+          s.state := pre_ready;
+        end if;
+      when pre_ready =>
         if start_conv = '1' then
           s.state := ready;
           s.addr1 := r.index;

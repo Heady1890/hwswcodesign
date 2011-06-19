@@ -138,9 +138,9 @@ architecture behaviour of top is
 
   --SIGNALE LUKAS
   --signals zwischen read_kamera und tp_ram
-  signal tp_address1_sig		: std_logic_vector(10 downto 0);
-  signal tp_address2_sig		: std_logic_vector(10 downto 0);
-  signal tp_address3_sig		: std_logic_vector(10 downto 0);
+  signal tp_address1_sig	: std_logic_vector(11 downto 0);
+  signal tp_address2_sig	: std_logic_vector(11 downto 0);
+  signal tp_address3_sig	: std_logic_vector(11 downto 0);
   signal tp_data_in1_sig	: std_logic_vector( 7 downto 0);
   signal tp_wr1_sig		: std_logic;
   signal tp_data_out2_sig	: std_logic_vector( 7 downto 0);
@@ -148,8 +148,8 @@ architecture behaviour of top is
   --signale zwischen read_kamera und converter
   signal start_conv_sig		: std_logic;
   --signale zwischen converter und dp_ram
-  signal dp_address1_sig	: std_logic_vector(10 downto 0);
-  signal dp_address2_sig	: std_logic_vector(10 downto 0);
+  signal dp_address1_sig	: std_logic_vector(11 downto 0);
+  signal dp_address2_sig	: std_logic_vector(11 downto 0);
   signal dp_wr1_sig		: std_logic;
   signal dp_data_in1_sig	: std_logic_vector(23 downto 0);
   signal dp_data_out1_sig	: std_logic_vector(23 downto 0);
@@ -433,7 +433,7 @@ begin
   dp_ram0 : dp_ram
   generic map
   (
-     ADDR_WIDTH => 11,
+     ADDR_WIDTH => 12,
      DATA_WIDTH => 24
   )
   port map
@@ -454,7 +454,7 @@ begin
   tp_ram0 : tp_ram
   generic map
   (
-     ADDR_WIDTH => 11,
+     ADDR_WIDTH => 12,
      DATA_WIDTH => 8
   )
   port map

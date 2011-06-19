@@ -1,5 +1,5 @@
 Assembler report for top
-Tue Jun 14 14:39:36 2011
+Sat Jun 18 11:51:26 2011
 Quartus II Version 10.1 Build 197 01/19/2011 Service Pack 1 SJ Full Version
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Jun 14 14:39:36 2011 ;
+; Assembler Status      ; Successful - Sat Jun 18 11:51:26 2011 ;
 ; Revision Name         ; top                                   ;
 ; Top-level Entity Name ; top                                   ;
 ; Family                ; Cyclone IV E                          ;
@@ -93,7 +93,7 @@ applicable agreement for further details.
 +----------------+------------------+
 ; Device         ; EP4CE115F29C7    ;
 ; JTAG usercode  ; 0xFFFFFFFF       ;
-; Checksum       ; 0x019508FD       ;
+; Checksum       ; 0x0181FC02       ;
 +----------------+------------------+
 
 
@@ -103,14 +103,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 10.1 Build 197 01/19/2011 Service Pack 1 SJ Full Version
-    Info: Processing started: Tue Jun 14 14:39:16 2011
+    Info: Processing started: Sat Jun 18 11:51:08 2011
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off top -c top
 Info: Writing out detailed assembly data for power analysis
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 497 megabytes
-    Info: Processing ended: Tue Jun 14 14:39:37 2011
-    Info: Elapsed time: 00:00:21
+    Info: Peak virtual memory: 494 megabytes
+    Info: Processing ended: Sat Jun 18 11:51:26 2011
+    Info: Elapsed time: 00:00:18
     Info: Total CPU time (on all processors): 00:00:17
 
 

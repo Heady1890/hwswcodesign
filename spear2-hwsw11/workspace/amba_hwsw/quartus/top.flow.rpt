@@ -1,5 +1,5 @@
 Flow report for top
-Tue Jun 14 14:39:59 2011
+Sat Jun 18 11:51:45 2011
 Quartus II Version 10.1 Build 197 01/19/2011 Service Pack 1 SJ Full Version
 
 
@@ -38,20 +38,20 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------------+
 ; Flow Summary                                                                        ;
 +------------------------------------+------------------------------------------------+
-; Flow Status                        ; Successful - Tue Jun 14 14:39:59 2011          ;
+; Flow Status                        ; Successful - Sat Jun 18 11:51:45 2011          ;
 ; Quartus II Version                 ; 10.1 Build 197 01/19/2011 SP 1 SJ Full Version ;
 ; Revision Name                      ; top                                            ;
 ; Top-level Entity Name              ; top                                            ;
 ; Family                             ; Cyclone IV E                                   ;
 ; Device                             ; EP4CE115F29C7                                  ;
 ; Timing Models                      ; Final                                          ;
-; Total logic elements               ; 6,693 / 114,480 ( 6 % )                        ;
-;     Total combinational functions  ; 6,402 / 114,480 ( 6 % )                        ;
-;     Dedicated logic registers      ; 2,313 / 114,480 ( 2 % )                        ;
-; Total registers                    ; 2313                                           ;
+; Total logic elements               ; 5,017 / 114,480 ( 4 % )                        ;
+;     Total combinational functions  ; 4,685 / 114,480 ( 4 % )                        ;
+;     Dedicated logic registers      ; 1,718 / 114,480 ( 2 % )                        ;
+; Total registers                    ; 1718                                           ;
 ; Total pins                         ; 223 / 529 ( 42 % )                             ;
 ; Total virtual pins                 ; 0                                              ;
-; Total memory bits                  ; 2,189,312 / 3,981,312 ( 55 % )                 ;
+; Total memory bits                  ; 2,166,784 / 3,981,312 ( 54 % )                 ;
 ; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                                ;
 ; Total PLLs                         ; 1 / 4 ( 25 % )                                 ;
 +------------------------------------+------------------------------------------------+
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/14/2011 14:32:27 ;
+; Start date & time ; 06/18/2011 11:46:51 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; top                 ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------------------------------------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                                                                             ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------------------------------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 83519801562.130805474713992                                                                       ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 83519801629.130839041111899                                                                       ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Vhdl                                                                                              ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim (VHDL)                                                                                   ; <None>        ; --          ; --             ;
 ; IP_TOOL_NAME                        ; ALTPLL                                                                                            ; --            ; --          ; --             ;
@@ -104,12 +104,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:02:49     ; 1.0                     ; --                  ; 00:02:42                           ;
-; Fitter                    ; 00:03:39     ; 1.6                     ; --                  ; 00:04:31                           ;
-; TimeQuest Timing Analyzer ; 00:00:12     ; 1.4                     ; --                  ; 00:00:10                           ;
-; Assembler                 ; 00:00:20     ; 1.0                     ; --                  ; 00:00:17                           ;
-; EDA Netlist Writer        ; 00:00:19     ; 1.0                     ; --                  ; 00:00:16                           ;
-; Total                     ; 00:07:19     ; --                      ; --                  ; 00:07:56                           ;
+; Analysis & Synthesis      ; 00:01:40     ; 1.0                     ; --                  ; 00:01:37                           ;
+; Fitter                    ; 00:02:21     ; 1.6                     ; --                  ; 00:03:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:10     ; 1.4                     ; --                  ; 00:00:09                           ;
+; Assembler                 ; 00:00:18     ; 1.0                     ; --                  ; 00:00:16                           ;
+; EDA Netlist Writer        ; 00:00:16     ; 1.0                     ; --                  ; 00:00:13                           ;
+; Total                     ; 00:04:45     ; --                      ; --                  ; 00:05:18                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -118,11 +118,11 @@ applicable agreement for further details.
 +---------------------------+------------------+----------------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name        ; OS Version ; Processor type ;
 +---------------------------+------------------+----------------+------------+----------------+
-; Analysis & Synthesis      ; ecslab2          ; CentOS release ; 5          ; x86_64         ;
-; Fitter                    ; ecslab2          ; CentOS release ; 5          ; x86_64         ;
-; TimeQuest Timing Analyzer ; ecslab2          ; CentOS release ; 5          ; x86_64         ;
-; Assembler                 ; ecslab2          ; CentOS release ; 5          ; x86_64         ;
-; EDA Netlist Writer        ; ecslab2          ; CentOS release ; 5          ; x86_64         ;
+; Analysis & Synthesis      ; ecslab5          ; CentOS release ; 5          ; x86_64         ;
+; Fitter                    ; ecslab5          ; CentOS release ; 5          ; x86_64         ;
+; TimeQuest Timing Analyzer ; ecslab5          ; CentOS release ; 5          ; x86_64         ;
+; Assembler                 ; ecslab5          ; CentOS release ; 5          ; x86_64         ;
+; EDA Netlist Writer        ; ecslab5          ; CentOS release ; 5          ; x86_64         ;
 +---------------------------+------------------+----------------+------------+----------------+
 
 

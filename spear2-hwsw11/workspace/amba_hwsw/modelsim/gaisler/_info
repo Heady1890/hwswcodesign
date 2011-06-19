@@ -4,7 +4,7 @@ K3
 cModel Technology
 Z0 d/homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim
 Eahbmst
-Z1 w1269601462
+Z1 w1307454584
 Z2 DPx7 techmap 7 gencomp 0 22 UGe8K;c=a?h3=;oGYiebG1
 Z3 DPx7 gaisler 4 misc 0 22 heN0@k0_29GiOoMlWG1f60
 Z4 DPx5 grlib 7 devices 0 22 7OXS[_3O=CCzCY8=SaHFj1
@@ -14,7 +14,7 @@ Z7 DPx3 std 6 textio 0 22 m2KQDRRhmF833<<DjYdL70
 Z8 DPx4 ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
 Z9 DPx5 grlib 4 amba 0 22 1bVKkflXCG@EOO2WeR7;E2
 Z10 DPx4 ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
-Z11 d/homes/c0725642/Desktop/spear2-hwsw11/workspace/amba_hwsw/modelsim
+Z11 d/homes/c0725146/Desktop/HWSWCodesign/spear2-hwsw11/workspace/amba_hwsw/modelsim
 Z12 8../../../VHDL/amba_modules/gaisler/misc/ahbmst.vhd
 Z13 F../../../VHDL/amba_modules/gaisler/misc/ahbmst.vhd
 l0
@@ -175,7 +175,7 @@ R7
 R8
 R9
 R10
-w1277813654
+R1
 R11
 8../../../VHDL/amba_modules/gaisler/memctrl/memctrl.vhd
 F../../../VHDL/amba_modules/gaisler/memctrl/memctrl.vhd
@@ -252,9 +252,9 @@ R16
 nbody
 !s100 ^>OOIO:eaTd:z7Gd:7NW40
 Esdctrl
-Z51 w1292160940
+R1
 R2
-Z52 DPx7 gaisler 7 memctrl 0 22 fC0]JB4IYRanAlGBBfJHR3
+Z51 DPx7 gaisler 7 memctrl 0 22 fC0]JB4IYRanAlGBBfJHR3
 R4
 R5
 R6
@@ -263,8 +263,8 @@ R8
 R9
 R10
 R11
-Z53 8../../../VHDL/amba_modules/gaisler/memctrl/sdctrl.vhd
-Z54 F../../../VHDL/amba_modules/gaisler/memctrl/sdctrl.vhd
+Z52 8../../../VHDL/amba_modules/gaisler/memctrl/sdctrl.vhd
+Z53 F../../../VHDL/amba_modules/gaisler/memctrl/sdctrl.vhd
 l0
 L35
 VOmVHMDonZzfKXIdT:H<a>2
@@ -275,7 +275,7 @@ R15
 R16
 Artl
 R2
-R52
+R51
 R4
 R5
 R6
@@ -283,11 +283,11 @@ R7
 R8
 R9
 R10
-Z55 DEx4 work 6 sdctrl 0 22 OmVHMDonZzfKXIdT:H<a>2
+Z54 DEx4 work 6 sdctrl 0 22 OmVHMDonZzfKXIdT:H<a>2
 l155
 L61
-Z56 Vz<XJ9;Z0GSAZ_3h36Tg1Q3
-Z57 !s100 jn4doP?e7m2@Z9omB^i4M1
+Z55 Vz<XJ9;Z0GSAZ_3h36Tg1Q3
+Z56 !s100 jn4doP?e7m2@Z9omB^i4M1
 R14
 32
 R17
@@ -297,7 +297,7 @@ R20
 R21
 R22
 R23
-Z58 Mx2 7 gaisler 7 memctrl
+Z57 Mx2 7 gaisler 7 memctrl
 R25
 R15
 R16
@@ -313,8 +313,8 @@ R8
 R9
 R10
 R11
-Z59 8../../../VHDL/amba_modules/gaisler/misc/svgactrl.vhd
-Z60 F../../../VHDL/amba_modules/gaisler/misc/svgactrl.vhd
+Z58 8../../../VHDL/amba_modules/gaisler/misc/svgactrl.vhd
+Z59 F../../../VHDL/amba_modules/gaisler/misc/svgactrl.vhd
 l0
 L36
 V6W`T:149A?>XBC6:5`;301
@@ -352,8 +352,8 @@ R15
 R16
 !s100 lU61]`BOWRb_[UFQYcV2C3
 Esyncram_2p
-Z61 w1209024930
-Z62 DPx7 techmap 6 allmem 0 22 UYWKYEXFZ3aCN_HhmiVkc1
+R1
+Z60 DPx7 techmap 6 allmem 0 22 UYWKYEXFZ3aCN_HhmiVkc1
 R5
 R6
 R7
@@ -362,8 +362,8 @@ R9
 R2
 R10
 R11
-Z63 8../../../VHDL/amba_modules/techmap/maps/syncram_2p.vhd
-Z64 F../../../VHDL/amba_modules/techmap/maps/syncram_2p.vhd
+Z61 8../../../VHDL/amba_modules/techmap/maps/syncram_2p.vhd
+Z62 F../../../VHDL/amba_modules/techmap/maps/syncram_2p.vhd
 l0
 L31
 VG4m0jDRKP0n1]=[m9g2bE3
@@ -373,7 +373,7 @@ R15
 R16
 !s100 OJfJBn[aD6SGUg]6gIm`>3
 Artl
-R62
+R60
 R5
 R6
 R7
@@ -388,7 +388,7 @@ VE6Eb7^aSeN_OYH9^[39]b3
 R14
 32
 R45
-Z65 Mx7 7 techmap 7 gencomp
+Z63 Mx7 7 techmap 7 gencomp
 R38
 R39
 R40

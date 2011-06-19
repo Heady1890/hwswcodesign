@@ -21,102 +21,6 @@ db|
 -- Start VHDL Libraries --
 -- End VHDL Libraries --
 # entity
-top
-# storage
-db|top.(0).cnf
-db|top.(0).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|workspace|amba_hwsw|VHDL|top.vhd
-8712c41891ade2ead4a3be8c14a50
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|version.vhd
-fd48f5d4ffd2032b2fb8b5fca8a7b
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|ext_modules|ext_CamD5m|pkg_CamD5m_read.vhd
-6d40502375116edc68ada1be6ec43e
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|amba|devices.vhd
-35d41e76dc5759e4b1872fb08b23a9aa
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|ext_modules|ext_Dis7Seg|pkg_Dis7Seg.vhd
-18e2fa8c6e2efed34bf3aaf342b6f3b0
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|gaisler|misc|misc.vhd
-dcb26473abfa1974fdfda7880309f50
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|stdlib.vhd
-dd5ccd657ead64ecd9d3a8f60a431de
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|amba|amba.vhd
-71375e7e3fe55042d3b45ae0c18717f8
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|gaisler|memctrl|memctrl.vhd
-d76ee4cd6cbd74528d30432ec5681b3b
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|ext_modules|ext_counter|pkg_counter.vhd
-4c511da8a7e24477f1b8aefef3ad4e
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|techmap|gencomp|gencomp.vhd
-326c86fb79f23fa75152b8d4f1f1286
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|ext_modules|ext_CamD5m|pkg_CamD5m_init.vhd
-c3a71fac5eb737df7d6cdf6c6fa6283
-|homes|c0725642|Desktop|spear2-hwsw11|workspace|amba_hwsw|VHDL|top_pkg.vhd
-32f319c75d81f44b0a2d097e115ea8e
-}
-# hierarchies {
-|
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-altera_pll
-# storage
-db|top.(1).cnf
-db|top.(1).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|workspace|amba_hwsw|VHDL|altera_pll.vhd
-9e14df3ff9722fd2a8966d7847c6f478
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# hierarchies {
-altera_pll:altera_pll_inst
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
 altpll
 # storage
 db|top.(2).cnf
@@ -1663,610 +1567,6 @@ altera_pll:altera_pll_inst|altpll:altpll_component|altpll_imp2:auto_generated
 
 # end
 # entity
-spear
-# storage
-db|top.(4).cnf
-db|top.(4).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|spear.vhd
-f1a72242490859a1d1e56b4088d7d2
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-conf
-A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
-PARAMETER_ARRAY
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
-94a7a967ca2448f83c1799c984b18f
-}
-# hierarchies {
-spear:spear_unit
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-spear_core
-# storage
-db|top.(5).cnf
-db|top.(5).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|core.vhd
-22f624fcec22d9d892762fdc49df32ac
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-conf
-A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
-PARAMETER_ARRAY
-USR
- constraint(iramo_rdata)
-15 downto 0
-PARAMETER_STRING
-USR
- constraint(irami_wdata)
-15 downto 0
-PARAMETER_STRING
-USR
- constraint(irami_waddr)
-15 downto 0
-PARAMETER_STRING
-USR
- constraint(irami_raddr)
-15 downto 0
-PARAMETER_STRING
-USR
- constraint(regfi_wdata)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(regfi_waddr)
-3 downto 0
-PARAMETER_STRING
-USR
- constraint(regfi_raddr1)
-3 downto 0
-PARAMETER_STRING
-USR
- constraint(regfi_raddr2)
-3 downto 0
-PARAMETER_STRING
-USR
- constraint(regfo_rdata1)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(regfo_rdata2)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(corei_interruptin)
-15 downto 0
-PARAMETER_STRING
-USR
- constraint(corei_extdata)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(coreo_extaddr)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(coreo_extdata)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(bromi_addr)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(bromo_data)
-15 downto 0
-PARAMETER_STRING
-USR
- constraint(vecti_data_in)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(vecti_interruptnr)
-3 downto 0
-PARAMETER_STRING
-USR
- constraint(vecti_trapnr)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(vecti_wrvecnr)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(vecto_data_out)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(sysci_staflag)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(sysci_interruptin)
-15 downto 0
-PARAMETER_STRING
-USR
- constraint(sysci_fptrwnew)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(sysci_fptrxnew)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(sysci_fptrynew)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(sysci_fptrznew)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(sysco_interruptnr)
-3 downto 0
-PARAMETER_STRING
-USR
- constraint(sysco_fptrw)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(sysco_fptrx)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(sysco_fptry)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(sysco_fptrz)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(progo_praddr)
-15 downto 0
-PARAMETER_STRING
-USR
- constraint(progo_prdata)
-15 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
-94a7a967ca2448f83c1799c984b18f
-}
-# hierarchies {
-spear:spear_unit|spear_core:core_unit
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-spear_regf
-# storage
-db|top.(6).cnf
-db|top.(6).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|regf.vhd
-72556460caea8a58dc9eb3b475ac7990
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-conf
-A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
-PARAMETER_ARRAY
-USR
- constraint(wdata)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(waddr)
-3 downto 0
-PARAMETER_STRING
-USR
- constraint(raddr1)
-3 downto 0
-PARAMETER_STRING
-USR
- constraint(raddr2)
-3 downto 0
-PARAMETER_STRING
-USR
- constraint(rdata1)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(rdata2)
-31 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
-94a7a967ca2448f83c1799c984b18f
-}
-# hierarchies {
-spear:spear_unit|spear_regf:regf_unit
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-spear_regfram
-# storage
-db|top.(7).cnf
-db|top.(7).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|regfram.vhd
-4938442f3d4b9defc866cb0432884aa
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-conf
-A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
-PARAMETER_ARRAY
-USR
- constraint(wdata)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(waddr)
-3 downto 0
-PARAMETER_STRING
-USR
- constraint(raddr)
-3 downto 0
-PARAMETER_STRING
-USR
- constraint(rdata)
-31 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
-94a7a967ca2448f83c1799c984b18f
-}
-# hierarchies {
-spear:spear_unit|spear_regf:regf_unit|spear_regfram:ram1
-spear:spear_unit|spear_regf:regf_unit|spear_regfram:ram2
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-spear_dram
-# storage
-db|top.(8).cnf
-db|top.(8).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|dram.vhd
-791dd02d07032c3bef2bb51b4c974d
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-conf
-A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
-PARAMETER_ARRAY
-USR
- constraint(byte_en)
-3 downto 0
-PARAMETER_STRING
-USR
- constraint(data_in)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(addr)
-16 downto 2
-PARAMETER_STRING
-USR
- constraint(data_out)
-31 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
-94a7a967ca2448f83c1799c984b18f
-}
-# hierarchies {
-spear:spear_unit|spear_dram:dram_unit
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-spear_byteram
-# storage
-db|top.(9).cnf
-db|top.(9).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|byteram.vhd
-4521d9c7cebf3904f3954a1428f39d2
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-conf
-A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
-PARAMETER_ARRAY
-USR
- constraint(wdata)
-7 downto 0
-PARAMETER_STRING
-USR
- constraint(waddr)
-14 downto 0
-PARAMETER_STRING
-USR
- constraint(raddr)
-14 downto 0
-PARAMETER_STRING
-USR
- constraint(rdata)
-7 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
-94a7a967ca2448f83c1799c984b18f
-}
-# hierarchies {
-spear:spear_unit|spear_dram:dram_unit|spear_byteram:ram0
-spear:spear_unit|spear_dram:dram_unit|spear_byteram:ram1
-spear:spear_unit|spear_dram:dram_unit|spear_byteram:ram2
-spear:spear_unit|spear_dram:dram_unit|spear_byteram:ram3
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-spear_brom
-# storage
-db|top.(10).cnf
-db|top.(10).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|brom.vhd
-7be757908dfdbec4fc16cb02cbc14
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-conf
-A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
-PARAMETER_ARRAY
-USR
- constraint(addr)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(data)
-15 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
-94a7a967ca2448f83c1799c984b18f
-}
-# hierarchies {
-spear:spear_unit|spear_brom:brom_unit
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-altera_boot_rom
-# storage
-db|top.(11).cnf
-db|top.(11).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|altera|boot_rom.vhd
-c9c347cb2b3180a873dc1dbd538976f
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-conf
-A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
-PARAMETER_ARRAY
-USR
- constraint(address)
-15 downto 0
-PARAMETER_STRING
-USR
- constraint(q)
-15 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
-94a7a967ca2448f83c1799c984b18f
-}
-# hierarchies {
-spear:spear_unit|spear_brom:brom_unit|altera_boot_rom:\altera_gen:boot_rom_inst
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
 altsyncram
 # storage
 db|top.(12).cnf
@@ -2577,1771 +1877,6 @@ address_a0
 # hierarchies {
 spear:spear_unit|spear_brom:brom_unit|altera_boot_rom:\altera_gen:boot_rom_inst|altsyncram:\use_brom_hex:altsyncram_component
 }
-# macro_sequence
-
-# end
-# entity
-altsyncram_p6b1
-# storage
-db|top.(13).cnf
-db|top.(13).cnf
-# case_insensitive
-# source_file
-db|altsyncram_p6b1.tdf
-2a268e1a81c5bd8c4416c7dbee410a3
-7
-# used_port {
-q_a9
--1
-3
-q_a8
--1
-3
-q_a7
--1
-3
-q_a6
--1
-3
-q_a5
--1
-3
-q_a4
--1
-3
-q_a3
--1
-3
-q_a2
--1
-3
-q_a15
--1
-3
-q_a14
--1
-3
-q_a13
--1
-3
-q_a12
--1
-3
-q_a11
--1
-3
-q_a10
--1
-3
-q_a1
--1
-3
-q_a0
--1
-3
-clocken0
--1
-3
-clock0
--1
-3
-address_a9
--1
-3
-address_a8
--1
-3
-address_a7
--1
-3
-address_a6
--1
-3
-address_a5
--1
-3
-address_a4
--1
-3
-address_a3
--1
-3
-address_a2
--1
-3
-address_a11
--1
-3
-address_a10
--1
-3
-address_a1
--1
-3
-address_a0
--1
-3
-}
-# memory_file {
-|homes|c0725642|Desktop|spear2-hwsw11|workspace|amba_hwsw|bootloader|spear32-bootloader.hex
-baef3c72dc3d9e566b74afc511d63aee
-}
-# hierarchies {
-spear:spear_unit|spear_brom:brom_unit|altera_boot_rom:\altera_gen:boot_rom_inst|altsyncram:\use_brom_hex:altsyncram_component|altsyncram_p6b1:auto_generated
-}
-# macro_sequence
-
-# end
-# entity
-spear_vectab
-# storage
-db|top.(14).cnf
-db|top.(14).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|vectab.vhd
-77ab7a5a5c12f7f8525fdb388ace241
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-conf
-A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
-PARAMETER_ARRAY
-USR
- constraint(data_in)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(interruptnr)
-3 downto 0
-PARAMETER_STRING
-USR
- constraint(trapnr)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(wrvecnr)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(data_out)
-31 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
-94a7a967ca2448f83c1799c984b18f
-}
-# hierarchies {
-spear:spear_unit|spear_vectab:vect_unit
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-spear_sysc
-# storage
-db|top.(15).cnf
-db|top.(15).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|sysc.vhd
-4fc7edf93d72d394f3c6cc5848d2a954
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-conf
-A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
-PARAMETER_ARRAY
-USR
- constraint(staflag)
-4 downto 0
-PARAMETER_STRING
-USR
- constraint(interruptin)
-15 downto 0
-PARAMETER_STRING
-USR
- constraint(fptrwnew)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(fptrxnew)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(fptrynew)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(fptrznew)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(interruptnr)
-3 downto 0
-PARAMETER_STRING
-USR
- constraint(fptrw)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(fptrx)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(fptry)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(fptrz)
-31 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
-94a7a967ca2448f83c1799c984b18f
-}
-# hierarchies {
-spear:spear_unit|spear_sysc:sysc_unit
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-spear_iram
-# storage
-db|top.(16).cnf
-db|top.(16).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|iram.vhd
-cf23841c255a3656e73ea64c7c919
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-conf
-A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
-PARAMETER_ARRAY
-USR
- constraint(wdata)
-15 downto 0
-PARAMETER_STRING
-USR
- constraint(waddr)
-15 downto 0
-PARAMETER_STRING
-USR
- constraint(raddr)
-15 downto 0
-PARAMETER_STRING
-USR
- constraint(rdata)
-15 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
-94a7a967ca2448f83c1799c984b18f
-}
-# hierarchies {
-spear:spear_unit|spear_iram:\use_prog_gen:iram_unit
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-spear_prog
-# storage
-db|top.(17).cnf
-db|top.(17).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|prog.vhd
-298b251df4f9c1ff82843e57a7d954a
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-conf
-A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
-PARAMETER_ARRAY
-USR
- constraint(praddr)
-15 downto 0
-PARAMETER_STRING
-USR
- constraint(prdata)
-15 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
-94a7a967ca2448f83c1799c984b18f
-}
-# hierarchies {
-spear:spear_unit|spear_prog:\use_prog_gen:prog_unit
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-ext_miniUART
-# storage
-db|top.(18).cnf
-db|top.(18).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|rs232.vhd
-86ee6587fa37a44cbc246b84a631cda4
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
-94a7a967ca2448f83c1799c984b18f
-}
-# hierarchies {
-spear:spear_unit|ext_miniUART:ext_miniUART_unit
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-miniUART_control
-# storage
-db|top.(19).cnf
-db|top.(19).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|rs232.vhd
-86ee6587fa37a44cbc246b84a631cda4
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(asa)
-2 downto 0
-PARAMETER_STRING
-USR
- constraint(evs)
-1 downto 0
-PARAMETER_STRING
-USR
- constraint(data_r)
-15 downto 0
-PARAMETER_STRING
-USR
- constraint(data_r_out)
-15 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
-94a7a967ca2448f83c1799c984b18f
-}
-# hierarchies {
-spear:spear_unit|ext_miniUART:ext_miniUART_unit|miniUART_control:miniUART_control_unit
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-miniUART_transmitter
-# storage
-db|top.(20).cnf
-db|top.(20).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|rs232.vhd
-86ee6587fa37a44cbc246b84a631cda4
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(msglength)
-3 downto 0
-PARAMETER_STRING
-USR
- constraint(data)
-15 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
-94a7a967ca2448f83c1799c984b18f
-}
-# hierarchies {
-spear:spear_unit|ext_miniUART:ext_miniUART_unit|miniUART_transmitter:miniUART_transmitter_unit
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-miniUART_receiver
-# storage
-db|top.(21).cnf
-db|top.(21).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|rs232.vhd
-86ee6587fa37a44cbc246b84a631cda4
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(msglength)
-3 downto 0
-PARAMETER_STRING
-USR
- constraint(data)
-15 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
-94a7a967ca2448f83c1799c984b18f
-}
-# hierarchies {
-spear:spear_unit|ext_miniUART:ext_miniUART_unit|miniUART_receiver:miniUART_receiver_unit
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-miniUART_BRG
-# storage
-db|top.(22).cnf
-db|top.(22).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|rs232.vhd
-86ee6587fa37a44cbc246b84a631cda4
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(ubrs)
-15 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
-94a7a967ca2448f83c1799c984b18f
-}
-# hierarchies {
-spear:spear_unit|ext_miniUART:ext_miniUART_unit|miniUART_BRG:miniUART_BRG_unit
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-miniUART_busdriver
-# storage
-db|top.(23).cnf
-db|top.(23).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|rs232.vhd
-86ee6587fa37a44cbc246b84a631cda4
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
-94a7a967ca2448f83c1799c984b18f
-}
-# hierarchies {
-spear:spear_unit|ext_miniUART:ext_miniUART_unit|miniUART_busdriver:miniUART_busdriver_unit
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-ext_AMBA_sharedmem
-# storage
-db|top.(24).cnf
-db|top.(24).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|ext_AMBA_sharedmem.vhd
-bfdb6c6735a8baa1b74d95111a11e50
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-conf
-A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
-PARAMETER_ARRAY
-USR
- constraint(adrami_byte_en)
-3 downto 0
-PARAMETER_STRING
-USR
- constraint(adrami_data_in)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(adrami_addr)
-7 downto 2
-PARAMETER_STRING
-USR
- constraint(adramo_data_out)
-31 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
-94a7a967ca2448f83c1799c984b18f
-}
-# hierarchies {
-spear:spear_unit|ext_AMBA_sharedmem:\ena_amba:ambadram_unit
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-AMBA_sharedmem_dram
-# storage
-db|top.(25).cnf
-db|top.(25).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|AMBA_sharedmem_dram.vhd
-06fc42358b220d969301748e6b4b55d
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-conf
-A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
-PARAMETER_ARRAY
-USR
- constraint(byte_en)
-3 downto 0
-PARAMETER_STRING
-USR
- constraint(data_in)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(addr)
-7 downto 2
-PARAMETER_STRING
-USR
- constraint(data_out)
-31 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
-94a7a967ca2448f83c1799c984b18f
-}
-# hierarchies {
-spear:spear_unit|ext_AMBA_sharedmem:\ena_amba:ambadram_unit|AMBA_sharedmem_dram:dram_unit
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-AMBA_sharedmem_byteram
-# storage
-db|top.(26).cnf
-db|top.(26).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|AMBA_sharedmem_byteram.vhd
-d0dcfbb25abe29eea5bad56cb2d4fa41
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-conf
-A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
-PARAMETER_ARRAY
-USR
- constraint(wdata)
-7 downto 0
-PARAMETER_STRING
-USR
- constraint(waddr)
-5 downto 0
-PARAMETER_STRING
-USR
- constraint(raddr)
-5 downto 0
-PARAMETER_STRING
-USR
- constraint(rdata)
-7 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
-94a7a967ca2448f83c1799c984b18f
-}
-# hierarchies {
-spear:spear_unit|ext_AMBA_sharedmem:\ena_amba:ambadram_unit|AMBA_sharedmem_dram:dram_unit|AMBA_sharedmem_byteram:ram0
-spear:spear_unit|ext_AMBA_sharedmem:\ena_amba:ambadram_unit|AMBA_sharedmem_dram:dram_unit|AMBA_sharedmem_byteram:ram1
-spear:spear_unit|ext_AMBA_sharedmem:\ena_amba:ambadram_unit|AMBA_sharedmem_dram:dram_unit|AMBA_sharedmem_byteram:\ramcfg:ram2
-spear:spear_unit|ext_AMBA_sharedmem:\ena_amba:ambadram_unit|AMBA_sharedmem_dram:dram_unit|AMBA_sharedmem_byteram:\ramcfg:ram3
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-ext_AMBA
-# storage
-db|top.(27).cnf
-db|top.(27).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|ext_AMBA.vhd
-aa2ab9451ade21ed9ae6477fe4f24
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-conf
-A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
-PARAMETER_ARRAY
-USR
-dramoffset
-000000000000000000000000
-PARAMETER_UNSIGNED_BIN
-USR
- constraint(dramoffset)
-31 downto 8
-PARAMETER_STRING
-USR
- constraint(addr_high)
-31 downto 15
-PARAMETER_STRING
-USR
- constraint(atd_byte_en)
-3 downto 0
-PARAMETER_STRING
-USR
- constraint(atd_data_in)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(atd_addr)
-7 downto 2
-PARAMETER_STRING
-USR
- constraint(dta_data_out)
-31 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
-94a7a967ca2448f83c1799c984b18f
-}
-# hierarchies {
-spear:spear_unit|ext_AMBA:\ena_amba:amba_unit
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-AMBA_AHBMasterStatemachine
-# storage
-db|top.(28).cnf
-db|top.(28).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|AMBA_AHBMasterStatemachine.vhd
-e9d243db3d56ba3aa9305e6b5d551fd
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
-94a7a967ca2448f83c1799c984b18f
-}
-# hierarchies {
-spear:spear_unit|ext_AMBA:\ena_amba:amba_unit|AMBA_AHBMasterStatemachine:ASM_0
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-ahbctrl
-# storage
-db|top.(29).cnf
-db|top.(29).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|amba|ahbctrl.vhd
-a537b4eefd8b51c652f4148a787c7e22
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-defmast
-0
-PARAMETER_SIGNED_DEC
-USR
-split
-0
-PARAMETER_SIGNED_DEC
-USR
-rrobin
-0
-PARAMETER_SIGNED_DEC
-USR
-timeout
-0
-PARAMETER_SIGNED_DEC
-USR
-ioaddr
-4095
-PARAMETER_SIGNED_DEC
-USR
-iomask
-4095
-PARAMETER_SIGNED_DEC
-USR
-cfgaddr
-4080
-PARAMETER_SIGNED_DEC
-USR
-cfgmask
-4080
-PARAMETER_SIGNED_DEC
-USR
-nahbm
-2
-PARAMETER_SIGNED_DEC
-USR
-nahbs
-2
-PARAMETER_SIGNED_DEC
-USR
-ioen
-1
-PARAMETER_SIGNED_DEC
-USR
-disirq
-0
-PARAMETER_SIGNED_DEC
-USR
-fixbrst
-1
-PARAMETER_SIGNED_DEC
-USR
-debug
-2
-PARAMETER_SIGNED_DEC
-USR
-fpnpen
-0
-PARAMETER_SIGNED_DEC
-USR
-icheck
-1
-PARAMETER_SIGNED_DEC
-USR
-devid
-0
-PARAMETER_SIGNED_DEC
-USR
-enbusmon
-0
-PARAMETER_SIGNED_DEC
-USR
-assertwarn
-0
-PARAMETER_SIGNED_DEC
-USR
-asserterr
-0
-PARAMETER_SIGNED_DEC
-USR
-hmstdisable
-0
-PARAMETER_SIGNED_DEC
-USR
-hslvdisable
-0
-PARAMETER_SIGNED_DEC
-USR
-arbdisable
-0
-PARAMETER_SIGNED_DEC
-USR
- constraint(msto)
-15 downto 0
-PARAMETER_STRING
-USR
- constraint(slvo)
-15 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|version.vhd
-fd48f5d4ffd2032b2fb8b5fca8a7b
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|stdlib.vhd
-dd5ccd657ead64ecd9d3a8f60a431de
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|amba|amba.vhd
-71375e7e3fe55042d3b45ae0c18717f8
-}
-# hierarchies {
-ahbctrl:ahb0
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-apbctrl
-# storage
-db|top.(30).cnf
-db|top.(30).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|amba|apbctrl.vhd
-e2f158281635a2bca2b64be8b4dac3
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-hindex
-0
-PARAMETER_SIGNED_DEC
-USR
-haddr
-3840
-PARAMETER_SIGNED_DEC
-USR
-hmask
-4095
-PARAMETER_SIGNED_DEC
-USR
-nslaves
-1
-PARAMETER_SIGNED_DEC
-USR
-debug
-2
-PARAMETER_SIGNED_DEC
-USR
-icheck
-1
-PARAMETER_SIGNED_DEC
-USR
-enbusmon
-0
-PARAMETER_SIGNED_DEC
-USR
-asserterr
-0
-PARAMETER_SIGNED_DEC
-USR
-assertwarn
-0
-PARAMETER_SIGNED_DEC
-USR
-pslvdisable
-0
-PARAMETER_SIGNED_DEC
-USR
- constraint(apbo)
-0 to 15
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|version.vhd
-fd48f5d4ffd2032b2fb8b5fca8a7b
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|stdlib.vhd
-dd5ccd657ead64ecd9d3a8f60a431de
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|amba|amba.vhd
-71375e7e3fe55042d3b45ae0c18717f8
-}
-# hierarchies {
-apbctrl:apb_bridge
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-sdctrl
-# storage
-db|top.(31).cnf
-db|top.(31).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|gaisler|memctrl|sdctrl.vhd
-42fd1568403d3fd1ac98d420f17289
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-hindex
-1
-PARAMETER_SIGNED_DEC
-USR
-haddr
-3584
-PARAMETER_SIGNED_DEC
-USR
-hmask
-3968
-PARAMETER_SIGNED_DEC
-USR
-ioaddr
-0
-PARAMETER_SIGNED_DEC
-USR
-iomask
-4095
-PARAMETER_SIGNED_DEC
-USR
-wprot
-0
-PARAMETER_SIGNED_DEC
-USR
-invclk
-0
-PARAMETER_SIGNED_DEC
-USR
-fast
-0
-PARAMETER_SIGNED_DEC
-USR
-pwron
-0
-PARAMETER_SIGNED_DEC
-USR
-sdbits
-32
-PARAMETER_SIGNED_DEC
-USR
-oepol
-0
-PARAMETER_SIGNED_DEC
-USR
-pageburst
-0
-PARAMETER_SIGNED_DEC
-USR
-mobile
-0
-PARAMETER_SIGNED_DEC
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|version.vhd
-fd48f5d4ffd2032b2fb8b5fca8a7b
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|amba|devices.vhd
-35d41e76dc5759e4b1872fb08b23a9aa
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|stdlib.vhd
-dd5ccd657ead64ecd9d3a8f60a431de
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|amba|amba.vhd
-71375e7e3fe55042d3b45ae0c18717f8
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|gaisler|memctrl|memctrl.vhd
-d76ee4cd6cbd74528d30432ec5681b3b
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|techmap|gencomp|gencomp.vhd
-326c86fb79f23fa75152b8d4f1f1286
-}
-# hierarchies {
-sdctrl:sdctrl_inst
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-iopadvv
-# storage
-db|top.(32).cnf
-db|top.(32).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|techmap|maps|iopad.vhd
-52e8a89b6e779bd8149f55e25bbc7a1
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-tech
-0
-PARAMETER_SIGNED_DEC
-USR
-level
-0
-PARAMETER_SIGNED_DEC
-USR
-slew
-0
-PARAMETER_SIGNED_DEC
-USR
-voltage
-3
-PARAMETER_SIGNED_DEC
-USR
-strength
-12
-PARAMETER_SIGNED_DEC
-USR
-width
-32
-PARAMETER_SIGNED_DEC
-USR
-oepol
-0
-PARAMETER_SIGNED_DEC
-USR
- constraint(pad)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(i)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(en)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(o)
-31 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|techmap|maps|allpads.vhd
-c63e7635fd2a55fcd46c8af46bc5bc99
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|version.vhd
-fd48f5d4ffd2032b2fb8b5fca8a7b
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|stdlib.vhd
-dd5ccd657ead64ecd9d3a8f60a431de
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|amba|amba.vhd
-71375e7e3fe55042d3b45ae0c18717f8
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|techmap|gencomp|gencomp.vhd
-326c86fb79f23fa75152b8d4f1f1286
-}
-# hierarchies {
-iopadvv:sd_pad
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-iopad
-# storage
-db|top.(33).cnf
-db|top.(33).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|techmap|maps|iopad.vhd
-52e8a89b6e779bd8149f55e25bbc7a1
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-tech
-0
-PARAMETER_SIGNED_DEC
-USR
-level
-0
-PARAMETER_SIGNED_DEC
-USR
-slew
-0
-PARAMETER_SIGNED_DEC
-USR
-voltage
-3
-PARAMETER_SIGNED_DEC
-USR
-strength
-12
-PARAMETER_SIGNED_DEC
-USR
-oepol
-0
-PARAMETER_SIGNED_DEC
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|techmap|maps|allpads.vhd
-c63e7635fd2a55fcd46c8af46bc5bc99
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|version.vhd
-fd48f5d4ffd2032b2fb8b5fca8a7b
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|stdlib.vhd
-dd5ccd657ead64ecd9d3a8f60a431de
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|amba|amba.vhd
-71375e7e3fe55042d3b45ae0c18717f8
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|techmap|gencomp|gencomp.vhd
-326c86fb79f23fa75152b8d4f1f1286
-}
-# hierarchies {
-iopadvv:sd_pad|iopad:\v:31:x0
-iopadvv:sd_pad|iopad:\v:30:x0
-iopadvv:sd_pad|iopad:\v:29:x0
-iopadvv:sd_pad|iopad:\v:28:x0
-iopadvv:sd_pad|iopad:\v:27:x0
-iopadvv:sd_pad|iopad:\v:26:x0
-iopadvv:sd_pad|iopad:\v:25:x0
-iopadvv:sd_pad|iopad:\v:24:x0
-iopadvv:sd_pad|iopad:\v:23:x0
-iopadvv:sd_pad|iopad:\v:22:x0
-iopadvv:sd_pad|iopad:\v:21:x0
-iopadvv:sd_pad|iopad:\v:20:x0
-iopadvv:sd_pad|iopad:\v:19:x0
-iopadvv:sd_pad|iopad:\v:18:x0
-iopadvv:sd_pad|iopad:\v:17:x0
-iopadvv:sd_pad|iopad:\v:16:x0
-iopadvv:sd_pad|iopad:\v:15:x0
-iopadvv:sd_pad|iopad:\v:14:x0
-iopadvv:sd_pad|iopad:\v:13:x0
-iopadvv:sd_pad|iopad:\v:12:x0
-iopadvv:sd_pad|iopad:\v:11:x0
-iopadvv:sd_pad|iopad:\v:10:x0
-iopadvv:sd_pad|iopad:\v:9:x0
-iopadvv:sd_pad|iopad:\v:8:x0
-iopadvv:sd_pad|iopad:\v:7:x0
-iopadvv:sd_pad|iopad:\v:6:x0
-iopadvv:sd_pad|iopad:\v:5:x0
-iopadvv:sd_pad|iopad:\v:4:x0
-iopadvv:sd_pad|iopad:\v:3:x0
-iopadvv:sd_pad|iopad:\v:2:x0
-iopadvv:sd_pad|iopad:\v:1:x0
-iopadvv:sd_pad|iopad:\v:0:x0
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-svgactrl
-# storage
-db|top.(34).cnf
-db|top.(34).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|gaisler|misc|svgactrl.vhd
-3be2bca267a31e957d43e9866a6
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-length
-384
-PARAMETER_SIGNED_DEC
-USR
-part
-128
-PARAMETER_SIGNED_DEC
-USR
-memtech
-7
-PARAMETER_SIGNED_DEC
-USR
-pindex
-0
-PARAMETER_SIGNED_DEC
-USR
-paddr
-1
-PARAMETER_SIGNED_DEC
-USR
-pmask
-4095
-PARAMETER_SIGNED_DEC
-USR
-hindex
-1
-PARAMETER_SIGNED_DEC
-USR
-hirq
-0
-PARAMETER_SIGNED_DEC
-USR
-clk0
-40000
-PARAMETER_SIGNED_DEC
-USR
-clk1
-20000
-PARAMETER_SIGNED_DEC
-USR
-clk2
-15385
-PARAMETER_SIGNED_DEC
-USR
-clk3
-0
-PARAMETER_SIGNED_DEC
-USR
-burstlen
-8
-PARAMETER_SIGNED_DEC
-USR
- constraint(clk_sel)
-1 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|version.vhd
-fd48f5d4ffd2032b2fb8b5fca8a7b
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|amba|devices.vhd
-35d41e76dc5759e4b1872fb08b23a9aa
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|gaisler|misc|misc.vhd
-dcb26473abfa1974fdfda7880309f50
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|stdlib.vhd
-dd5ccd657ead64ecd9d3a8f60a431de
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|amba|amba.vhd
-71375e7e3fe55042d3b45ae0c18717f8
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|techmap|gencomp|gencomp.vhd
-326c86fb79f23fa75152b8d4f1f1286
-}
-# hierarchies {
-svgactrl:svgactrl0
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-syncram_2p
-# storage
-db|top.(35).cnf
-db|top.(35).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|techmap|maps|syncram_2p.vhd
-999129ead47ea134bcd075c49ef039f1
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-tech
-7
-PARAMETER_SIGNED_DEC
-USR
-abits
-10
-PARAMETER_SIGNED_DEC
-USR
-dbits
-32
-PARAMETER_SIGNED_DEC
-USR
-sepclk
-1
-PARAMETER_SIGNED_DEC
-USR
-wrfst
-0
-PARAMETER_SIGNED_DEC
-USR
- constraint(raddress)
-9 downto 0
-PARAMETER_STRING
-USR
- constraint(dataout)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(waddress)
-9 downto 0
-PARAMETER_STRING
-USR
- constraint(datain)
-31 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|techmap|maps|allmem.vhd
-687c49b3b24452c68da73da365730
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|version.vhd
-fd48f5d4ffd2032b2fb8b5fca8a7b
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|stdlib.vhd
-dd5ccd657ead64ecd9d3a8f60a431de
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|amba|amba.vhd
-71375e7e3fe55042d3b45ae0c18717f8
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|techmap|gencomp|gencomp.vhd
-326c86fb79f23fa75152b8d4f1f1286
-}
-# hierarchies {
-svgactrl:svgactrl0|syncram_2p:ram0
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-altera_syncram_dp
-# storage
-db|top.(36).cnf
-db|top.(36).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|techmap|altera_mf|memory_altera_mf.vhd
-eceaab6adf42a14ed78b6d8eb2e1019
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-abits
-10
-PARAMETER_SIGNED_DEC
-USR
-dbits
-32
-PARAMETER_SIGNED_DEC
-USR
- constraint(address1)
-9 downto 0
-PARAMETER_STRING
-USR
- constraint(datain1)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(dataout1)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(address2)
-9 downto 0
-PARAMETER_STRING
-USR
- constraint(datain2)
-31 downto 0
-PARAMETER_STRING
-USR
- constraint(dataout2)
-31 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-svgactrl:svgactrl0|syncram_2p:ram0|altera_syncram_dp:\alt:x0
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
 # macro_sequence
 
 # end
@@ -5506,156 +3041,6 @@ svgactrl:svgactrl0|syncram_2p:ram0|altera_syncram_dp:\alt:x0|altsyncram:u0|altsy
 
 # end
 # entity
-syncram_2p
-# storage
-db|top.(39).cnf
-db|top.(39).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|techmap|maps|syncram_2p.vhd
-999129ead47ea134bcd075c49ef039f1
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-tech
-7
-PARAMETER_SIGNED_DEC
-USR
-abits
-8
-PARAMETER_SIGNED_DEC
-USR
-dbits
-24
-PARAMETER_SIGNED_DEC
-USR
-sepclk
-1
-PARAMETER_SIGNED_DEC
-USR
-wrfst
-0
-PARAMETER_SIGNED_DEC
-USR
- constraint(raddress)
-7 downto 0
-PARAMETER_STRING
-USR
- constraint(dataout)
-23 downto 0
-PARAMETER_STRING
-USR
- constraint(waddress)
-7 downto 0
-PARAMETER_STRING
-USR
- constraint(datain)
-23 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|techmap|maps|allmem.vhd
-687c49b3b24452c68da73da365730
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|version.vhd
-fd48f5d4ffd2032b2fb8b5fca8a7b
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|stdlib.vhd
-dd5ccd657ead64ecd9d3a8f60a431de
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|amba|amba.vhd
-71375e7e3fe55042d3b45ae0c18717f8
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|techmap|gencomp|gencomp.vhd
-326c86fb79f23fa75152b8d4f1f1286
-}
-# hierarchies {
-svgactrl:svgactrl0|syncram_2p:clutram
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-altera_syncram_dp
-# storage
-db|top.(40).cnf
-db|top.(40).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|techmap|altera_mf|memory_altera_mf.vhd
-eceaab6adf42a14ed78b6d8eb2e1019
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-abits
-8
-PARAMETER_SIGNED_DEC
-USR
-dbits
-24
-PARAMETER_SIGNED_DEC
-USR
- constraint(address1)
-7 downto 0
-PARAMETER_STRING
-USR
- constraint(datain1)
-23 downto 0
-PARAMETER_STRING
-USR
- constraint(dataout1)
-23 downto 0
-PARAMETER_STRING
-USR
- constraint(address2)
-7 downto 0
-PARAMETER_STRING
-USR
- constraint(datain2)
-23 downto 0
-PARAMETER_STRING
-USR
- constraint(dataout2)
-23 downto 0
-PARAMETER_STRING
-USR
-}
-# hierarchies {
-svgactrl:svgactrl0|syncram_2p:clutram|altera_syncram_dp:\alt:x0
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
 altsyncram
 # storage
 db|top.(41).cnf
@@ -6596,289 +3981,6 @@ address_a0
 # hierarchies {
 svgactrl:svgactrl0|syncram_2p:clutram|altera_syncram_dp:\alt:x0|altsyncram:u0|altsyncram_j8r:auto_generated
 }
-# macro_sequence
-
-# end
-# entity
-ahbmst
-# storage
-db|top.(43).cnf
-db|top.(43).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|gaisler|misc|ahbmst.vhd
-235cb85785d5e902bc07c704b6f38f7
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-hindex
-1
-PARAMETER_SIGNED_DEC
-USR
-hirq
-0
-PARAMETER_SIGNED_DEC
-USR
-venid
-1
-PARAMETER_SIGNED_DEC
-USR
-devid
-99
-PARAMETER_SIGNED_DEC
-USR
-version
-0
-PARAMETER_SIGNED_DEC
-USR
-chprot
-3
-PARAMETER_SIGNED_DEC
-USR
-incaddr
-1
-PARAMETER_SIGNED_DEC
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|version.vhd
-fd48f5d4ffd2032b2fb8b5fca8a7b
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|amba|devices.vhd
-35d41e76dc5759e4b1872fb08b23a9aa
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|gaisler|misc|misc.vhd
-dcb26473abfa1974fdfda7880309f50
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|stdlib.vhd
-dd5ccd657ead64ecd9d3a8f60a431de
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|grlib|amba|amba.vhd
-71375e7e3fe55042d3b45ae0c18717f8
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|amba_modules|techmap|gencomp|gencomp.vhd
-326c86fb79f23fa75152b8d4f1f1286
-}
-# hierarchies {
-svgactrl:svgactrl0|ahbmst:ahb_master
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-ext_camd5m_init
-# storage
-db|top.(44).cnf
-db|top.(44).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|ext_modules|ext_CamD5m|ext_CamD5m_init_ent.vhd
-381e24f25689ef72252b4cb73f5e8a5b
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(led_red)
-17 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|ext_modules|ext_CamD5m|ext_CamD5m_init.vhd
-9417de74e76a4c3f326cddb4dc636c
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|ext_modules|ext_CamD5m|pkg_CamD5m_init.vhd
-c3a71fac5eb737df7d6cdf6c6fa6283
-}
-# hierarchies {
-ext_camd5m_init:camd5m_init_unit
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-ext_camd5m_read
-# storage
-db|top.(45).cnf
-db|top.(45).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|ext_modules|ext_CamD5m|ext_CamD5m_read_ent.vhd
-e65b999864d8fa12a016281e2ab79fd
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
- constraint(cam_d)
-11 downto 0
-PARAMETER_STRING
-USR
- constraint(led_green)
-8 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|ext_modules|ext_CamD5m|pkg_CamD5m_read.vhd
-6d40502375116edc68ada1be6ec43e
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|ext_modules|ext_CamD5m|ext_CamD5m_read.vhd
-656bf5887ebe7faa20b29af329356ee9
-}
-# hierarchies {
-ext_camd5m_read:camd5m_read_unit
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-ext_Dis7Seg
-# storage
-db|top.(46).cnf
-db|top.(46).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|ext_modules|ext_Dis7Seg|ext_Dis7Seg_ent.vhd
-43ee557640771da51920906bc6b47d3
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# user_parameter {
-digit_count
-8
-PARAMETER_SIGNED_DEC
-USR
-multiplexed
-0
-PARAMETER_SIGNED_DEC
-USR
- constraint(digits)
-7 downto 0
-PARAMETER_STRING
-USR
- constraint(pin_select)
-7 downto 0
-PARAMETER_STRING
-USR
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|ext_modules|ext_Dis7Seg|pkg_Dis7Seg.vhd
-18e2fa8c6e2efed34bf3aaf342b6f3b0
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|ext_modules|ext_Dis7Seg|ext_Dis7Seg.vhd
-933d4ef66b1e78742fa57bedf15a2cf5
-}
-# hierarchies {
-ext_Dis7Seg:dis7seg_unit
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
-# macro_sequence
-
-# end
-# entity
-ext_counter
-# storage
-db|top.(47).cnf
-db|top.(47).cnf
-# logic_option {
-AUTO_RAM_RECOGNITION
-ON
-}
-# case_insensitive
-# source_file
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|ext_modules|ext_counter|ext_counter_ent.vhd
-da25e29b3df490f014b178bcf0c25497
-5
-# internal_option {
-HDL_INITIAL_FANOUT_LIMIT
-OFF
-AUTO_RESOURCE_SHARING
-OFF
-AUTO_RAM_RECOGNITION
-ON
-AUTO_ROM_RECOGNITION
-ON
-}
-# include_file {
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
-45514fe7abbf6aa6982815bd9a1d2f
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|ext_modules|ext_counter|pkg_counter.vhd
-4c511da8a7e24477f1b8aefef3ad4e
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|common|spear_pkg.vhd
-25ee3778fd7a72ed4e2eb3d0f53c99f7
-|homes|c0725642|Desktop|spear2-hwsw11|VHDL|ext_modules|ext_counter|ext_counter.vhd
-56ebf688c9cb98a8888f572bd0336463
-}
-# hierarchies {
-ext_counter:counter_unit
-}
-# lmf
-|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
-9a59d39b0706640b4b2718e8a1ff1f
 # macro_sequence
 
 # end
@@ -10575,6 +7677,3231 @@ address_a0
 db|top.ram0_spear_vectab_f3dfa20a.hdl.mif
 39d04ad7adc82f9d1a0ab1458db51
 }
+# macro_sequence
+
+# end
+# entity
+altera_pll
+# storage
+db|top.(1).cnf
+db|top.(1).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|workspace|amba_hwsw|VHDL|altera_pll.vhd
+9e14df3ff9722fd2a8966d7847c6f478
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# hierarchies {
+altera_pll:altera_pll_inst
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+spear
+# storage
+db|top.(4).cnf
+db|top.(4).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|spear.vhd
+f1a72242490859a1d1e56b4088d7d2
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+conf
+A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
+PARAMETER_ARRAY
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
+94a7a967ca2448f83c1799c984b18f
+}
+# hierarchies {
+spear:spear_unit
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+spear_core
+# storage
+db|top.(5).cnf
+db|top.(5).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|core.vhd
+22f624fcec22d9d892762fdc49df32ac
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+conf
+A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
+PARAMETER_ARRAY
+USR
+ constraint(iramo_rdata)
+15 downto 0
+PARAMETER_STRING
+USR
+ constraint(irami_wdata)
+15 downto 0
+PARAMETER_STRING
+USR
+ constraint(irami_waddr)
+15 downto 0
+PARAMETER_STRING
+USR
+ constraint(irami_raddr)
+15 downto 0
+PARAMETER_STRING
+USR
+ constraint(regfi_wdata)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(regfi_waddr)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(regfi_raddr1)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(regfi_raddr2)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(regfo_rdata1)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(regfo_rdata2)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(corei_interruptin)
+15 downto 0
+PARAMETER_STRING
+USR
+ constraint(corei_extdata)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(coreo_extaddr)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(coreo_extdata)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(bromi_addr)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(bromo_data)
+15 downto 0
+PARAMETER_STRING
+USR
+ constraint(vecti_data_in)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(vecti_interruptnr)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(vecti_trapnr)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(vecti_wrvecnr)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(vecto_data_out)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(sysci_staflag)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(sysci_interruptin)
+15 downto 0
+PARAMETER_STRING
+USR
+ constraint(sysci_fptrwnew)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(sysci_fptrxnew)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(sysci_fptrynew)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(sysci_fptrznew)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(sysco_interruptnr)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(sysco_fptrw)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(sysco_fptrx)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(sysco_fptry)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(sysco_fptrz)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(progo_praddr)
+15 downto 0
+PARAMETER_STRING
+USR
+ constraint(progo_prdata)
+15 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
+94a7a967ca2448f83c1799c984b18f
+}
+# hierarchies {
+spear:spear_unit|spear_core:core_unit
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+spear_regf
+# storage
+db|top.(6).cnf
+db|top.(6).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|regf.vhd
+72556460caea8a58dc9eb3b475ac7990
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+conf
+A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
+PARAMETER_ARRAY
+USR
+ constraint(wdata)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(waddr)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(raddr1)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(raddr2)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(rdata1)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(rdata2)
+31 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
+94a7a967ca2448f83c1799c984b18f
+}
+# hierarchies {
+spear:spear_unit|spear_regf:regf_unit
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+spear_regfram
+# storage
+db|top.(7).cnf
+db|top.(7).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|regfram.vhd
+4938442f3d4b9defc866cb0432884aa
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+conf
+A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
+PARAMETER_ARRAY
+USR
+ constraint(wdata)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(waddr)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(raddr)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(rdata)
+31 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
+94a7a967ca2448f83c1799c984b18f
+}
+# hierarchies {
+spear:spear_unit|spear_regf:regf_unit|spear_regfram:ram1
+spear:spear_unit|spear_regf:regf_unit|spear_regfram:ram2
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+spear_dram
+# storage
+db|top.(8).cnf
+db|top.(8).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|dram.vhd
+791dd02d07032c3bef2bb51b4c974d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+conf
+A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
+PARAMETER_ARRAY
+USR
+ constraint(byte_en)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(data_in)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(addr)
+16 downto 2
+PARAMETER_STRING
+USR
+ constraint(data_out)
+31 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
+94a7a967ca2448f83c1799c984b18f
+}
+# hierarchies {
+spear:spear_unit|spear_dram:dram_unit
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+spear_byteram
+# storage
+db|top.(9).cnf
+db|top.(9).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|byteram.vhd
+4521d9c7cebf3904f3954a1428f39d2
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+conf
+A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
+PARAMETER_ARRAY
+USR
+ constraint(wdata)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(waddr)
+14 downto 0
+PARAMETER_STRING
+USR
+ constraint(raddr)
+14 downto 0
+PARAMETER_STRING
+USR
+ constraint(rdata)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
+94a7a967ca2448f83c1799c984b18f
+}
+# hierarchies {
+spear:spear_unit|spear_dram:dram_unit|spear_byteram:ram0
+spear:spear_unit|spear_dram:dram_unit|spear_byteram:ram1
+spear:spear_unit|spear_dram:dram_unit|spear_byteram:ram2
+spear:spear_unit|spear_dram:dram_unit|spear_byteram:ram3
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+spear_brom
+# storage
+db|top.(10).cnf
+db|top.(10).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|brom.vhd
+7be757908dfdbec4fc16cb02cbc14
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+conf
+A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
+PARAMETER_ARRAY
+USR
+ constraint(addr)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(data)
+15 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
+94a7a967ca2448f83c1799c984b18f
+}
+# hierarchies {
+spear:spear_unit|spear_brom:brom_unit
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+altera_boot_rom
+# storage
+db|top.(11).cnf
+db|top.(11).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|altera|boot_rom.vhd
+c9c347cb2b3180a873dc1dbd538976f
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+conf
+A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
+PARAMETER_ARRAY
+USR
+ constraint(address)
+15 downto 0
+PARAMETER_STRING
+USR
+ constraint(q)
+15 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
+94a7a967ca2448f83c1799c984b18f
+}
+# hierarchies {
+spear:spear_unit|spear_brom:brom_unit|altera_boot_rom:\altera_gen:boot_rom_inst
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+altsyncram_p6b1
+# storage
+db|top.(13).cnf
+db|top.(13).cnf
+# case_insensitive
+# source_file
+db|altsyncram_p6b1.tdf
+2a268e1a81c5bd8c4416c7dbee410a3
+7
+# used_port {
+q_a9
+-1
+3
+q_a8
+-1
+3
+q_a7
+-1
+3
+q_a6
+-1
+3
+q_a5
+-1
+3
+q_a4
+-1
+3
+q_a3
+-1
+3
+q_a2
+-1
+3
+q_a15
+-1
+3
+q_a14
+-1
+3
+q_a13
+-1
+3
+q_a12
+-1
+3
+q_a11
+-1
+3
+q_a10
+-1
+3
+q_a1
+-1
+3
+q_a0
+-1
+3
+clocken0
+-1
+3
+clock0
+-1
+3
+address_a9
+-1
+3
+address_a8
+-1
+3
+address_a7
+-1
+3
+address_a6
+-1
+3
+address_a5
+-1
+3
+address_a4
+-1
+3
+address_a3
+-1
+3
+address_a2
+-1
+3
+address_a11
+-1
+3
+address_a10
+-1
+3
+address_a1
+-1
+3
+address_a0
+-1
+3
+}
+# memory_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|workspace|amba_hwsw|bootloader|spear32-bootloader.hex
+baef3c72dc3d9e566b74afc511d63aee
+}
+# hierarchies {
+spear:spear_unit|spear_brom:brom_unit|altera_boot_rom:\altera_gen:boot_rom_inst|altsyncram:\use_brom_hex:altsyncram_component|altsyncram_p6b1:auto_generated
+}
+# macro_sequence
+
+# end
+# entity
+spear_vectab
+# storage
+db|top.(14).cnf
+db|top.(14).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|vectab.vhd
+77ab7a5a5c12f7f8525fdb388ace241
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+conf
+A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
+PARAMETER_ARRAY
+USR
+ constraint(data_in)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(interruptnr)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(trapnr)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(wrvecnr)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(data_out)
+31 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
+94a7a967ca2448f83c1799c984b18f
+}
+# hierarchies {
+spear:spear_unit|spear_vectab:vect_unit
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+spear_sysc
+# storage
+db|top.(15).cnf
+db|top.(15).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|sysc.vhd
+4fc7edf93d72d394f3c6cc5848d2a954
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+conf
+A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
+PARAMETER_ARRAY
+USR
+ constraint(staflag)
+4 downto 0
+PARAMETER_STRING
+USR
+ constraint(interruptin)
+15 downto 0
+PARAMETER_STRING
+USR
+ constraint(fptrwnew)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(fptrxnew)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(fptrynew)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(fptrznew)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(interruptnr)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(fptrw)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(fptrx)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(fptry)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(fptrz)
+31 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
+94a7a967ca2448f83c1799c984b18f
+}
+# hierarchies {
+spear:spear_unit|spear_sysc:sysc_unit
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+spear_iram
+# storage
+db|top.(16).cnf
+db|top.(16).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|iram.vhd
+cf23841c255a3656e73ea64c7c919
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+conf
+A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
+PARAMETER_ARRAY
+USR
+ constraint(wdata)
+15 downto 0
+PARAMETER_STRING
+USR
+ constraint(waddr)
+15 downto 0
+PARAMETER_STRING
+USR
+ constraint(raddr)
+15 downto 0
+PARAMETER_STRING
+USR
+ constraint(rdata)
+15 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
+94a7a967ca2448f83c1799c984b18f
+}
+# hierarchies {
+spear:spear_unit|spear_iram:\use_prog_gen:iram_unit
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+spear_prog
+# storage
+db|top.(17).cnf
+db|top.(17).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|prog.vhd
+298b251df4f9c1ff82843e57a7d954a
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+conf
+A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
+PARAMETER_ARRAY
+USR
+ constraint(praddr)
+15 downto 0
+PARAMETER_STRING
+USR
+ constraint(prdata)
+15 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
+94a7a967ca2448f83c1799c984b18f
+}
+# hierarchies {
+spear:spear_unit|spear_prog:\use_prog_gen:prog_unit
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+ext_miniUART
+# storage
+db|top.(18).cnf
+db|top.(18).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|rs232.vhd
+86ee6587fa37a44cbc246b84a631cda4
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
+94a7a967ca2448f83c1799c984b18f
+}
+# hierarchies {
+spear:spear_unit|ext_miniUART:ext_miniUART_unit
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+miniUART_control
+# storage
+db|top.(19).cnf
+db|top.(19).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|rs232.vhd
+86ee6587fa37a44cbc246b84a631cda4
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(asa)
+2 downto 0
+PARAMETER_STRING
+USR
+ constraint(evs)
+1 downto 0
+PARAMETER_STRING
+USR
+ constraint(data_r)
+15 downto 0
+PARAMETER_STRING
+USR
+ constraint(data_r_out)
+15 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
+94a7a967ca2448f83c1799c984b18f
+}
+# hierarchies {
+spear:spear_unit|ext_miniUART:ext_miniUART_unit|miniUART_control:miniUART_control_unit
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+miniUART_transmitter
+# storage
+db|top.(20).cnf
+db|top.(20).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|rs232.vhd
+86ee6587fa37a44cbc246b84a631cda4
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(msglength)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(data)
+15 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
+94a7a967ca2448f83c1799c984b18f
+}
+# hierarchies {
+spear:spear_unit|ext_miniUART:ext_miniUART_unit|miniUART_transmitter:miniUART_transmitter_unit
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+miniUART_receiver
+# storage
+db|top.(21).cnf
+db|top.(21).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|rs232.vhd
+86ee6587fa37a44cbc246b84a631cda4
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(msglength)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(data)
+15 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
+94a7a967ca2448f83c1799c984b18f
+}
+# hierarchies {
+spear:spear_unit|ext_miniUART:ext_miniUART_unit|miniUART_receiver:miniUART_receiver_unit
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+miniUART_BRG
+# storage
+db|top.(22).cnf
+db|top.(22).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|rs232.vhd
+86ee6587fa37a44cbc246b84a631cda4
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(ubrs)
+15 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
+94a7a967ca2448f83c1799c984b18f
+}
+# hierarchies {
+spear:spear_unit|ext_miniUART:ext_miniUART_unit|miniUART_BRG:miniUART_BRG_unit
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+miniUART_busdriver
+# storage
+db|top.(23).cnf
+db|top.(23).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|rs232.vhd
+86ee6587fa37a44cbc246b84a631cda4
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
+94a7a967ca2448f83c1799c984b18f
+}
+# hierarchies {
+spear:spear_unit|ext_miniUART:ext_miniUART_unit|miniUART_busdriver:miniUART_busdriver_unit
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+ext_AMBA_sharedmem
+# storage
+db|top.(24).cnf
+db|top.(24).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|ext_AMBA_sharedmem.vhd
+bfdb6c6735a8baa1b74d95111a11e50
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+conf
+A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
+PARAMETER_ARRAY
+USR
+ constraint(adrami_byte_en)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(adrami_data_in)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(adrami_addr)
+7 downto 2
+PARAMETER_STRING
+USR
+ constraint(adramo_data_out)
+31 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
+94a7a967ca2448f83c1799c984b18f
+}
+# hierarchies {
+spear:spear_unit|ext_AMBA_sharedmem:\ena_amba:ambadram_unit
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+AMBA_sharedmem_dram
+# storage
+db|top.(25).cnf
+db|top.(25).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|AMBA_sharedmem_dram.vhd
+06fc42358b220d969301748e6b4b55d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+conf
+A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
+PARAMETER_ARRAY
+USR
+ constraint(byte_en)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(data_in)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(addr)
+7 downto 2
+PARAMETER_STRING
+USR
+ constraint(data_out)
+31 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
+94a7a967ca2448f83c1799c984b18f
+}
+# hierarchies {
+spear:spear_unit|ext_AMBA_sharedmem:\ena_amba:ambadram_unit|AMBA_sharedmem_dram:dram_unit
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+AMBA_sharedmem_byteram
+# storage
+db|top.(26).cnf
+db|top.(26).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|AMBA_sharedmem_byteram.vhd
+d0dcfbb25abe29eea5bad56cb2d4fa41
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+conf
+A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
+PARAMETER_ARRAY
+USR
+ constraint(wdata)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(waddr)
+5 downto 0
+PARAMETER_STRING
+USR
+ constraint(raddr)
+5 downto 0
+PARAMETER_STRING
+USR
+ constraint(rdata)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
+94a7a967ca2448f83c1799c984b18f
+}
+# hierarchies {
+spear:spear_unit|ext_AMBA_sharedmem:\ena_amba:ambadram_unit|AMBA_sharedmem_dram:dram_unit|AMBA_sharedmem_byteram:ram0
+spear:spear_unit|ext_AMBA_sharedmem:\ena_amba:ambadram_unit|AMBA_sharedmem_dram:dram_unit|AMBA_sharedmem_byteram:ram1
+spear:spear_unit|ext_AMBA_sharedmem:\ena_amba:ambadram_unit|AMBA_sharedmem_dram:dram_unit|AMBA_sharedmem_byteram:\ramcfg:ram2
+spear:spear_unit|ext_AMBA_sharedmem:\ena_amba:ambadram_unit|AMBA_sharedmem_dram:dram_unit|AMBA_sharedmem_byteram:\ramcfg:ram3
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+ext_AMBA
+# storage
+db|top.(27).cnf
+db|top.(27).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|ext_AMBA.vhd
+aa2ab9451ade21ed9ae6477fe4f24
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+conf
+A(D"2",D"32",D"12",D"16",D"17",E"true",E"true",D"8",D"32",D"0",D"29")
+PARAMETER_ARRAY
+USR
+dramoffset
+000000000000000000000000
+PARAMETER_UNSIGNED_BIN
+USR
+ constraint(dramoffset)
+31 downto 8
+PARAMETER_STRING
+USR
+ constraint(addr_high)
+31 downto 15
+PARAMETER_STRING
+USR
+ constraint(atd_byte_en)
+3 downto 0
+PARAMETER_STRING
+USR
+ constraint(atd_data_in)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(atd_addr)
+7 downto 2
+PARAMETER_STRING
+USR
+ constraint(dta_data_out)
+31 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
+94a7a967ca2448f83c1799c984b18f
+}
+# hierarchies {
+spear:spear_unit|ext_AMBA:\ena_amba:amba_unit
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+AMBA_AHBMasterStatemachine
+# storage
+db|top.(28).cnf
+db|top.(28).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|AMBA_AHBMasterStatemachine.vhd
+e9d243db3d56ba3aa9305e6b5d551fd
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|spear2_core|spear_core_pkg.vhd
+94a7a967ca2448f83c1799c984b18f
+}
+# hierarchies {
+spear:spear_unit|ext_AMBA:\ena_amba:amba_unit|AMBA_AHBMasterStatemachine:ASM_0
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+ahbctrl
+# storage
+db|top.(29).cnf
+db|top.(29).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|amba|ahbctrl.vhd
+a537b4eefd8b51c652f4148a787c7e22
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+defmast
+0
+PARAMETER_SIGNED_DEC
+USR
+split
+0
+PARAMETER_SIGNED_DEC
+USR
+rrobin
+0
+PARAMETER_SIGNED_DEC
+USR
+timeout
+0
+PARAMETER_SIGNED_DEC
+USR
+ioaddr
+4095
+PARAMETER_SIGNED_DEC
+USR
+iomask
+4095
+PARAMETER_SIGNED_DEC
+USR
+cfgaddr
+4080
+PARAMETER_SIGNED_DEC
+USR
+cfgmask
+4080
+PARAMETER_SIGNED_DEC
+USR
+nahbm
+3
+PARAMETER_SIGNED_DEC
+USR
+nahbs
+2
+PARAMETER_SIGNED_DEC
+USR
+ioen
+1
+PARAMETER_SIGNED_DEC
+USR
+disirq
+0
+PARAMETER_SIGNED_DEC
+USR
+fixbrst
+1
+PARAMETER_SIGNED_DEC
+USR
+debug
+2
+PARAMETER_SIGNED_DEC
+USR
+fpnpen
+0
+PARAMETER_SIGNED_DEC
+USR
+icheck
+1
+PARAMETER_SIGNED_DEC
+USR
+devid
+0
+PARAMETER_SIGNED_DEC
+USR
+enbusmon
+0
+PARAMETER_SIGNED_DEC
+USR
+assertwarn
+0
+PARAMETER_SIGNED_DEC
+USR
+asserterr
+0
+PARAMETER_SIGNED_DEC
+USR
+hmstdisable
+0
+PARAMETER_SIGNED_DEC
+USR
+hslvdisable
+0
+PARAMETER_SIGNED_DEC
+USR
+arbdisable
+0
+PARAMETER_SIGNED_DEC
+USR
+ constraint(msto)
+15 downto 0
+PARAMETER_STRING
+USR
+ constraint(slvo)
+15 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|stdlib.vhd
+dd5ccd657ead64ecd9d3a8f60a431de
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|version.vhd
+fd48f5d4ffd2032b2fb8b5fca8a7b
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|amba|amba.vhd
+71375e7e3fe55042d3b45ae0c18717f8
+}
+# hierarchies {
+ahbctrl:ahb0
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+apbctrl
+# storage
+db|top.(30).cnf
+db|top.(30).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|amba|apbctrl.vhd
+e2f158281635a2bca2b64be8b4dac3
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+hindex
+0
+PARAMETER_SIGNED_DEC
+USR
+haddr
+3840
+PARAMETER_SIGNED_DEC
+USR
+hmask
+4095
+PARAMETER_SIGNED_DEC
+USR
+nslaves
+1
+PARAMETER_SIGNED_DEC
+USR
+debug
+2
+PARAMETER_SIGNED_DEC
+USR
+icheck
+1
+PARAMETER_SIGNED_DEC
+USR
+enbusmon
+0
+PARAMETER_SIGNED_DEC
+USR
+asserterr
+0
+PARAMETER_SIGNED_DEC
+USR
+assertwarn
+0
+PARAMETER_SIGNED_DEC
+USR
+pslvdisable
+0
+PARAMETER_SIGNED_DEC
+USR
+ constraint(apbo)
+0 to 15
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|stdlib.vhd
+dd5ccd657ead64ecd9d3a8f60a431de
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|version.vhd
+fd48f5d4ffd2032b2fb8b5fca8a7b
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|amba|amba.vhd
+71375e7e3fe55042d3b45ae0c18717f8
+}
+# hierarchies {
+apbctrl:apb_bridge
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+sdctrl
+# storage
+db|top.(31).cnf
+db|top.(31).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|gaisler|memctrl|sdctrl.vhd
+42fd1568403d3fd1ac98d420f17289
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+hindex
+1
+PARAMETER_SIGNED_DEC
+USR
+haddr
+3584
+PARAMETER_SIGNED_DEC
+USR
+hmask
+3968
+PARAMETER_SIGNED_DEC
+USR
+ioaddr
+0
+PARAMETER_SIGNED_DEC
+USR
+iomask
+4095
+PARAMETER_SIGNED_DEC
+USR
+wprot
+0
+PARAMETER_SIGNED_DEC
+USR
+invclk
+0
+PARAMETER_SIGNED_DEC
+USR
+fast
+0
+PARAMETER_SIGNED_DEC
+USR
+pwron
+0
+PARAMETER_SIGNED_DEC
+USR
+sdbits
+32
+PARAMETER_SIGNED_DEC
+USR
+oepol
+0
+PARAMETER_SIGNED_DEC
+USR
+pageburst
+0
+PARAMETER_SIGNED_DEC
+USR
+mobile
+0
+PARAMETER_SIGNED_DEC
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|stdlib.vhd
+dd5ccd657ead64ecd9d3a8f60a431de
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|amba|devices.vhd
+35d41e76dc5759e4b1872fb08b23a9aa
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|gaisler|memctrl|memctrl.vhd
+d76ee4cd6cbd74528d30432ec5681b3b
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|techmap|gencomp|gencomp.vhd
+326c86fb79f23fa75152b8d4f1f1286
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|version.vhd
+fd48f5d4ffd2032b2fb8b5fca8a7b
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|amba|amba.vhd
+71375e7e3fe55042d3b45ae0c18717f8
+}
+# hierarchies {
+sdctrl:sdctrl_inst
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+iopadvv
+# storage
+db|top.(32).cnf
+db|top.(32).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|techmap|maps|iopad.vhd
+52e8a89b6e779bd8149f55e25bbc7a1
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+tech
+0
+PARAMETER_SIGNED_DEC
+USR
+level
+0
+PARAMETER_SIGNED_DEC
+USR
+slew
+0
+PARAMETER_SIGNED_DEC
+USR
+voltage
+3
+PARAMETER_SIGNED_DEC
+USR
+strength
+12
+PARAMETER_SIGNED_DEC
+USR
+width
+32
+PARAMETER_SIGNED_DEC
+USR
+oepol
+0
+PARAMETER_SIGNED_DEC
+USR
+ constraint(pad)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(i)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(en)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(o)
+31 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|stdlib.vhd
+dd5ccd657ead64ecd9d3a8f60a431de
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|techmap|maps|allpads.vhd
+c63e7635fd2a55fcd46c8af46bc5bc99
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|techmap|gencomp|gencomp.vhd
+326c86fb79f23fa75152b8d4f1f1286
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|version.vhd
+fd48f5d4ffd2032b2fb8b5fca8a7b
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|amba|amba.vhd
+71375e7e3fe55042d3b45ae0c18717f8
+}
+# hierarchies {
+iopadvv:sd_pad
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+iopad
+# storage
+db|top.(33).cnf
+db|top.(33).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|techmap|maps|iopad.vhd
+52e8a89b6e779bd8149f55e25bbc7a1
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+tech
+0
+PARAMETER_SIGNED_DEC
+USR
+level
+0
+PARAMETER_SIGNED_DEC
+USR
+slew
+0
+PARAMETER_SIGNED_DEC
+USR
+voltage
+3
+PARAMETER_SIGNED_DEC
+USR
+strength
+12
+PARAMETER_SIGNED_DEC
+USR
+oepol
+0
+PARAMETER_SIGNED_DEC
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|stdlib.vhd
+dd5ccd657ead64ecd9d3a8f60a431de
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|techmap|maps|allpads.vhd
+c63e7635fd2a55fcd46c8af46bc5bc99
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|techmap|gencomp|gencomp.vhd
+326c86fb79f23fa75152b8d4f1f1286
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|version.vhd
+fd48f5d4ffd2032b2fb8b5fca8a7b
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|amba|amba.vhd
+71375e7e3fe55042d3b45ae0c18717f8
+}
+# hierarchies {
+iopadvv:sd_pad|iopad:\v:31:x0
+iopadvv:sd_pad|iopad:\v:30:x0
+iopadvv:sd_pad|iopad:\v:29:x0
+iopadvv:sd_pad|iopad:\v:28:x0
+iopadvv:sd_pad|iopad:\v:27:x0
+iopadvv:sd_pad|iopad:\v:26:x0
+iopadvv:sd_pad|iopad:\v:25:x0
+iopadvv:sd_pad|iopad:\v:24:x0
+iopadvv:sd_pad|iopad:\v:23:x0
+iopadvv:sd_pad|iopad:\v:22:x0
+iopadvv:sd_pad|iopad:\v:21:x0
+iopadvv:sd_pad|iopad:\v:20:x0
+iopadvv:sd_pad|iopad:\v:19:x0
+iopadvv:sd_pad|iopad:\v:18:x0
+iopadvv:sd_pad|iopad:\v:17:x0
+iopadvv:sd_pad|iopad:\v:16:x0
+iopadvv:sd_pad|iopad:\v:15:x0
+iopadvv:sd_pad|iopad:\v:14:x0
+iopadvv:sd_pad|iopad:\v:13:x0
+iopadvv:sd_pad|iopad:\v:12:x0
+iopadvv:sd_pad|iopad:\v:11:x0
+iopadvv:sd_pad|iopad:\v:10:x0
+iopadvv:sd_pad|iopad:\v:9:x0
+iopadvv:sd_pad|iopad:\v:8:x0
+iopadvv:sd_pad|iopad:\v:7:x0
+iopadvv:sd_pad|iopad:\v:6:x0
+iopadvv:sd_pad|iopad:\v:5:x0
+iopadvv:sd_pad|iopad:\v:4:x0
+iopadvv:sd_pad|iopad:\v:3:x0
+iopadvv:sd_pad|iopad:\v:2:x0
+iopadvv:sd_pad|iopad:\v:1:x0
+iopadvv:sd_pad|iopad:\v:0:x0
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+svgactrl
+# storage
+db|top.(34).cnf
+db|top.(34).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|gaisler|misc|svgactrl.vhd
+3be2bca267a31e957d43e9866a6
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+length
+384
+PARAMETER_SIGNED_DEC
+USR
+part
+128
+PARAMETER_SIGNED_DEC
+USR
+memtech
+7
+PARAMETER_SIGNED_DEC
+USR
+pindex
+0
+PARAMETER_SIGNED_DEC
+USR
+paddr
+1
+PARAMETER_SIGNED_DEC
+USR
+pmask
+4095
+PARAMETER_SIGNED_DEC
+USR
+hindex
+1
+PARAMETER_SIGNED_DEC
+USR
+hirq
+0
+PARAMETER_SIGNED_DEC
+USR
+clk0
+40000
+PARAMETER_SIGNED_DEC
+USR
+clk1
+20000
+PARAMETER_SIGNED_DEC
+USR
+clk2
+15385
+PARAMETER_SIGNED_DEC
+USR
+clk3
+0
+PARAMETER_SIGNED_DEC
+USR
+burstlen
+8
+PARAMETER_SIGNED_DEC
+USR
+ constraint(clk_sel)
+1 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|stdlib.vhd
+dd5ccd657ead64ecd9d3a8f60a431de
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|gaisler|misc|misc.vhd
+dcb26473abfa1974fdfda7880309f50
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|amba|devices.vhd
+35d41e76dc5759e4b1872fb08b23a9aa
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|techmap|gencomp|gencomp.vhd
+326c86fb79f23fa75152b8d4f1f1286
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|version.vhd
+fd48f5d4ffd2032b2fb8b5fca8a7b
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|amba|amba.vhd
+71375e7e3fe55042d3b45ae0c18717f8
+}
+# hierarchies {
+svgactrl:svgactrl0
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+syncram_2p
+# storage
+db|top.(35).cnf
+db|top.(35).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|techmap|maps|syncram_2p.vhd
+999129ead47ea134bcd075c49ef039f1
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+tech
+7
+PARAMETER_SIGNED_DEC
+USR
+abits
+10
+PARAMETER_SIGNED_DEC
+USR
+dbits
+32
+PARAMETER_SIGNED_DEC
+USR
+sepclk
+1
+PARAMETER_SIGNED_DEC
+USR
+wrfst
+0
+PARAMETER_SIGNED_DEC
+USR
+ constraint(raddress)
+9 downto 0
+PARAMETER_STRING
+USR
+ constraint(dataout)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(waddress)
+9 downto 0
+PARAMETER_STRING
+USR
+ constraint(datain)
+31 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|stdlib.vhd
+dd5ccd657ead64ecd9d3a8f60a431de
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|techmap|maps|allmem.vhd
+687c49b3b24452c68da73da365730
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|techmap|gencomp|gencomp.vhd
+326c86fb79f23fa75152b8d4f1f1286
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|version.vhd
+fd48f5d4ffd2032b2fb8b5fca8a7b
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|amba|amba.vhd
+71375e7e3fe55042d3b45ae0c18717f8
+}
+# hierarchies {
+svgactrl:svgactrl0|syncram_2p:ram0
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+altera_syncram_dp
+# storage
+db|top.(36).cnf
+db|top.(36).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|techmap|altera_mf|memory_altera_mf.vhd
+eceaab6adf42a14ed78b6d8eb2e1019
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+abits
+10
+PARAMETER_SIGNED_DEC
+USR
+dbits
+32
+PARAMETER_SIGNED_DEC
+USR
+ constraint(address1)
+9 downto 0
+PARAMETER_STRING
+USR
+ constraint(datain1)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(dataout1)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(address2)
+9 downto 0
+PARAMETER_STRING
+USR
+ constraint(datain2)
+31 downto 0
+PARAMETER_STRING
+USR
+ constraint(dataout2)
+31 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+svgactrl:svgactrl0|syncram_2p:ram0|altera_syncram_dp:\alt:x0
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+syncram_2p
+# storage
+db|top.(39).cnf
+db|top.(39).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|techmap|maps|syncram_2p.vhd
+999129ead47ea134bcd075c49ef039f1
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+tech
+7
+PARAMETER_SIGNED_DEC
+USR
+abits
+8
+PARAMETER_SIGNED_DEC
+USR
+dbits
+24
+PARAMETER_SIGNED_DEC
+USR
+sepclk
+1
+PARAMETER_SIGNED_DEC
+USR
+wrfst
+0
+PARAMETER_SIGNED_DEC
+USR
+ constraint(raddress)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(dataout)
+23 downto 0
+PARAMETER_STRING
+USR
+ constraint(waddress)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(datain)
+23 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|stdlib.vhd
+dd5ccd657ead64ecd9d3a8f60a431de
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|techmap|maps|allmem.vhd
+687c49b3b24452c68da73da365730
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|techmap|gencomp|gencomp.vhd
+326c86fb79f23fa75152b8d4f1f1286
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|version.vhd
+fd48f5d4ffd2032b2fb8b5fca8a7b
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|amba|amba.vhd
+71375e7e3fe55042d3b45ae0c18717f8
+}
+# hierarchies {
+svgactrl:svgactrl0|syncram_2p:clutram
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+altera_syncram_dp
+# storage
+db|top.(40).cnf
+db|top.(40).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|techmap|altera_mf|memory_altera_mf.vhd
+eceaab6adf42a14ed78b6d8eb2e1019
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+abits
+8
+PARAMETER_SIGNED_DEC
+USR
+dbits
+24
+PARAMETER_SIGNED_DEC
+USR
+ constraint(address1)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(datain1)
+23 downto 0
+PARAMETER_STRING
+USR
+ constraint(dataout1)
+23 downto 0
+PARAMETER_STRING
+USR
+ constraint(address2)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(datain2)
+23 downto 0
+PARAMETER_STRING
+USR
+ constraint(dataout2)
+23 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+svgactrl:svgactrl0|syncram_2p:clutram|altera_syncram_dp:\alt:x0
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+ahbmst
+# storage
+db|top.(43).cnf
+db|top.(43).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|gaisler|misc|ahbmst.vhd
+235cb85785d5e902bc07c704b6f38f7
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+hindex
+1
+PARAMETER_SIGNED_DEC
+USR
+hirq
+0
+PARAMETER_SIGNED_DEC
+USR
+venid
+1
+PARAMETER_SIGNED_DEC
+USR
+devid
+99
+PARAMETER_SIGNED_DEC
+USR
+version
+0
+PARAMETER_SIGNED_DEC
+USR
+chprot
+3
+PARAMETER_SIGNED_DEC
+USR
+incaddr
+1
+PARAMETER_SIGNED_DEC
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|stdlib.vhd
+dd5ccd657ead64ecd9d3a8f60a431de
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|gaisler|misc|misc.vhd
+dcb26473abfa1974fdfda7880309f50
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|amba|devices.vhd
+35d41e76dc5759e4b1872fb08b23a9aa
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|techmap|gencomp|gencomp.vhd
+326c86fb79f23fa75152b8d4f1f1286
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|version.vhd
+fd48f5d4ffd2032b2fb8b5fca8a7b
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|amba|amba.vhd
+71375e7e3fe55042d3b45ae0c18717f8
+}
+# hierarchies {
+svgactrl:svgactrl0|ahbmst:ahb_master
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+ext_camd5m_init
+# storage
+db|top.(44).cnf
+db|top.(44).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|ext_modules|ext_CamD5m|ext_CamD5m_init_ent.vhd
+381e24f25689ef72252b4cb73f5e8a5b
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(led_red)
+17 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|ext_modules|ext_CamD5m|pkg_CamD5m_init.vhd
+c3a71fac5eb737df7d6cdf6c6fa6283
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|ext_modules|ext_CamD5m|ext_CamD5m_init.vhd
+9417de74e76a4c3f326cddb4dc636c
+}
+# hierarchies {
+ext_camd5m_init:camd5m_init_unit
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+dp_ram
+# storage
+db|top.(45).cnf
+db|top.(45).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|ext_modules|ext_kamera|ext_dp_ram.vhd
+3542d9d8a71f70c9a6ca3c8ffc13830
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+addr_width
+11
+PARAMETER_SIGNED_DEC
+USR
+data_width
+24
+PARAMETER_SIGNED_DEC
+USR
+ constraint(address1)
+10 downto 0
+PARAMETER_STRING
+USR
+ constraint(data_out1)
+23 downto 0
+PARAMETER_STRING
+USR
+ constraint(data_in1)
+23 downto 0
+PARAMETER_STRING
+USR
+ constraint(address2)
+10 downto 0
+PARAMETER_STRING
+USR
+ constraint(data_out2)
+23 downto 0
+PARAMETER_STRING
+USR
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+tp_ram
+# storage
+db|top.(46).cnf
+db|top.(46).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|ext_modules|ext_kamera|ext_tp_ram.vhd
+239fa4e575866e6a235ec46671d4d3d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+addr_width
+11
+PARAMETER_SIGNED_DEC
+USR
+data_width
+8
+PARAMETER_SIGNED_DEC
+USR
+ constraint(address1)
+10 downto 0
+PARAMETER_STRING
+USR
+ constraint(address2)
+10 downto 0
+PARAMETER_STRING
+USR
+ constraint(address3)
+10 downto 0
+PARAMETER_STRING
+USR
+ constraint(data_in1)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(data_out2)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(data_out3)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+ext_Dis7Seg
+# storage
+db|top.(63).cnf
+db|top.(63).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|ext_modules|ext_Dis7Seg|ext_Dis7Seg_ent.vhd
+43ee557640771da51920906bc6b47d3
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+digit_count
+8
+PARAMETER_SIGNED_DEC
+USR
+multiplexed
+0
+PARAMETER_SIGNED_DEC
+USR
+ constraint(digits)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(pin_select)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|ext_modules|ext_Dis7Seg|ext_Dis7Seg.vhd
+933d4ef66b1e78742fa57bedf15a2cf5
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|ext_modules|ext_Dis7Seg|pkg_Dis7Seg.vhd
+18e2fa8c6e2efed34bf3aaf342b6f3b0
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+}
+# hierarchies {
+ext_Dis7Seg:dis7seg_unit
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+ext_counter
+# storage
+db|top.(64).cnf
+db|top.(64).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|ext_modules|ext_counter|ext_counter_ent.vhd
+da25e29b3df490f014b178bcf0c25497
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|ext_modules|ext_counter|ext_counter.vhd
+56ebf688c9cb98a8888f572bd0336463
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|ext_modules|ext_counter|pkg_counter.vhd
+4c511da8a7e24477f1b8aefef3ad4e
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+}
+# hierarchies {
+ext_counter:counter_unit
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+top
+# storage
+db|top.(0).cnf
+db|top.(0).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|workspace|amba_hwsw|VHDL|top.vhd
+5ed51b657430faac422140136490ee40
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|gaisler|memctrl|memctrl.vhd
+d76ee4cd6cbd74528d30432ec5681b3b
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|ext_modules|ext_CamD5m|pkg_CamD5m_init.vhd
+c3a71fac5eb737df7d6cdf6c6fa6283
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|gaisler|misc|misc.vhd
+dcb26473abfa1974fdfda7880309f50
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|workspace|amba_hwsw|VHDL|top_pkg.vhd
+32f319c75d81f44b0a2d097e115ea8e
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|techmap|gencomp|gencomp.vhd
+326c86fb79f23fa75152b8d4f1f1286
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|amba|devices.vhd
+35d41e76dc5759e4b1872fb08b23a9aa
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|version.vhd
+fd48f5d4ffd2032b2fb8b5fca8a7b
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|ext_modules|ext_kamera|pkg_kamera.vhd
+f22358f821cedadc7fb5c0991d9238
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|ext_modules|ext_Dis7Seg|pkg_Dis7Seg.vhd
+18e2fa8c6e2efed34bf3aaf342b6f3b0
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|amba|amba.vhd
+71375e7e3fe55042d3b45ae0c18717f8
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|ext_modules|ext_counter|pkg_counter.vhd
+4c511da8a7e24477f1b8aefef3ad4e
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|amba_modules|grlib|stdlib|stdlib.vhd
+dd5ccd657ead64ecd9d3a8f60a431de
+}
+# hierarchies {
+|
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+dp_ram
+# storage
+db|top.(47).cnf
+db|top.(47).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|ext_modules|ext_kamera|ext_dp_ram.vhd
+3542d9d8a71f70c9a6ca3c8ffc13830
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+addr_width
+12
+PARAMETER_SIGNED_DEC
+USR
+data_width
+24
+PARAMETER_SIGNED_DEC
+USR
+ constraint(address1)
+11 downto 0
+PARAMETER_STRING
+USR
+ constraint(data_out1)
+23 downto 0
+PARAMETER_STRING
+USR
+ constraint(data_in1)
+23 downto 0
+PARAMETER_STRING
+USR
+ constraint(address2)
+11 downto 0
+PARAMETER_STRING
+USR
+ constraint(data_out2)
+23 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+dp_ram:dp_ram0
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+tp_ram
+# storage
+db|top.(62).cnf
+db|top.(62).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|ext_modules|ext_kamera|ext_tp_ram.vhd
+239fa4e575866e6a235ec46671d4d3d
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+addr_width
+12
+PARAMETER_SIGNED_DEC
+USR
+data_width
+8
+PARAMETER_SIGNED_DEC
+USR
+ constraint(address1)
+11 downto 0
+PARAMETER_STRING
+USR
+ constraint(address2)
+11 downto 0
+PARAMETER_STRING
+USR
+ constraint(address3)
+11 downto 0
+PARAMETER_STRING
+USR
+ constraint(data_in1)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(data_out2)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(data_out3)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# hierarchies {
+tp_ram:tp_ram0
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+read_kamera
+# storage
+db|top.(65).cnf
+db|top.(65).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|ext_modules|ext_kamera|ext_read_kamera.vhd
+97937f50a112e775aaace7cc903b17b0
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(cam_d)
+11 downto 0
+PARAMETER_STRING
+USR
+ constraint(ram_address)
+11 downto 0
+PARAMETER_STRING
+USR
+ constraint(ram_data)
+7 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|ext_modules|ext_CamD5m|pkg_CamD5m_read.vhd
+6d40502375116edc68ada1be6ec43e
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|ext_modules|ext_kamera|pkg_kamera.vhd
+f22358f821cedadc7fb5c0991d9238
+}
+# hierarchies {
+read_kamera:kam1
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
+# macro_sequence
+
+# end
+# entity
+converter
+# storage
+db|top.(66).cnf
+db|top.(66).cnf
+# logic_option {
+AUTO_RAM_RECOGNITION
+ON
+}
+# case_insensitive
+# source_file
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|ext_modules|ext_kamera|ext_converter.vhd
+2999381e5c773bca52e47aa649d8fd1c
+5
+# internal_option {
+HDL_INITIAL_FANOUT_LIMIT
+OFF
+AUTO_RESOURCE_SHARING
+OFF
+AUTO_RAM_RECOGNITION
+ON
+AUTO_ROM_RECOGNITION
+ON
+}
+# user_parameter {
+ constraint(small_ram_address1)
+11 downto 0
+PARAMETER_STRING
+USR
+ constraint(small_ram_data1)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(small_ram_address2)
+11 downto 0
+PARAMETER_STRING
+USR
+ constraint(small_ram_data2)
+7 downto 0
+PARAMETER_STRING
+USR
+ constraint(ram_address)
+11 downto 0
+PARAMETER_STRING
+USR
+ constraint(ram_data)
+23 downto 0
+PARAMETER_STRING
+USR
+}
+# include_file {
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_amba_pkg.vhd
+45514fe7abbf6aa6982815bd9a1d2f
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|ext_modules|ext_CamD5m|pkg_CamD5m_read.vhd
+6d40502375116edc68ada1be6ec43e
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|common|spear_pkg.vhd
+25ee3778fd7a72ed4e2eb3d0f53c99f7
+|homes|c0725146|Desktop|HWSWCodesign|spear2-hwsw11|VHDL|ext_modules|ext_kamera|pkg_kamera.vhd
+f22358f821cedadc7fb5c0991d9238
+}
+# hierarchies {
+converter:con1
+}
+# lmf
+|opt|altera-quartus-10.1sp1|quartus|lmf|maxplus2.lmf
+9a59d39b0706640b4b2718e8a1ff1f
 # macro_sequence
 
 # end
