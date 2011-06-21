@@ -64,7 +64,7 @@ architecture behaviour of read_kamera is
 
 begin
 
-  read : process(r, CAM_LVAL, CAM_FVAL, CAM_PIXCLK, CAM_D)
+  read : process(r, CAM_LVAL, CAM_FVAL, CAM_PIXCLK, CAM_D, INIT_DONE)
   variable temp_index	: std_logic_vector(11 downto 0);
   begin
     r_next <= r;

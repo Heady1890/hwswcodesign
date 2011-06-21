@@ -42,7 +42,7 @@ architecture behaviour of ext_skindetect is
   );
 	
   signal rstint : std_ulogic;
-  signal result,result_next : std_logic;
+  signal isSkin, isSkin_next : std_logic;
 
 begin
 
@@ -64,38 +64,64 @@ begin
             end if;
             if ((exti.byte_en(3) = '1')) then
               v.ifacereg(3) := exti.data(31 downto 24);
-            end if;
+            end if; 
           end if;
         when "001" =>
           if ((exti.byte_en(0) = '1')) then
-            v.ifacereg(4) := exti.data(7 downto 0);
+            v.r := exti.data(7 downto 0);
           end if;
           if ((exti.byte_en(1) = '1')) then
-            v.ifacereg(5) := exti.data(15 downto 8);
+            v.g := exti.data(15 downto 8);
           end if;
           if ((exti.byte_en(2) = '1')) then
-            v.ifacereg(6) := exti.data(23 downto 16);
-          end if;
-          if ((exti.byte_en(3) = '1')) then
-            v.ifacereg(7) := exti.data(31 downto 24);
-          end if;
-        when "010" =>
-          if ((exti.byte_en(0) = '1')) then
-            v.counter(7 downto 0) := exti.data(7 downto 0);
-          end if;
-          if ((exti.byte_en(1) = '1')) then
-            v.counter(15 downto 8) := exti.data(15 downto 8);
-          end if;
-          if ((exti.byte_en(2) = '1')) then
-            v.counter(23 downto 16) := exti.data(23 downto 16);
-          end if;
-          if ((exti.byte_en(3) = '1')) then
-            v.counter(31 downto 24) := exti.data(31 downto 24);
+            v.b := exti.data(23 downto 16);
           end if;
         when others =>
           null;
       end case;
     end if;
+
+    --auslesen
+    exto.data <= (others => '0');
+    if ((extsel = '1') and (exti.write_en = '0')) then
+      case exti.addr(4 downto 2) is
+        when "000" =>
+          exto.data <= r.ifacereg(3) & r.ifacereg(2) & r.ifacereg(1) & r.ifacereg(0);
+        when "010" =>
+          exto.data(0) <= isSkin;
+        when others =>
+          null;
+      end case;
+    end if;
+
+    --berechnen der neuen status flags
+    v.ifacereg(STATUSREG)(STA_LOOR) := r.ifacereg(CONFIGREG)(CONF_LOOW);
+    v.ifacereg(STATUSREG)(STA_FSS) := '0';
+    v.ifacereg(STATUSREG)(STA_RESH) := '0';
+    v.ifacereg(STATUSREG)(STA_RESL) := '0';
+    v.ifacereg(STATUSREG)(STA_BUSY) := '0';
+    v.ifacereg(STATUSREG)(STA_ERR) := '0';
+    v.ifacereg(STATUSREG)(STA_RDY) := '1';
+
+    -- Output soll Defaultmassig auf eingeschalten sie 
+    v.ifacereg(CONFIGREG)(CONF_OUTD) := '1';
+    
+    
+    --soft- und hard-reset vereinen
+    rstint <= not RST_ACT;
+    if exti.reset = RST_ACT or r.ifacereg(CONFIGREG)(CONF_SRES) = '1' then
+      rstint <= RST_ACT;
+    end if;
+    
+    -- Interrupt
+    if r.ifacereg(STATUSREG)(STA_INT) = '1' and r.ifacereg(CONFIGREG)(CONF_INTA) ='0' then
+      v.ifacereg(STATUSREG)(STA_INT) := '0';
+    end if; 
+    exto.intreq <= r.ifacereg(STATUSREG)(STA_INT);
+
+
+
+    r_next <= v;
 
   end process;
 

@@ -25,8 +25,8 @@ entity converter is
 
     small_ram_address1	: out std_logic_vector(11 downto 0);
     small_ram_data1	: in  std_logic_vector(7 downto 0);
-    small_ram_address2	: out std_logic_vector(11 downto 0);
-    small_ram_data2	: in  std_logic_vector(7 downto 0);
+    --small_ram_address2	: out std_logic_vector(11 downto 0);
+    --small_ram_data2	: in  std_logic_vector(7 downto 0);
 
     ram_address	: out std_logic_vector(11 downto 0);
     ram_data	: out std_logic_vector(23 downto 0);
@@ -42,7 +42,7 @@ architecture behaviour of converter is
   constant FRAME_WIDTH : integer := 640;
   constant FRAME_HEIGHT : integer := 480;
 
-  type state_type is (reset, wait_conv, read1, read2, write2, write3, write4);
+  type state_type is (reset, wait_conv, read1, read2, read3write1, read4write2, write3, write4);
 
   type reg_type is record
     --Variablen für Berechnung
@@ -82,7 +82,7 @@ architecture behaviour of converter is
   
 begin
 
-  convert : process(r, start_conv)
+  convert : process(r, start_conv, small_ram_data1)
   variable s 	: reg_type;
   begin
     s := r;
@@ -90,6 +90,8 @@ begin
     ram_en <= '0';
     ram_address <= (others => '0');
     ram_data <= (others => '0');
+
+    small_ram_address1 <= (others => '0');
     
     case r.state is
       when reset =>
@@ -109,49 +111,34 @@ begin
           s.index_toggle := not s.index_toggle;
 
           small_ram_address1 <= s.index;
-          small_ram_address2 <= s.index+1;
-
-          s.addr1 := s.index + FRAME_WIDTH;
-          s.addr2 := s.index + FRAME_WIDTH + 1;
+          s.addr1 := s.index + 1;
         end if;
-
-      --when ready =>
-      --  s.state := read1;
-      --  s.col_cnt := (others => '0');
-      --  s.row_cnt := (others => '0');
-      --  s.col_toggle := '0';
-      --  s.row_toggle := '0';
-      --  s.index := (others => '0');
-
-      --  small_ram_address1 <= r.addr1;
-      --  small_ram_address2 <= r.addr2;
-
-      --  s.addr1 := r.index + FRAME_WIDTH;
-      --  s.addr2 := r.index + FRAME_WIDTH + 1;
 
       when read1 =>
         s.dot_g1 := small_ram_data1;
-        s.dot_r := small_ram_data2;
 
         small_ram_address1 <= r.addr1;
-        small_ram_address2 <= r.addr2;
-
+        s.addr1 := s.index + FRAME_WIDTH;
         s.state := read2;
 
       when read2 =>
+        s.dot_r := small_ram_data1;
+        small_ram_address1 <= r.addr1;
+        s.addr1 := s.index + FRAME_WIDTH + 1;
+        s.state := read3write1;
+
+      when read3write1 =>
         s.dot_b := small_ram_data1;
-        s.dot_g2 := small_ram_data2;
+        small_ram_address1 <= r.addr1;
+        s.state := read4write2;
 
-        --s.state := write1;
-
-      --when write1 =>
         ram_address <= r.index;
         ram_data <= r.dot_r & r.dot_g1 & small_ram_data1;
         ram_en <= '1';
 
-        s.state := write2;
-
-      when write2 =>
+      when read4write2 =>
+        s.dot_g2 := small_ram_data1;
+        
         ram_address <= r.index + 1;
         ram_data <= r.dot_r & r.dot_g1 & r.dot_b;
         ram_en <= '1';
@@ -179,10 +166,7 @@ begin
           s.index := r.index + 2;
 
           small_ram_address1 <= s.index;
-          small_ram_address2 <= s.index+1;
-
-          s.addr1 := s.index + FRAME_WIDTH;
-          s.addr2 := s.index + FRAME_WIDTH + 1;
+          s.addr1 := s.index + 1;
         end if;
 
     end case;

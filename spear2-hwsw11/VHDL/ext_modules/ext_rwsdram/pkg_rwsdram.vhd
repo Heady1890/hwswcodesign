@@ -25,8 +25,9 @@ package pkg_rwsdram is
       exto       	: out module_out_type;
       ahbi      	: in  ahb_mst_in_type;
       ahbo      	: out ahb_mst_out_type;
-      LED_RED	: out std_logic_vector(17 downto 0);
-      LED_GREEN	: out std_logic_vector(8 downto 0)
+      addr_ram_out	: out std_logic_vector(11 downto 0);
+      data_ram_in	: in std_logic_vector(23 downto 0)
+--       LED_RED		: out std_logic_vector(17 downto 0)
       );
   end component;
 
