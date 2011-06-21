@@ -6,17 +6,12 @@ use work.spear_pkg.all;
 use work.spear_amba_pkg.all;
 use work.pkg_dis7seg.all;
 use work.pkg_counter.all;
-
---Simon
+use work.pkg_rwsdram.all;
 use work.pkg_camd5m_init.all;
---Lukas
 use work.pkg_kamera.all;
---Phillip
---use work.pkg_rwsdram.all;
 
 library grlib;
 use grlib.amba.all;
-use grlib.devices.all;
 
 library techmap;
 use techmap.gencomp.all;
@@ -53,21 +48,7 @@ entity top is
     ltm_nclk    : out std_logic;
     ltm_den     : out std_logic;
     ltm_grest   : out std_logic;
-    --LED_RED	: out std_logic_vector(17 downto 0);
-    -- Camera
-    CAM_PIXCLK	: in  std_logic;
-    CAM_XCLKIN	: out std_logic;
-    CAM_LVAL	: in  std_logic;
-    CAM_RESET   : out std_logic;
-    CAM_SDATA	: inout std_logic;
-    CAM_TRIGGER	: out std_logic;
-    CAM_SCLK	: out std_logic;
-    CAM_STROBE	: in  std_logic;
-    CAM_FVAL	: in  std_logic;
-    CAM_D	: in std_logic_vector(11 downto 0);
-    LED_RED  	: out std_logic_vector(17 downto 0);
-    LED_GREEN  	: out std_logic_vector(8 downto 0);
-    GPIO  	: out std_logic_vector(28 downto 0)
+    LED_RED	: out std_logic_vector(17 downto 0)
   );
 end top;
 
@@ -89,6 +70,34 @@ architecture behaviour of top is
   -- 7-segment display
   signal dis7segsel  : std_ulogic;
   signal dis7segexto : module_out_type;
+
+  --signals for Camera Initialisierung
+  signal init_done_sig    : std_logic;
+  signal cam_sdata_sig    : std_logic;
+  signal cam_xclkin_sig    : std_logic;
+  signal cam_sclk_sig    : std_logic;
+
+  -- Write RWSDRAM extension segsel
+  signal rwsdramsel 		: std_ulogic;
+  signal rwsdramsegexto 	: module_out_type;
+
+  --signals zwischen read_kamera und tp_ram
+  signal dp2_address1_sig	: std_logic_vector(11 downto 0);
+  signal dp2_address2_sig	: std_logic_vector(11 downto 0);
+  signal dp2_wr1_sig		: std_logic;
+  signal dp2_data_in1_sig	: std_logic_vector( 7 downto 0);
+  signal dp2_data_out1_sig	: std_logic_vector( 7 downto 0);
+  signal dp2_data_out2_sig	: std_logic_vector( 7 downto 0);
+  --signale zwischen read_kamera und converter
+  signal start_conv_sig		: std_logic;
+  --signale zwischen converter und dp_ram
+  signal dp_address1_sig	: std_logic_vector(11 downto 0);
+  signal dp_address2_sig	: std_logic_vector(11 downto 0);
+  signal dp_wr1_sig		: std_logic;
+  signal dp_data_in1_sig	: std_logic_vector(23 downto 0);
+  signal dp_data_out1_sig	: std_logic_vector(23 downto 0);
+  signal dp_data_out2_sig	: std_logic_vector(23 downto 0);
+
 
   -- signals for counter extension module
   signal counter_segsel : std_logic;
@@ -116,45 +125,20 @@ architecture behaviour of top is
   signal vga_clk_sel    : std_logic_vector(1 downto 0);
   signal svga_ahbmo     : ahb_mst_out_type;
 
-  --SIGNALE SIMON
-  --signals for Camera Initialisierung
-  signal init_done_sig    : std_logic;
-  signal cam_sdata_sig    : std_logic;
-  signal cam_xclkin_sig    : std_logic;
-  signal cam_sclk_sig    : std_logic;
-
-  --SIGNALE PHILLIP
   --signals for Write SDRAM Controller
   signal rwsdram_ahbmo	: ahb_mst_out_type;
-  -- Write RWSDRAM extension segsel
-  signal rwsdramsel 		: std_ulogic;
-  signal rwsdramsegexto 	: module_out_type;
-  signal addr_dp_ram_sig	: std_logic_vector(19 downto 0);
-  signal data_dp_ram_sig	: std_logic_vector(31 downto 0);
-  -- Signals for dp_ram module for rgb
-  signal address1_sig  : std_logic_vector(19 downto 0);
-  signal data_out1_sig : std_logic_vector(31 downto 0);
-  signal wr1_sig       : std_logic;
-  signal data_in1_sig  : std_logic_vector(31 downto 0);
 
-  --SIGNALE LUKAS
-  --signals zwischen read_kamera und tp_ram
-  signal tp_address1_sig	: std_logic_vector(11 downto 0);
-  signal tp_address2_sig	: std_logic_vector(11 downto 0);
-  signal tp_address3_sig	: std_logic_vector(11 downto 0);
-  signal tp_data_in1_sig	: std_logic_vector( 7 downto 0);
-  signal tp_wr1_sig		: std_logic;
-  signal tp_data_out2_sig	: std_logic_vector( 7 downto 0);
-  signal tp_data_out3_sig	: std_logic_vector( 7 downto 0);  
-  --signale zwischen read_kamera und converter
-  signal start_conv_sig		: std_logic;
-  --signale zwischen converter und dp_ram
-  signal dp_address1_sig	: std_logic_vector(11 downto 0);
-  signal dp_address2_sig	: std_logic_vector(11 downto 0);
-  signal dp_wr1_sig		: std_logic;
-  signal dp_data_in1_sig	: std_logic_vector(23 downto 0);
-  signal dp_data_out1_sig	: std_logic_vector(23 downto 0);
-  signal dp_data_out2_sig	: std_logic_vector(23 downto 0);  
+    -- Camera
+  signal CAM_PIXCLK	:  std_logic;
+  --signal CAM_XCLKIN	:  std_logic;
+  signal CAM_LVAL	:  std_logic;
+  --signal CAM_RESET   	:  std_logic;
+  signal CAM_SDATA	:  std_logic;
+  signal CAM_TRIGGER	:  std_logic;
+  --signal CAM_SCLK	:  std_logic;
+  signal CAM_STROBE	:  std_logic;
+  signal CAM_FVAL	:  std_logic;
+  signal CAM_D		:  std_logic_vector(11 downto 0);
 
   component altera_pll IS
     PORT
@@ -162,8 +146,7 @@ architecture behaviour of top is
         areset		: IN STD_LOGIC  := '0';
         inclk0		: IN STD_LOGIC  := '0';
         c0		: OUT STD_LOGIC ;
-        c1		: OUT STD_LOGIC; 
-        c2		: OUT STD_LOGIC;
+        c1		: OUT STD_LOGIC;
         locked		: OUT STD_LOGIC 
         );
    END component;
@@ -175,7 +158,6 @@ begin
     inclk0	 => db_clk,
     c0	         => clk,
     c1	         => vga_clk_int,
-    c2           => cam_xclkin_sig,  
     locked	 => open
     );
 
@@ -395,16 +377,16 @@ begin
   -- Kamera Initialisierung
   -----------------------------------------------------------------------------
 
-  camd5m_init_unit: ext_camd5m_init
-    port map(
-      CAM_SDATA    => CAM_SDATA,
-      CAM_SCLK    => cam_sclk_sig,
-      LED_RED    => LED_RED,
-      INIT_DONE    => init_done_sig,
-      sys_res     => sysrst,
-      sys_clk     => clk
-    ); 
-  
+--   camd5m_init_unit: ext_camd5m_init
+--     port map(
+--       CAM_SDATA    => CAM_SDATA,
+--       CAM_SCLK    => cam_sclk_sig,
+--       LED_RED    => LED_RED,
+--       INIT_DONE    => init_done_sig,
+--       sys_res     => sysrst,
+--       sys_clk     => clk
+--     );
+
   -----------------------------------------------------------------------------
   -- Write to SDRAM modules
   -----------------------------------------------------------------------------
@@ -422,16 +404,16 @@ begin
   --    exto => rwsdramsegexto,
   --    ahbi => grlib_ahbmi,
   --    ahbo => rwsdram_ahbmo,
-  --    addr_ram_out => addr_dp_ram_sig,
-  --    data_ram_in => data_dp_ram_sig,
-  --    LED_RED => LED_RED
+  --    addr_ram_out => dp_address2_sig,
+  --    data_ram_in => dp_data_out2_sig
+--       LED_RED => LED_RED
   --  );
 
   -----------------------------------------------------------------------------
   -- Dual Portet RAM Module for amba
   -----------------------------------------------------------------------------
 
-  dp_ram0 : dp_ram
+  dp_ram1 : dp_ram
   generic map
   (
      ADDR_WIDTH => 12,
@@ -449,10 +431,10 @@ begin
   );
 
   -----------------------------------------------------------------------------
-  -- Triple Portet RAM Module for kamera_read
+  -- Dual Portet RAM Module between read_kamera and converter
   -----------------------------------------------------------------------------
 
-  tp_ram0 : tp_ram
+  dp_ram0 : dp_ram
   generic map
   (
      ADDR_WIDTH => 12,
@@ -460,34 +442,33 @@ begin
   )
   port map
   (
-     clk	=> clk,                           	
-     address1	=> tp_address1_sig,
-     address2	=> tp_address2_sig,
-     address3	=> tp_address3_sig,
-     data_in1   => tp_data_in1_sig,              	
-     wr1        => tp_wr1_sig,             	
-     data_out2	=> tp_data_out2_sig,
-     data_out3  => tp_data_out3_sig       	
+     clk => clk,
+     address1 	=> dp2_address1_sig,
+     data_out1 	=> dp2_data_out1_sig,
+     wr1 	=> dp2_wr1_sig,
+     data_in1 	=> dp2_data_in1_sig,
+     address2 	=> dp2_address2_sig,
+     data_out2 	=> dp2_data_out2_sig
   );
 
   -----------------------------------------------------------------------------
   -- Modul zum Lesen der rohen Kamera Daten
   -----------------------------------------------------------------------------
 
-  kam1 : read_kamera
-  port map (
-    CAM_PIXCLK	=> CAM_PIXCLK,
-    CAM_LVAL	=> CAM_LVAL,
-    CAM_TRIGGER	=> CAM_TRIGGER,
-    CAM_STROBE	=> CAM_STROBE,
-    CAM_FVAL	=> CAM_FVAL,
-    CAM_D	=> CAM_D,
-    INIT_DONE	=> init_done_sig,
-    sys_res	=> sysrst,
-    ram_address	=> tp_address1_sig,
-    ram_data	=> tp_data_in1_sig,
-    ram_en	=> tp_wr1_sig
-  ); 
+   kam1 : read_kamera
+   port map (
+     CAM_PIXCLK		=> CAM_PIXCLK,
+     CAM_LVAL		=> CAM_LVAL,
+     CAM_TRIGGER	=> CAM_TRIGGER,
+     CAM_STROBE		=> CAM_STROBE,
+     CAM_FVAL		=> CAM_FVAL,
+     CAM_D		=> CAM_D,
+     INIT_DONE		=> init_done_sig,
+     sys_res		=> sysrst,
+     ram_address	=> dp2_address1_sig,
+     ram_data		=> dp2_data_in1_sig,
+     ram_en		=> dp2_wr1_sig
+   ); 
 
   -----------------------------------------------------------------------------
   -- Modul zum Konvertieren der Kamera Daten
@@ -498,19 +479,17 @@ begin
     start_conv		=> start_conv_sig,
     sys_res		=> rst,
     sys_clk		=> clk,
-    small_ram_address1	=> tp_address2_sig,
-    small_ram_data1	=> tp_data_out2_sig,
-    small_ram_address2	=> tp_address3_sig,
-    small_ram_data2	=> tp_data_out3_sig,
+    small_ram_address1	=> dp2_address2_sig,
+    small_ram_data1	=> dp2_data_out2_sig,
     ram_address		=> dp_address1_sig,
     ram_data		=> dp_data_in1_sig,
     ram_en		=> dp_wr1_sig
-  );  
+  );
 
   -----------------------------------------------------------------------------
   -- Spear extension modules
   -----------------------------------------------------------------------------
-    
+
   dis7seg_unit: ext_dis7seg
     generic map (
       DIGIT_COUNT => 8,
@@ -590,41 +569,40 @@ begin
     end if;
   end process;
 
-  --Camera verbinden
-  CAM_RESET	<= sysrst;
-  CAM_XCLKIN	<= cam_xclkin_sig;
-  CAM_SCLK	<= cam_sclk_sig;
-  --CAM_SDATA	<= cam_sdata_sig;
-  --cam_sdata_sig <= CAM_SDATA;
-  
-  	 GPIO(0)<= CAM_PIXCLK;
-  	 GPIO(1)<= CAM_D(11);
-  	 --GPIO(2)<=
-  	 GPIO(3)<= CAM_D(10);
-  	 GPIO(4)<= CAM_D(9);	
-  	 GPIO(5)<= CAM_D(8);
-  	 GPIO(6)<= CAM_D(7);
-  	 GPIO(7)<= CAM_D(6);
-  	 GPIO(8)<= CAM_D(5);
-  	 GPIO(9)<= CAM_D(4);
-  	 --GPIO(10)<=
-  	 --GPIO(11)<=
-  	 GPIO(12)<= CAM_D(3);
-  	 GPIO(13)<= CAM_D(2);
-  	 GPIO(14)<= CAM_D(1);
-  	 GPIO(15)<= CAM_D(0);
-  	 --GPIO(16)<=
-  	 --GPIO(17)<=
-  	 GPIO(18)<= cam_xclkin_sig;
-  	 GPIO(19)<= sysrst;
-  	 --GPIO(20)<= 
-  	 --GPIO(21)<= 
-  	 --GPIO(22)<= 
-  	 GPIO(23)<= CAM_LVAL;
-  	 GPIO(24)<= CAM_FVAL;
-  	 GPIO(25)<= CAM_SDATA;
-  	 GPIO(26)<= cam_sclk_sig;
-  	 --GPIO(27)<=
-
+--    --Camera verbinden
+--   CAM_RESET	<= sysrst;
+--   CAM_XCLKIN	<= cam_xclkin_sig;
+--   CAM_SCLK	<= cam_sclk_sig;
+--   --CAM_SDATA	<= cam_sdata_sig;
+--   --cam_sdata_sig <= CAM_SDATA;
+--   
+--   	 GPIO(0)<= CAM_PIXCLK;
+--   	 GPIO(1)<= CAM_D(11);
+--   	 --GPIO(2)<=
+--   	 GPIO(3)<= CAM_D(10);
+--   	 GPIO(4)<= CAM_D(9);	
+--   	 GPIO(5)<= CAM_D(8);
+--   	 GPIO(6)<= CAM_D(7);
+--   	 GPIO(7)<= CAM_D(6);
+--   	 GPIO(8)<= CAM_D(5);
+--   	 GPIO(9)<= CAM_D(4);
+--   	 --GPIO(10)<=
+--   	 --GPIO(11)<=
+--   	 GPIO(12)<= CAM_D(3);
+--   	 GPIO(13)<= CAM_D(2);
+--   	 GPIO(14)<= CAM_D(1);
+--   	 GPIO(15)<= CAM_D(0);
+--   	 --GPIO(16)<=
+--   	 --GPIO(17)<=
+--   	 GPIO(18)<= cam_xclkin_sig;
+--   	 GPIO(19)<= sysrst;
+--   	 --GPIO(20)<= 
+--   	 --GPIO(21)<= 
+--   	 --GPIO(22)<= 
+--   	 GPIO(23)<= CAM_LVAL;
+--   	 GPIO(24)<= CAM_FVAL;
+--   	 GPIO(25)<= CAM_SDATA;
+--   	 GPIO(26)<= cam_sclk_sig;
+--   	 --GPIO(27)<=
 
 end behaviour;
