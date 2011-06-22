@@ -19,14 +19,13 @@ use work.pkg_kamera.all;
 entity converter is
   port (
     start_conv	: in  std_logic;
+    start_display	: out std_logic_vector(1 downto 0);
     
     sys_res : in  std_logic;
     sys_clk : in  std_logic;
 
     small_ram_address1	: out std_logic_vector(11 downto 0);
     small_ram_data1	: in  std_logic_vector(7 downto 0);
-    --small_ram_address2	: out std_logic_vector(11 downto 0);
-    --small_ram_data2	: in  std_logic_vector(7 downto 0);
 
     ram_address	: out std_logic_vector(11 downto 0);
     ram_data	: out std_logic_vector(23 downto 0);
@@ -92,6 +91,8 @@ begin
     ram_data <= (others => '0');
 
     small_ram_address1 <= (others => '0');
+
+    start_display <= (others => '0');
     
     case r.state is
       when reset =>
@@ -162,6 +163,7 @@ begin
         s.col_cnt := r.col_cnt + 2;
         if r.col_cnt = FRAME_WIDTH - 2 then
           s.state := wait_conv;
+          start_display <= not s.index_toggle & '1';
         else
           s.index := r.index + 2;
 

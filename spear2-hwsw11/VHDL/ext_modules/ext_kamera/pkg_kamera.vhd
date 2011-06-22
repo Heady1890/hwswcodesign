@@ -69,10 +69,10 @@ package pkg_kamera is
       sys_res 		: in  std_logic;
       sys_clk 		: in  std_logic;
 
+      start_display	: out std_logic_vector(1 downto 0);
+
       small_ram_address1	: out std_logic_vector(11 downto 0);
       small_ram_data1		: in  std_logic_vector(7 downto 0);
-      --small_ram_address2	: out std_logic_vector(11 downto 0);
-      --small_ram_data2		: in  std_logic_vector(7 downto 0);
 
       ram_address	: out std_logic_vector(11 downto 0);
       ram_data		: out std_logic_vector(23 downto 0);

@@ -130,7 +130,7 @@ begin
 
   reg : process(CAM_PIXCLK)
   begin
-    if rising_edge(CAM_PIXCLK) then 
+    if falling_edge(CAM_PIXCLK) then 
       if sys_res = RST_ACT then
         --Signale initialisieren
         
