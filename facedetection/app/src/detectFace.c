@@ -3,6 +3,7 @@
 #include <string.h>
 #include "image.h"
 #include "detectFace.h"
+#include "filters.h"
 
 #define FOREGROUND_COLOR_R   0xff
 #define FOREGROUND_COLOR_G   0xff
@@ -137,6 +138,12 @@ void detectFace(bit_image_t *faceMask, image_t *rawImage)
 	resultRect.bottomRightY = resultRect.topLeftY + width/2*3;
       }
     }
+
+    resultRect.topLeftX*=COMPUTE_COLUMN;
+    resultRect.bottomRightX*=COMPUTE_COLUMN;
+    resultRect.topLeftY*=COMPUTE_LINE;
+    resultRect.bottomRightY*=COMPUTE_LINE;
+
 
     printf("selected rect: topLeft=(%d, %d), bottomRight=(%d, %d)\n", resultRect.topLeftX, resultRect.topLeftY, resultRect.bottomRightX, resultRect.bottomRightY);
     

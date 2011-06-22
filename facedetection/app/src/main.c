@@ -47,11 +47,26 @@ void initializeImage(image_t *template, image_t *image)
 #endif
 }
 
+void initializeSaveImage(image_t *template, image_t *image)
+{
+  image->width = template->width/COMPUTE_LINE;
+  image->height = template->height/COMPUTE_COLUMN;
+  image->dataLength = (image->width*image->height)*3;
+#ifdef __SPEAR32__
+  // allocate memory in external SDRAM
+  image->data = (unsigned char *)(SDRAM_BASE+sdramBytesAllocated);
+  sdramBytesAllocated += template->dataLength;
+#else
+  // allocate memory on heap
+  image->data = (unsigned char *)malloc(template->dataLength);    
+#endif
+}
+
 void initializeBitImage(image_t *template, bit_image_t *image)
 {
-  image->width = template->width;
-  image->height = template->height;
-  uint16_t dataLength = (template->width*template->height)>>3;
+  image->width = template->width/COMPUTE_LINE;
+  image->height = template->height/COMPUTE_COLUMN;
+  uint16_t dataLength = ((image->width*image->height)>>3)+1;
   image->data = (uint8_t *)malloc(dataLength);
 }
 
@@ -71,13 +86,13 @@ void saveBitImage(image_t *inputImage, bit_image_t *image){
         inputImage->data[pIndex+1]=0x00;
         inputImage->data[pIndex+2]=0x00;
       }
-
-      pIndex+=3;
       byteIndex++;
       if(byteIndex>=8){
         byteIndex=0;
         bpIndex++;
       }
+      pIndex+=3;
+        
     }
   }
 }
@@ -252,6 +267,7 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
   inputImage.width = (tgaHeader[13] << 8) | (tgaHeader[12] & 0xFF);
   inputImage.height = (tgaHeader[15] << 8) | (tgaHeader[14] & 0xFF);
   inputImage.dataLength = imageLen - sizeof(tgaHeader);
+  printf("imagelength=%i\n",inputImage.dataLength);
 
 
 #ifndef __SPEAR32__
@@ -270,11 +286,9 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
   
   printf("Images received, starting computation.\n");
 #endif
-
   initializeBitImage(&inputImage, &skinFilterImage);
   initializeBitImage(&inputImage, &erodeFilterImage);
   initializeBitImage(&inputImage, &dilateFilterImage);
-
 
 #ifdef __SPEAR32__
   
@@ -292,8 +306,8 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
   printf("erodeFilter finished\n");
   //printBitImage(&erodeFilterImage);
 
-  //erodeDilateFilter(&erodeFilterImage, &dilateFilterImage, FILTER_DILATE);
   dilateFilter(&erodeFilterImage, &dilateFilterImage);
+  //dilateFilter(&erodeFilterImage, &dilateFilterImage);
   printf("dilitateFilter finished\n");
   //printBitImage(&dilateFilterImage);
 
@@ -329,8 +343,15 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
   fwrite(inputImage.data, 1, inputImage.dataLength, f);
   fclose(f);
 
+  image_t tempImage;
+  initializeSaveImage(&inputImage, &tempImage);
+  tgaHeader[12] = (unsigned char) (skinFilterImage.width & 0xFF);
+  tgaHeader[13] = (unsigned char) (skinFilterImage.width >> 8);
+  tgaHeader[14] = (unsigned char) (skinFilterImage.height & 0xFF);
+  tgaHeader[15] = (unsigned char) (skinFilterImage.height >> 8);
+
   //save skinFilter Image
-  saveBitImage(&inputImage, &skinFilterImage);
+  saveBitImage(&tempImage, &skinFilterImage);
   f = fopen("../1.skinFilter.tga", "w");
   if (!f) {
     printf("Image file <%s> couldn't be opened", "../1.skinFilter.tga");
@@ -338,11 +359,11 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
   }
     
   fwrite(tgaHeader, 1, sizeof(tgaHeader), f);
-  fwrite(inputImage.data, 1, inputImage.dataLength, f);
+  fwrite(tempImage.data, 1, tempImage.dataLength, f);
   fclose(f);
 
   //save erodeFilter Image
-  saveBitImage(&inputImage, &erodeFilterImage);
+  saveBitImage(&tempImage, &erodeFilterImage);
   f = fopen("../2.erodeFilter.tga", "w");
   if (!f) {
     printf("Image file <%s> couldn't be opened", "../2.erodeFilter.tga");
@@ -350,11 +371,11 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
   }
     
   fwrite(tgaHeader, 1, sizeof(tgaHeader), f);
-  fwrite(inputImage.data, 1, inputImage.dataLength, f);
+  fwrite(tempImage.data, 1, tempImage.dataLength, f);
   fclose(f);
 
   //save dilateFilter Image
-  saveBitImage(&inputImage, &dilateFilterImage);
+  saveBitImage(&tempImage, &dilateFilterImage);
   f = fopen("../3.dilateFilter.tga", "w");
   if (!f) {
     printf("Image file <%s> couldn't be opened", "../3.dilateFilter.tga");
@@ -362,15 +383,16 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
   }
     
   fwrite(tgaHeader, 1, sizeof(tgaHeader), f);
-  fwrite(inputImage.data, 1, inputImage.dataLength, f);
+  fwrite(tempImage.data, 1, tempImage.dataLength, f);
   fclose(f);
 
+  freeImage(&tempImage);
   
 #else
   // send signal to PC client that output data will be sent
   printf("\x04\n");
 
-  // send elapsed time for computation
+  // send elapsed time for computation		
   cycles = counter_getValue(&counterHandle);
   UART_write(1, (char *)&cycles, sizeof(cycles));
   // send length of whole image file
@@ -382,7 +404,6 @@ void computeSingleImage(const char *sourcePath, const char *targetPath)
 #endif
 
   freeImage(&inputImage);
-  //freeImage(&tempImage);
   freeBitImage(&skinFilterImage);
   freeBitImage(&erodeFilterImage);
   freeBitImage(&dilateFilterImage);
